@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SixSheet: Spoiler-Free GTA VI Cheat Sheet</title>
+<meta name="description" content="Spoiler-free GTA VI cheat sheet: unlock countdown, launch prep checklist, verified cheat codes, money methods and collectible trackers, updated through launch week.">
+<meta property="og:title" content="SixSheet: Spoiler-Free GTA VI Cheat Sheet">
+<meta property="og:description" content="Countdown, launch checklist, verified codes, money methods and trackers. No story spoilers, ever.">
+<meta name="theme-color" content="#0d0b14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0b14;--panel:#17131f;--panel2:#1f1a2b;--line:#2c2540;
+  --ink:#f4f0fa;--mute:#a79fb8;--pink:#ff5e8a;--amber:#ffb35c;--teal:#3ee6c9;
+  --grad:linear-gradient(100deg,var(--pink),var(--amber));
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif}
+a{color:var(--teal)}
+.wrap{max-width:960px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:5;background:rgba(13,11,20,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
+.logo{font-family:Anton,Impact,sans-serif;font-size:26px;letter-spacing:.5px;text-decoration:none;color:var(--ink)}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.shield{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mute);cursor:pointer;user-select:none;border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--panel)}
+.shield .dot{width:10px;height:10px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
+.shield.off .dot{background:var(--pink);box-shadow:0 0 8px var(--pink)}
+.hero{padding:44px 0 28px;text-align:center;background:radial-gradient(ellipse at 50% -20%,rgba(255,94,138,.28),transparent 60%),radial-gradient(ellipse at 90% 10%,rgba(62,230,201,.12),transparent 50%)}
+.hero h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,7vw,64px);line-height:1.05;margin:0 0 8px;text-transform:uppercase}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mute);margin:0 auto;max-width:560px}
+.count{display:flex;justify-content:center;gap:10px;margin:26px 0 8px}
+.count div{background:var(--panel);border:1px solid var(--line);border-radius:14px;min-width:74px;padding:12px 8px}
+.count b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px;line-height:1}
+.count small{color:var(--mute);font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.note{font-size:12px;color:var(--mute);max-width:520px;margin:0 auto}
+.live{display:inline-block;background:var(--grad);color:#1a0f12;font-weight:700;border-radius:99px;padding:8px 18px;margin-top:20px}
+nav.tabs{display:flex;gap:6px;overflow-x:auto;padding:14px 0;scrollbar-width:none}
+nav.tabs a{flex:none;text-decoration:none;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:14px;font-weight:600;background:var(--panel)}
+nav.tabs a.on{color:#1a0f12;background:var(--grad);border-color:transparent}
+section.view{display:none;padding:6px 0 40px}
+section.view.on{display:block}
+h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:30px;margin:10px 0 4px;text-transform:uppercase;letter-spacing:.3px}
+.sub{color:var(--mute);margin:0 0 18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.fact .k{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--amber);font-weight:700}
+.fact .v{font-weight:600;margin:4px 0 8px}
+.src{font-size:12px;color:var(--mute)}
+.check{display:flex;gap:12px;align-items:flex-start;cursor:pointer;margin-bottom:10px}
+.check .box{flex:none;width:24px;height:24px;border-radius:7px;border:2px solid var(--line);display:grid;place-items:center;margin-top:2px;transition:.15s}
+.check.done .box{background:var(--teal);border-color:var(--teal)}
+.check.done .box::after{content:"";width:6px;height:11px;border:solid #0d0b14;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.check.done .t{text-decoration:line-through;color:var(--mute)}
+.check .t{font-weight:600}
+.check .d{font-size:14px;color:var(--mute)}
+.progress{height:8px;background:var(--panel2);border-radius:99px;overflow:hidden;margin:6px 0 18px}
+.progress i{display:block;height:100%;background:var(--grad);transition:width .3s}
+.empty{text-align:center;padding:36px 18px;border:1px dashed var(--line);border-radius:16px;color:var(--mute)}
+.empty b{display:block;color:var(--ink);font-size:18px;margin-bottom:6px}
+.search{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;color:var(--ink);font:inherit;padding:12px 14px;margin-bottom:12px}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;border-radius:6px;padding:2px 7px;background:var(--panel2);color:var(--teal)}
+.tag.warn{color:var(--amber)}
+.input{font-family:ui-monospace,Menlo,monospace;font-size:14px;background:var(--panel2);border-radius:8px;padding:6px 8px;margin-top:6px;word-break:break-word}
+button.copy{flex:none;background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 10px;font:600 13px Inter,sans-serif;cursor:pointer}
+.spoil{position:relative}
+body.shielded .spoil .body{filter:blur(7px);user-select:none;pointer-events:none}
+body.shielded .spoil .reveal{display:block}
+.reveal{display:none;position:absolute;inset:0;margin:auto;height:max-content;width:max-content;background:var(--bg);border:1px solid var(--amber);color:var(--amber);border-radius:99px;padding:6px 14px;font:600 13px Inter,sans-serif;cursor:pointer;z-index:2}
+.spoil.open .body{filter:none!important;pointer-events:auto!important}
+.spoil.open .reveal{display:none!important}
+.stack>*+*{margin-top:12px}
+.gear a{text-decoration:none;color:inherit;display:block}
+.gear .card:hover{border-color:var(--pink)}
+.ad-slot{display:none;margin:18px 0;min-height:90px;border-radius:12px;background:var(--panel)}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--mute);font-size:13px}
+.updated{font-size:12px;color:var(--mute)}
+</style>
+</head>
+<body class="shielded">
+<header class="top"><div class="wrap bar">
+  <a class="logo" href="#prep">Six<span>Sheet</span></a>
+  <div class="shield" id="shield" role="button" tabindex="0" aria-pressed="true"><span class="dot"></span><span id="shieldLabel">Spoiler shield on</span></div>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>The <em>spoiler-free</em><br>GTA VI cheat sheet</h1>
+  <p>Verified codes, money methods and checklists, updated all launch week. No story spoilers, ever.</p>
+  <div class="count" id="count" aria-live="polite">
+    <div><b id="cd-d">-</b><small>Days</small></div>
+    <div><b id="cd-h">-</b><small>Hours</small></div>
+    <div><b id="cd-m">-</b><small>Min</small></div>
+    <div><b id="cd-s">-</b><small>Sec</small></div>
+  </div>
+  <p class="note" id="launchNote"></p>
+</div></div>
+
+<div class="wrap">
+  <nav class="tabs" id="tabs">
+    <a href="#prep" data-v="prep">Launch prep</a>
+    <a href="#codes" data-v="codes">Cheat codes</a>
+    <a href="#money" data-v="money">Money</a>
+    <a href="#tracker" data-v="tracker">Trackers</a>
+    <a href="#finds" data-v="finds">Latest finds</a>
+    <a href="#gear" data-v="gear">Gear</a>
+  </nav>
+  <div class="ad-slot" data-slot="top"></div>
+
+  <section class="view" id="v-prep">
+    <h2>Launch prep</h2>
+    <p class="sub">Tick these off before unlock. Your progress saves on this device.</p>
+    <div class="progress"><i id="prepBar" style="width:0"></i></div>
+    <div class="card" id="prepList"></div>
+    <h2 style="margin-top:28px">What's confirmed</h2>
+    <p class="sub">Only facts with a source. Rumors stay off this page.</p>
+    <div class="grid" id="facts"></div>
+  </section>
+
+  <section class="view" id="v-codes">
+    <h2>Cheat codes</h2>
+    <p class="sub">Every code is tested before it's marked verified.</p>
+    <input class="search" id="codeSearch" placeholder="Search codes (e.g. armor, vehicle)" aria-label="Search codes">
+    <div class="stack" id="codes"></div>
+  </section>
+
+  <section class="view" id="v-money">
+    <h2>Making money</h2>
+    <p class="sub">Fastest legit methods, ranked as players confirm them.</p>
+    <div class="stack" id="money"></div>
+  </section>
+
+  <section class="view" id="v-tracker">
+    <h2>Trackers</h2>
+    <p class="sub">Check off collectibles as you go. Saved on this device.</p>
+    <div class="stack" id="tracker"></div>
+  </section>
+
+  <section class="view" id="v-finds">
+    <h2>Latest finds</h2>
+    <p class="sub">Hidden spots, tricks and glitches, credited to whoever found them.</p>
+    <div class="stack" id="finds"></div>
+  </section>
+
+  <section class="view" id="v-gear">
+    <h2>Gear for launch</h2>
+    <p class="sub">Storage first. That download is huge.</p>
+    <div class="grid gear" id="gear"></div>
+    <p class="src" id="affNote" style="margin-top:14px"></p>
+  </section>
+  <div class="ad-slot" data-slot="bottom"></div>
+</div>
+
+<footer><div class="wrap">
+  <p class="updated" id="updated"></p>
+  <p id="contact"></p>
+  <p>SixSheet is an unofficial fan site. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Grand Theft Auto and related names are trademarks of Take-Two Interactive.</p>
+</div></footer>
+
+<script type="application/json" id="seed">{"site":{"name":"SixSheet","tagline":"The spoiler-free GTA VI cheat sheet","xHandle":"","affiliateTag":"","updated":"2026-11-15T06:00:00Z"},"launch":{"unlockUtc":"2026-11-19T05:00:00Z","note":"Counting down to midnight ET (US). PlayStation Store listings show a midnight local unlock; Rockstar hasn't confirmed an exact time."},"facts":[{"label":"Release","value":"Thursday, November 19, 2026","source":"Rockstar via PC Gamer","url":"https://www.pcgamer.com/games/action/grand-theft-auto-6-is-delayed-to-november-these-extra-months-will-allow-us-to-finish-the-game-with-the-level-of-polish-you-have-come-to-expect-and-deserve"},{"label":"Unlock time","value":"Midnight local time per PS Store listings (not confirmed by Rockstar)","source":"GAMES.GG","url":"https://games.gg/grand-theft-auto-vi/guides/what-time-does-gta-6-come-out-likely-midnight-rockstar-hasnt-said/"},{"label":"Platforms","value":"PS5, Xbox Series X and Series S. No PC version announced.","source":"PC Gamer","url":"https://www.pcgamer.com/games/action/grand-theft-auto-6-is-delayed-to-november-these-extra-months-will-allow-us-to-finish-the-game-with-the-level-of-polish-you-have-come-to-expect-and-deserve"},{"label":"Price","value":"Standard $79.99 / Ultimate $99.99","source":"KeenGamer","url":"https://www.keengamer.com/articles/guides/gta-6-prices-and-editions-which-edition-should-you-buy/"},{"label":"Physical copies","value":"Code in a box. No disc at launch.","source":"TweakTown","url":"https://www.tweaktown.com/news/112341/rockstar-confirms-gta-6s-price-no-physical-disc-version/index.html"},{"label":"Download size","value":"Up to 212 GB, depending on console","source":"GamesRadar+","url":"https://gamesradar.com/games/grand-theft-auto/rockstar-confirms-gta-6-is-212gb-pre-loading-opens-earlier-than-previously-announced-for-digital-orders"},{"label":"Early-purchase bonus","value":"Vintage Vice City Pack: a 1955 Vapid Stanier with a garage, vintage outfits and hairstyles, weapon finishes. Buy before Nov 20.","source":"VGTimes / GTA BOOM","url":"https://www.gtaboom.com/gta-6-release-date-and-delay-history-9f6b"},{"label":"Mode at launch","value":"Single-player","source":"GTA BOOM","url":"https://www.gtaboom.com/gta-6-release-date-and-delay-history-9f6b"}],"prep":[{"id":"space","text":"Free up 212 GB","detail":"Xbox Series S 512 GB owners: expect to delete a couple of big games."},{"id":"preload","text":"Finish the preload","detail":"Done when the game tile shows a countdown instead of a Play button."},{"id":"bonus","text":"Buy before Nov 20 for the Vintage Vice City Pack","detail":"Both editions include it."},{"id":"region","text":"Check your account region's unlock time","detail":"Your PSN account region sets the unlock. Changing the console clock does nothing."},{"id":"mute","text":"Mute spoiler words on X, Reddit and YouTube","detail":"Earlier time zones unlock up to 19 hours before the Americas. Streams of the opening will be everywhere."},{"id":"patch","text":"Leave the console on and updated on launch night","detail":"A day-one patch is likely. Let it download before midnight."}],"codes":[],"money":[],"tracker":[],"finds":[],"gear":[{"name":"PS5 M.2 SSD (1 TB or more, with heatsink)","why":"212 GB eats a third of a launch PS5.","query":"PS5 M.2 NVMe SSD 2TB heatsink"},{"name":"Xbox Series X|S storage expansion card","why":"The only plug-in option for running Series games.","query":"Xbox Series X S storage expansion card"},{"name":"Spare controller","why":"Long sessions, dead batteries.","query":"DualSense wireless controller"},{"name":"Controller charging dock","why":"Always grab a charged one.","query":"PS5 controller charging station"},{"name":"Gaming headset","why":"Hear the radio and the city properly.","query":"wireless gaming headset PS5 Xbox"}]}</script>
+<script>
+(function(){
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem('sixsheet:'+k);return v===null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem('sixsheet:'+k,JSON.stringify(v));}catch(e){}}
+  };
+  var D;
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function $(id){return document.getElementById(id);}
+  function srcLink(o){
+    if(!o.source) return '';
+    return '<div class="src">Source: '+(o.url?'<a href="'+esc(o.url)+'" rel="nofollow noopener" target="_blank">'+esc(o.source)+'</a>':esc(o.source))+(o.added?' · '+esc(fmtDate(o.added)):'')+'</div>';
+  }
+  function fmtDate(s){var d=new Date(s);return isNaN(d)?s:d.toLocaleDateString(undefined,{month:'short',day:'numeric'});}
+  function wrapSpoiler(html,isSp){
+    return isSp?'<div class="spoil"><button class="reveal" type="button">Spoiler-ish. Tap to reveal</button><div class="body">'+html+'</div></div>':html;
+  }
+  function empty(title,msg){return '<div class="empty"><b>'+esc(title)+'</b>'+esc(msg)+'</div>';}
+
+  // Spoiler shield
+  var shielded = store.get('shield',true);
+  function applyShield(){
+    document.body.classList.toggle('shielded',shielded);
+    $('shield').classList.toggle('off',!shielded);
+    $('shield').setAttribute('aria-pressed',shielded);
+    $('shieldLabel').textContent = shielded?'Spoiler shield on':'Spoiler shield off';
+  }
+  function toggleShield(){shielded=!shielded;store.set('shield',shielded);applyShield();}
+  $('shield').addEventListener('click',toggleShield);
+  $('shield').addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleShield();}});
+  document.addEventListener('click',function(e){
+    var r=e.target.closest('.reveal'); if(r){r.parentNode.classList.add('open');}
+  });
+
+  // Countdown
+  var timer;
+  function tick(){
+    var t=new Date(D.launch.unlockUtc).getTime()-Date.now();
+    if(t<=0){clearInterval(timer);$('count').innerHTML='<span class="live">It’s out. Go play. We’ll keep this page updated.</span>';return;}
+    var s=Math.floor(t/1000);
+    $('cd-d').textContent=Math.floor(s/86400);
+    $('cd-h').textContent=String(Math.floor(s%86400/3600)).padStart(2,'0');
+    $('cd-m').textContent=String(Math.floor(s%3600/60)).padStart(2,'0');
+    $('cd-s').textContent=String(s%60).padStart(2,'0');
+  }
+
+  // Prep checklist
+  function renderPrep(){
+    var done=store.get('prep',{});
+    $('prepList').innerHTML=D.prep.map(function(p){
+      return '<div class="check'+(done[p.id]?' done':'')+'" data-id="'+esc(p.id)+'" role="checkbox" tabindex="0" aria-checked="'+!!done[p.id]+'"><span class="box"></span><div><div class="t">'+esc(p.text)+'</div><div class="d">'+esc(p.detail||'')+'</div></div></div>';
+    }).join('');
+    var n=D.prep.filter(function(p){return done[p.id];}).length;
+    $('prepBar').style.width=(D.prep.length?100*n/D.prep.length:0)+'%';
+  }
+  function toggleCheck(el,key){
+    var all=store.get(key,{});var id=el.getAttribute('data-id');all[id]=!all[id];store.set(key,all);
+    if(key==='prep')renderPrep();else renderTracker();
+  }
+  $('prepList').addEventListener('click',function(e){var c=e.target.closest('.check');if(c)toggleCheck(c,'prep');});
+
+  // Facts
+  function renderFacts(){
+    $('facts').innerHTML=D.facts.map(function(f){
+      return '<div class="card fact"><div class="k">'+esc(f.label)+'</div><div class="v">'+esc(f.value)+'</div>'+srcLink(f)+'</div>';
+    }).join('');
+  }
+
+  // Codes
+  function renderCodes(){
+    var q=($('codeSearch').value||'').toLowerCase();
+    if(!D.codes.length){$('codes').innerHTML=empty('Codes land here once they’re verified','If GTA VI has cheat codes, each one gets tested and added within hours of launch. Bookmark this page.');return;}
+    var list=D.codes.filter(function(c){return !q||(c.name+' '+c.effect).toLowerCase().indexOf(q)>-1;});
+    if(!list.length){$('codes').innerHTML=empty('No match','Try a different word.');return;}
+    $('codes').innerHTML=list.map(function(c,i){
+      var inputs=[['PS5',c.ps],['Xbox',c.xbox],['Phone',c.phone]].filter(function(x){return x[1];});
+      return '<div class="card"><div class="row"><div><b>'+esc(c.name)+'</b> <span class="tag'+(c.verified?'':' warn')+'">'+(c.verified?'Verified':'Unconfirmed')+'</span><div class="d" style="color:var(--mute);font-size:14px">'+esc(c.effect||'')+'</div></div></div>'+
+        inputs.map(function(x){return '<div class="row"><div class="input"><b>'+x[0]+':</b> '+esc(x[1])+'</div><button class="copy" type="button" data-copy="'+esc(x[1])+'">Copy</button></div>';}).join('')+srcLink(c)+'</div>';
+    }).join('');
+  }
+  $('codeSearch').addEventListener('input',renderCodes);
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('button.copy');if(!b)return;
+    var txt=b.getAttribute('data-copy');
+    try{navigator.clipboard.writeText(txt).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1200);},function(){b.textContent='Select it';});}catch(err){b.textContent='Select it';}
+  });
+
+  // Money
+  function renderMoney(){
+    if(!D.money.length){$('money').innerHTML=empty('Money methods arrive at launch','We rank methods by payout per hour once players confirm them in-game.');return;}
+    $('money').innerHTML=D.money.map(function(m,i){
+      var body='<div class="row"><b>#'+(i+1)+' '+esc(m.title)+'</b>'+(m.verified?'<span class="tag">Verified</span>':'<span class="tag warn">Unconfirmed</span>')+'</div><div>'+esc(m.summary)+'</div>'+
+        ((m.payout||m.time)?'<div class="src">'+(m.payout?'Payout: '+esc(m.payout):'')+(m.payout&&m.time?' · ':'')+(m.time?'Time: '+esc(m.time):'')+'</div>':'')+srcLink(m);
+      return '<div class="card">'+wrapSpoiler(body,m.spoiler)+'</div>';
+    }).join('');
+  }
+
+  // Trackers
+  function renderTracker(){
+    if(!D.tracker.length){$('tracker').innerHTML=empty('Collectible trackers go live after launch','Categories and counts get added once they’re confirmed in-game.');return;}
+    var done=store.get('tracker',{});
+    $('tracker').innerHTML=D.tracker.map(function(cat){
+      var items=cat.items||[];
+      var n=items.filter(function(it){return done[it.id];}).length;
+      var total=cat.total||items.length;
+      return '<div class="card"><div class="row"><b>'+esc(cat.category)+'</b><span class="src">'+n+' / '+esc(total)+'</span></div><div class="progress"><i style="width:'+(total?100*n/total:0)+'%"></i></div>'+
+        items.map(function(it){
+          var row='<div class="check'+(done[it.id]?' done':'')+'" data-id="'+esc(it.id)+'" role="checkbox" tabindex="0" aria-checked="'+!!done[it.id]+'"><span class="box"></span><div><div class="t">'+esc(it.name)+'</div><div class="d">'+esc(it.hint||'')+'</div></div></div>';
+          return wrapSpoiler(row,it.spoiler);
+        }).join('')+'</div>';
+    }).join('');
+  }
+  $('tracker').addEventListener('click',function(e){var c=e.target.closest('.check');if(c)toggleCheck(c,'tracker');});
+
+  // Finds
+  function renderFinds(){
+    if(!D.finds.length){$('finds').innerHTML=empty('Nothing yet. The game isn’t out','New discoveries post here, credited to the player who found them.');return;}
+    var list=D.finds.slice().sort(function(a,b){return new Date(b.added)-new Date(a.added);});
+    $('finds').innerHTML=list.map(function(f){
+      return '<div class="card">'+wrapSpoiler('<b>'+esc(f.title)+'</b><div>'+esc(f.summary)+'</div>'+srcLink(f),f.spoiler)+'</div>';
+    }).join('');
+  }
+
+  // Gear
+  function renderGear(){
+    var tag=D.site.affiliateTag;
+    $('gear').innerHTML=D.gear.map(function(g){
+      var url='https://www.amazon.com/s?k='+encodeURIComponent(g.query)+(tag?'&tag='+encodeURIComponent(tag):'');
+      return '<a href="'+esc(url)+'" target="_blank" rel="sponsored noopener"><div class="card"><b>'+esc(g.name)+'</b><div class="src" style="margin-top:4px">'+esc(g.why)+'</div><div class="src" style="color:var(--teal);margin-top:8px">Shop on Amazon →</div></div></a>';
+    }).join('');
+    $('affNote').textContent=tag?'As an Amazon Associate, SixSheet earns from qualifying purchases.':'';
+  }
+
+  // Routing
+  var views=['prep','codes','money','tracker','finds','gear'];
+  function route(){
+    var v=(location.hash||'').slice(1);if(views.indexOf(v)<0)v='prep';
+    views.forEach(function(x){$('v-'+x).classList.toggle('on',x===v);});
+    Array.prototype.forEach.call(document.querySelectorAll('#tabs a'),function(a){a.classList.toggle('on',a.getAttribute('data-v')===v);});
+  }
+  window.addEventListener('hashchange',route);
+
+  function boot(data){
+    D=data;
+    ['codes','money','tracker','finds','gear','facts','prep'].forEach(function(k){if(!Array.isArray(D[k]))D[k]=[];});
+    $('launchNote').textContent=D.launch.note||'';
+    $('updated').textContent='Last updated '+new Date(D.site.updated).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+    $('contact').innerHTML=D.site.xHandle?'Found something? Tag <a href="https://x.com/'+esc(D.site.xHandle)+'" target="_blank" rel="noopener">@'+esc(D.site.xHandle)+'</a> on X.':'';
+    applyShield();renderPrep();renderFacts();renderCodes();renderMoney();renderTracker();renderFinds();renderGear();route();
+    tick();clearInterval(timer);timer=setInterval(tick,1000);
+  }
+  var seed;try{seed=JSON.parse($('seed').textContent);}catch(e){}
+  if(seed)boot(seed);
+  try{
+    fetch('data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){if(d&&d.site)boot(d);}).catch(function(){});
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

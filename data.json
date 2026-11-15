@@ -1,0 +1,42 @@
+{
+  "site": {
+    "name": "SixSheet",
+    "tagline": "The spoiler-free GTA VI cheat sheet",
+    "xHandle": "",
+    "affiliateTag": "",
+    "updated": "2026-11-15T06:00:00Z"
+  },
+  "launch": {
+    "unlockUtc": "2026-11-19T05:00:00Z",
+    "note": "Counting down to midnight ET (US). PlayStation Store listings show a midnight local unlock; Rockstar hasn't confirmed an exact time."
+  },
+  "facts": [
+    { "label": "Release", "value": "Thursday, November 19, 2026", "source": "Rockstar via PC Gamer", "url": "https://www.pcgamer.com/games/action/grand-theft-auto-6-is-delayed-to-november-these-extra-months-will-allow-us-to-finish-the-game-with-the-level-of-polish-you-have-come-to-expect-and-deserve" },
+    { "label": "Unlock time", "value": "Midnight local time per PS Store listings (not confirmed by Rockstar)", "source": "GAMES.GG", "url": "https://games.gg/grand-theft-auto-vi/guides/what-time-does-gta-6-come-out-likely-midnight-rockstar-hasnt-said/" },
+    { "label": "Platforms", "value": "PS5, Xbox Series X and Series S. No PC version announced.", "source": "PC Gamer", "url": "https://www.pcgamer.com/games/action/grand-theft-auto-6-is-delayed-to-november-these-extra-months-will-allow-us-to-finish-the-game-with-the-level-of-polish-you-have-come-to-expect-and-deserve" },
+    { "label": "Price", "value": "Standard $79.99 / Ultimate $99.99", "source": "KeenGamer", "url": "https://www.keengamer.com/articles/guides/gta-6-prices-and-editions-which-edition-should-you-buy/" },
+    { "label": "Physical copies", "value": "Code in a box. No disc at launch.", "source": "TweakTown", "url": "https://www.tweaktown.com/news/112341/rockstar-confirms-gta-6s-price-no-physical-disc-version/index.html" },
+    { "label": "Download size", "value": "Up to 212 GB, depending on console", "source": "GamesRadar+", "url": "https://gamesradar.com/games/grand-theft-auto/rockstar-confirms-gta-6-is-212gb-pre-loading-opens-earlier-than-previously-announced-for-digital-orders" },
+    { "label": "Early-purchase bonus", "value": "Vintage Vice City Pack: a 1955 Vapid Stanier with a garage, vintage outfits and hairstyles, weapon finishes. Buy before Nov 20.", "source": "VGTimes / GTA BOOM", "url": "https://www.gtaboom.com/gta-6-release-date-and-delay-history-9f6b" },
+    { "label": "Mode at launch", "value": "Single-player", "source": "GTA BOOM", "url": "https://www.gtaboom.com/gta-6-release-date-and-delay-history-9f6b" }
+  ],
+  "prep": [
+    { "id": "space", "text": "Free up 212 GB", "detail": "Xbox Series S 512 GB owners: expect to delete a couple of big games." },
+    { "id": "preload", "text": "Finish the preload", "detail": "Done when the game tile shows a countdown instead of a Play button." },
+    { "id": "bonus", "text": "Buy before Nov 20 for the Vintage Vice City Pack", "detail": "Both editions include it." },
+    { "id": "region", "text": "Check your account region's unlock time", "detail": "Your PSN account region sets the unlock. Changing the console clock does nothing." },
+    { "id": "mute", "text": "Mute spoiler words on X, Reddit and YouTube", "detail": "Earlier time zones unlock up to 19 hours before the Americas. Streams of the opening will be everywhere." },
+    { "id": "patch", "text": "Leave the console on and updated on launch night", "detail": "A day-one patch is likely. Let it download before midnight." }
+  ],
+  "codes": [],
+  "money": [],
+  "tracker": [],
+  "finds": [],
+  "gear": [
+    { "name": "PS5 M.2 SSD (1 TB or more, with heatsink)", "why": "212 GB eats a third of a launch PS5.", "query": "PS5 M.2 NVMe SSD 2TB heatsink" },
+    { "name": "Xbox Series X|S storage expansion card", "why": "The only plug-in option for running Series games.", "query": "Xbox Series X S storage expansion card" },
+    { "name": "Spare controller", "why": "Long sessions, dead batteries.", "query": "DualSense wireless controller" },
+    { "name": "Controller charging dock", "why": "Always grab a charged one.", "query": "PS5 controller charging station" },
+    { "name": "Gaming headset", "why": "Hear the radio and the city properly.", "query": "wireless gaming headset PS5 Xbox" }
+  ]
+}
