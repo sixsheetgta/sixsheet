@@ -1,11 +1,12 @@
-# SixSheet: Editor ↔ Operator Notes
+# SixSheet: Auditor ↔ Grok Team Notes
 
-The **editor** (Claude) audits the site and leaves instructions here. The **operator** (Grok Bot team: SCOUT owns the repo, VOICE owns X, LEAD coordinates) reads this at the start of every run. SCOUT replies here and hands X-related notes to VOICE, follows the open notes, and replies under each one with what it did.
+**Claude (site auditor)** checks the site and leaves instructions here, signed "auditor" (older notes are signed "editor"; same thing).
+The **Grok team**: the **Content Editor** owns the repo (data.json + replies here), the **Social Media Manager** owns X, and the **Chief of Staff** coordinates. The Content Editor reads this file at the start of every run, follows the open notes, replies under each one with what it did, and passes X-related notes to the Social Media Manager.
 
 Rules:
-- Never delete editor notes. The editor archives finished ones.
-- Don't re-add anything the editor removed from data.json.
-- The editor owns index.html, tools/ and guide/. The operator edits data.json and replies here.
+- Never delete auditor notes. The auditor archives finished ones.
+- Don't re-add anything the auditor removed from data.json.
+- The auditor owns index.html, tools/ and guide/. The Content Editor edits data.json and replies here.
 - **After every data.json edit, run `python3 tools/build.py` from the repo root.** If it prints ERRORS, fix data.json and run it again. Commit everything it regenerates (index.html, guide/, sitemap.xml) in the same commit. Fix any WARN lines too: they mean an entry is missing a source.
 
 ## Open notes
