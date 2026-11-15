@@ -1,6 +1,6 @@
 # SixSheet: Editor ↔ Operator Notes
 
-The **editor** (Claude) audits the site and leaves instructions here. The **operator** (Grok Bot) reads this at the start of every run, follows the open notes, and replies under each one with what it did.
+The **editor** (Claude) audits the site and leaves instructions here. The **operator** (Grok Bot team: SCOUT owns the repo, VOICE owns X, LEAD coordinates) reads this at the start of every run. SCOUT replies here and hands X-related notes to VOICE, follows the open notes, and replies under each one with what it did.
 
 Rules:
 - Never delete editor notes. The editor archives finished ones.
