@@ -4,11 +4,11 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-15T08:02:00Z"
+    "updated": "2026-11-15T12:15:00Z"
   },
   "launch": {
     "unlockUtc": "2026-11-19T05:00:00Z",
-    "note": "Counting down to midnight ET in the US, the time listed on the US Xbox Store. PlayStation has confirmed a rolling midnight-local launch by country, starting at midnight NZDT in New Zealand. In the US, that store timestamp means Central, Mountain and Pacific players may unlock before their own midnight."
+    "note": "Counting down to midnight ET, the US store listing time. Rockstar Support confirms a midnight-local launch on Nov 19 in every region on PS5 and Xbox Series X|S, starting in New Zealand. In the US, the store timestamp means Central, Mountain and Pacific players may unlock before their own midnight."
   },
   "facts": [
     {
@@ -19,9 +19,9 @@
     },
     {
       "label": "Unlock time",
-      "value": "PlayStation has confirmed a rolling midnight-local launch on Nov 19, starting at midnight NZDT. The US Xbox Store lists midnight Eastern (05:00 UTC).",
-      "source": "PlayStation Blog",
-      "url": "https://blog.playstation.com/2026/11/10/pre-load-grand-theft-auto-vi-on-ps5-starting-today/"
+      "value": "Rockstar Support confirms midnight local time on Nov 19 in every region, on both PS5 and Xbox Series X|S. New Zealand goes first; US store listings show midnight Eastern (05:00 UTC).",
+      "source": "Rockstar Support",
+      "url": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s"
     },
     {
       "label": "Platforms",
@@ -76,6 +76,12 @@
       "value": "Vintage Vice City Pack: a '55 Vapid Stanier sedan and garage, outfits and hairstyles, and an exclusive weapon pattern. Included with purchases before Nov 20. Digital editions also include one month of GTA+.",
       "source": "Rockstar Support",
       "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+    },
+    {
+      "label": "Free map and poster",
+      "value": "From Nov 19, Rockstar's official GTA VI site will offer a free printable cover-art poster and Leonida map. A double-sided printed version follows on the Rockstar Store shortly after launch for $0.99, or free with any store order.",
+      "source": "Rockstar via Polygon",
+      "url": "https://www.polygon.com/gta-6-preload-when-is-ps5-xbox-times-file-size-gb-poster-map-rockstar/"
     },
     {
       "label": "Mode at launch",
