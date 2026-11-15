@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""Build SixSheet from data.json.
+
+- Validates data.json (structure + required fields). Exits 1 on hard errors.
+- Regenerates index.html from tools/template.html (embedded fallback data).
+- Writes static, crawlable guide pages to guide/ and a sitemap.xml.
+
+Usage: python3 tools/build.py   (run from the repo root)
+"""
+import html, json, sys, datetime, pathlib
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+BASE = "https://sixsheetgta.github.io/sixsheet/"
+ARRAYS = ["facts", "prep", "codes", "money", "tracker", "finds", "gear"]
+NEEDS_SOURCE = ["codes", "money", "finds", "facts"]
+
+errors, warnings = [], []
+try:
+    D = json.loads((ROOT / "data.json").read_text(encoding="utf-8"))
+except Exception as e:
+    print(f"ERROR: data.json is not valid JSON: {e}")
+    sys.exit(1)
+
+for k in ["site", "launch"]:
+    if not isinstance(D.get(k), dict):
+        errors.append(f"missing object '{k}'")
+for k in ARRAYS:
+    if not isinstance(D.get(k), list):
+        errors.append(f"'{k}' must be an array")
+if errors:
+    print("ERRORS:\n- " + "\n- ".join(errors)); sys.exit(1)
+
+def check_src(sec, i, o):
+    if not o.get("source") or not str(o.get("url", "")).startswith("http"):
+        warnings.append(f"{sec}[{i}] '{o.get('name') or o.get('title') or o.get('label')}' has no source/url")
+
+for sec in NEEDS_SOURCE:
+    for i, o in enumerate(D[sec]):
+        if not isinstance(o, dict):
+            errors.append(f"{sec}[{i}] is not an object"); continue
+        check_src(sec, i, o)
+for i, c in enumerate(D["codes"]):
+    if not c.get("name"): errors.append(f"codes[{i}] missing name")
+    if not any(c.get(k) for k in ("ps", "xbox", "phone")): warnings.append(f"codes[{i}] has no input for any platform")
+for i, m in enumerate(D["money"]):
+    if not m.get("title"): errors.append(f"money[{i}] missing title")
+seen = set()
+for ci, cat in enumerate(D["tracker"]):
+    for ii, it in enumerate(cat.get("items", [])):
+        iid = it.get("id")
+        if not iid: errors.append(f"tracker[{ci}].items[{ii}] missing id")
+        elif iid in seen: errors.append(f"duplicate tracker id '{iid}'")
+        seen.add(iid)
+if errors:
+    print("ERRORS:\n- " + "\n- ".join(errors)); sys.exit(1)
+
+# ---------- index.html ----------
+seed = json.dumps(D, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+tpl = (ROOT / "tools" / "template.html").read_text(encoding="utf-8")
+(ROOT / "index.html").write_text(tpl.replace("/*SEED*/", seed), encoding="utf-8")
+
+# ---------- guide pages ----------
+e = lambda s: html.escape(str(s if s is not None else ""))
+CSS = """body{margin:0;background:#0d0b14;color:#f4f0fa;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:#3ee6c9}.w{max-width:760px;margin:0 auto;padding:20px}h1{font-size:30px;line-height:1.15;margin:8px 0}
+.top a{text-decoration:none;font-weight:800;font-size:22px;color:#f4f0fa}.top span{color:#ff8a7a}
+.c{background:#17131f;border:1px solid #2c2540;border-radius:14px;padding:14px;margin:12px 0}
+.m{color:#a79fb8;font-size:14px}.k{font-family:ui-monospace,Menlo,monospace;background:#1f1a2b;border-radius:6px;padding:2px 6px}
+details summary{cursor:pointer;color:#ffb35c;font-weight:600}.cta{display:inline-block;margin:10px 0;padding:10px 16px;border-radius:99px;background:linear-gradient(100deg,#ff5e8a,#ffb35c);color:#1a0f12;font-weight:700;text-decoration:none}
+footer{color:#a79fb8;font-size:13px;border-top:1px solid #2c2540;margin-top:30px;padding-top:16px}"""
+
+def src(o):
+    if not o.get("source"): return ""
+    s = f'<a href="{e(o.get("url"))}" rel="nofollow noopener">{e(o["source"])}</a>' if o.get("url") else e(o["source"])
+    return f'<div class="m">Source: {s}</div>'
+
+def spoil(inner, flag):
+    return f"<details><summary>Spoiler-ish. Tap to reveal</summary>{inner}</details>" if flag else inner
+
+def page(slug, title, desc, h1, intro, body, tab):
+    updated = e(D["site"].get("updated", ""))
+    doc = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(title)}</title><meta name="description" content="{e(desc)}">
+<link rel="canonical" href="{BASE}guide/{slug}.html">
+<meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}">
+<style>{CSS}</style></head><body><div class="w">
+<div class="top"><a href="../index.html">Six<span>Sheet</span></a></div>
+<h1>{e(h1)}</h1><p class="m">Updated {updated[:10]} · Spoiler-free</p><p>{intro}</p>
+<a class="cta" href="../index.html#{tab}">Open the interactive version</a>
+{body}
+<footer><p><a href="launch.html">Launch guide</a> · <a href="codes.html">Cheat codes</a> · <a href="money.html">Money</a> · <a href="collectibles.html">Collectibles</a> · <a href="finds.html">Latest finds</a></p>
+<p>SixSheet is an unofficial fan site, not affiliated with or endorsed by Rockstar Games or Take-Two Interactive.</p></footer>
+</div></body></html>"""
+    (ROOT / "guide").mkdir(exist_ok=True)
+    (ROOT / "guide" / f"{slug}.html").write_text(doc, encoding="utf-8")
+
+def empty(msg): return f'<div class="c m">{e(msg)}</div>'
+
+# Launch
+facts = "".join(f'<div class="c"><b>{e(f["label"])}</b><div>{e(f["value"])}</div>{src(f)}</div>' for f in D["facts"])
+prep = "".join(f'<li><b>{e(p["text"])}</b>. {e(p.get("detail",""))}</li>' for p in D["prep"])
+page("launch", "GTA VI Launch Guide: Unlock Time, Size, Price & Checklist | SixSheet",
+     "When GTA VI unlocks, how much space you need, editions and prices, plus a spoiler-free launch checklist.",
+     "GTA VI launch guide", "Everything confirmed about launch, with sources. No rumors, no spoilers.",
+     f"<h2>Checklist</h2><ol>{prep}</ol><h2>Confirmed facts</h2>{facts}", "prep")
+
+# Codes
+if D["codes"]:
+    rows = ""
+    for c in D["codes"]:
+        inputs = "".join(f'<div><b>{lab}:</b> <span class="k">{e(c[k])}</span></div>' for lab, k in (("PS5","ps"),("Xbox","xbox"),("Phone","phone")) if c.get(k))
+        badge = "Verified" if c.get("verified") else "Unconfirmed"
+        rows += f'<div class="c"><b>{e(c["name"])}</b> <span class="m">({badge})</span><div>{e(c.get("effect",""))}</div>{inputs}{src(c)}</div>'
+else:
+    rows = empty("No verified codes yet. If GTA VI has cheat codes, each one is tested and added here within hours of launch.")
+page("codes", "GTA VI Cheat Codes (PS5 & Xbox), Verified | SixSheet",
+     "Every GTA VI cheat code for PS5 and Xbox Series X|S, tested and marked verified. Updated through launch week.",
+     "GTA VI cheat codes", f"{len(D['codes'])} codes listed. Only tested codes are marked verified.", rows, "codes")
+
+# Money
+if D["money"]:
+    rows = ""
+    for i, m in enumerate(D["money"], 1):
+        meta = " · ".join(x for x in [f'Payout: {e(m["payout"])}' if m.get("payout") else "", f'Time: {e(m["time"])}' if m.get("time") else ""] if x)
+        inner = f'<b>#{i} {e(m["title"])}</b> <span class="m">({"Verified" if m.get("verified") else "Unconfirmed"})</span><div>{e(m.get("summary",""))}</div>' + (f'<div class="m">{meta}</div>' if meta else "") + src(m)
+        rows += f'<div class="c">{spoil(inner, m.get("spoiler"))}</div>'
+else:
+    rows = empty("Money methods get ranked by payout per hour once players confirm them after launch.")
+page("money", "Fastest Ways to Make Money in GTA VI, Ranked | SixSheet",
+     "The fastest legit ways to make money in GTA VI, ranked by payout and time. Spoiler-free, updated daily.",
+     "Fastest ways to make money in GTA VI", "Ranked best first. Story spoilers are never included.", rows, "money")
+
+# Collectibles
+if D["tracker"]:
+    rows = ""
+    for cat in D["tracker"]:
+        items = "".join("<li>" + spoil(f'<b>{e(it["name"])}</b> {e(it.get("hint",""))}', it.get("spoiler")) + "</li>" for it in cat.get("items", []))
+        rows += f'<div class="c"><h2 style="margin:0">{e(cat["category"])} <span class="m">({e(cat.get("total", len(cat.get("items",[]))))} total)</span></h2><ul>{items}</ul></div>'
+else:
+    rows = empty("Collectible categories and counts go up once they're confirmed in-game.")
+page("collectibles", "GTA VI Collectibles Checklist & Locations | SixSheet",
+     "Every GTA VI collectible category with counts and hints, plus a checklist that saves your progress.",
+     "GTA VI collectibles checklist", "Use the interactive version to tick items off as you go.", rows, "tracker")
+
+# Finds
+fl = sorted(D["finds"], key=lambda f: f.get("added", ""), reverse=True)
+rows = "".join(f'<div class="c">{spoil(f"<b>{e(f["title"])}</b><div>{e(f.get("summary",""))}</div>{src(f)}", f.get("spoiler"))}</div>' for f in fl) or empty("New discoveries post here, credited to whoever found them.")
+page("finds", "GTA VI Secrets, Hidden Spots & Tricks (Spoiler-Free) | SixSheet",
+     "The latest GTA VI discoveries: hidden spots, tricks and easter eggs, credited to the players who found them.",
+     "Latest GTA VI finds", "Newest first. Anything spoiler-ish is hidden until you tap it.", rows, "finds")
+
+# Sitemap
+today = datetime.date.today().isoformat()
+urls = [BASE] + [f"{BASE}guide/{s}.html" for s in ("launch", "codes", "money", "collectibles", "finds")]
+(ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    "".join(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n", encoding="utf-8")
+
+print("BUILD OK")
+for w in warnings: print("WARN:", w)
