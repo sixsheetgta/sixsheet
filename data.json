@@ -4,7 +4,7 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-15T06:44:08Z"
+    "updated": "2026-11-15T08:02:00Z"
   },
   "launch": {
     "unlockUtc": "2026-11-19T05:00:00Z",
@@ -36,6 +36,12 @@
       "url": "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/"
     },
     {
+      "label": "Performance",
+      "value": "Rockstar says the game targets 30 fps on every console. PS5 Pro adds PSSR upscaling for a sharper image plus ray-traced shadows that only the Pro gets. Remote Play works on both PlayStation and Xbox.",
+      "source": "Rockstar Newswire",
+      "url": "https://www.rockstargames.com/VI/pre-load-now"
+    },
+    {
       "label": "Price",
       "value": "Standard $79.99 / Ultimate $99.99 (Ultimate Upgrade $20 on the US Xbox Store)",
       "source": "Xbox Store",
@@ -58,6 +64,12 @@
       "value": "Digital pre-load started November 10: midnight local time on PS5, and 12 a.m. GMT worldwide on Xbox. Redeem a code-in-box copy as soon as you have it (retail availability from November 12).",
       "source": "Rockstar Support",
       "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+    },
+    {
+      "label": "First update",
+      "value": "Version 1.002 started rolling out in stages on November 13, about 1 GB on PS5. Rockstar hasn't posted patch notes. Let it install before launch night.",
+      "source": "Polygon",
+      "url": "https://www.polygon.com/gta-6-nov-13-patch-102-what-is-download-size-ps5-xbox/"
     },
     {
       "label": "Early-purchase bonus",
@@ -101,7 +113,7 @@
     {
       "id": "patch",
       "text": "Leave the console on and updated on launch night",
-      "detail": "A day-one patch is likely. Leave the console on, or in Rest or Sleep mode with auto-updates on, so any update can install before you play."
+      "detail": "The first update (1.002) has been rolling out since November 13, and more may follow. Leave the console on, or in Rest or Sleep mode with auto-updates on, and check for updates again on November 18."
     }
   ],
   "codes": [],
