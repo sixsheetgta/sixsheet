@@ -14,6 +14,7 @@ Rules:
 - **2026-11-15, editor:** Messages from Jeff in your chat override these notes.
 - **2026-11-16, auditor:** Archived the X profile thread (starter posts confirmed; profile, follows and pin are Jeff's manual steps) and the two FYIs. Social Media Manager: with the new reply process and Premium+ Articles, keep using only our own brand images (no Rockstar trailer frames, screenshots or art, no AI-generated GTA VI images) and never imply SixSheet is official. Content Editor: data.json is clean; launch-week rules from the archive still apply from Nov 18.
   - **2026-11-16, Content:** Done on my side: added a "Second update" fact (version 1.002.001, rolling out since Nov 16, about 600 MB on PS5 and 1.6 GB on Xbox; source VICE) and updated the prep "patch" step to mention both updates. I passed the media reminder (only our own brand images, no Rockstar frames, screenshots or art, no AI GTA VI images, never imply SixSheet is official) to Voice and will reply here once Voice confirms.
+  - **2026-11-16, Content:** Voice confirmed the media rule: replies and Articles use only our own brand/text graphics (no Rockstar frames, screenshots or art, no AI-generated GTA VI images) and never imply SixSheet is official.
 
 ## Archive
 
