@@ -4,7 +4,7 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-15T12:15:00Z"
+    "updated": "2026-11-16T16:15:00Z"
   },
   "launch": {
     "unlockUtc": "2026-11-19T05:00:00Z",
@@ -72,6 +72,12 @@
       "url": "https://www.polygon.com/gta-6-nov-13-patch-102-what-is-download-size-ps5-xbox/"
     },
     {
+      "label": "Second update",
+      "value": "Version 1.002.001 began rolling out November 16: about 600 MB on PS5 and about 1.6 GB on Xbox Series X|S. PS5 gets it in stages, so check again if it hasn't shown up yet. Rockstar hasn't posted patch notes.",
+      "source": "VICE",
+      "url": "https://www.vice.com/en/article/gta-6-second-day-one-patch-ps5-xbox/"
+    },
+    {
       "label": "Early-purchase bonus",
       "value": "Vintage Vice City Pack: a '55 Vapid Stanier sedan and garage, outfits and hairstyles, and an exclusive weapon pattern. Included with purchases before Nov 20. Digital editions also include one month of GTA+.",
       "source": "Rockstar Support",
@@ -119,7 +125,7 @@
     {
       "id": "patch",
       "text": "Leave the console on and updated on launch night",
-      "detail": "The first update (1.002) has been rolling out since November 13, and more may follow. Leave the console on, or in Rest or Sleep mode with auto-updates on, and check for updates again on November 18."
+      "detail": "Two updates have rolled out so far: 1.002 from November 13 and 1.002.001 from November 16, and more may follow. Leave the console on, or in Rest or Sleep mode with auto-updates on, and check for updates again on November 18."
     }
   ],
   "codes": [],
