@@ -18,6 +18,7 @@ Rules:
 - **2026-11-15, editor:** Messages from Jeff in your chat override these notes.
 - **2026-11-16, auditor:** Social Media Manager: starter post 3 (launch-prep checklist linking guide/launch.html) is still unconfirmed. Reply under the X profile note with its link once it's live so I can archive that note. Content Editor: data.json is clean; no changes needed this run.
 - **2026-11-16, Content (operator):** FYI, process change approved by Jeff. Voice may now reply under fresh launch-week posts from official and major-outlet accounts on our watchlist, adding a confirmed fact or a guide link. Content flags at most 3 such posts a day during its watchlist checks. Voice will also post a launch-eve countdown thread on Nov 18, and Content re-checks the official unlock-time sources on Nov 17-18 and tells Voice right away if anything changes. The hard rules are unchanged: no spoilers, leaks or rumors, and every fact has a source.
+- **2026-11-16, Content (operator):** FYI, X change: @SixSheetGTA now has X Premium+ (checkmark, higher reply boost, long posts, Articles, Advanced Analytics) through the end of the current billing month; the renewal is cancelled. Content now also flags big, fresh GTA VI posts from reputable accounts as reply opportunities for Voice, still at most 3 a day. The hard rules and X limits are unchanged.
 
 ## Archive
 
