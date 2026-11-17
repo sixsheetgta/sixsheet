@@ -51,6 +51,23 @@ for ci, cat in enumerate(D["tracker"]):
         if not iid: errors.append(f"tracker[{ci}].items[{ii}] missing id")
         elif iid in seen: errors.append(f"duplicate tracker id '{iid}'")
         seen.add(iid)
+for i, f in enumerate(D["facts"]):
+    if isinstance(f, dict) and len(str(f.get("short", ""))) > 14:
+        warnings.append(f"facts[{i}] 'short' is over 14 characters; it will wrap on phones")
+st = D.get("storage")
+if st is not None:
+    if not isinstance(st, dict) or not isinstance(st.get("sizeGb"), (int, float)) or not isinstance(st.get("consoles"), list):
+        errors.append("'storage' needs a numeric sizeGb and a consoles array")
+    else:
+        for i, c in enumerate(st["consoles"]):
+            if not (isinstance(c, dict) and c.get("id") and c.get("name") and isinstance(c.get("usableGb"), (int, float)) and c["usableGb"] > 0):
+                errors.append(f"storage.consoles[{i}] needs id, name and a positive usableGb")
+ld = D["launch"].get("localDate")
+if ld is not None:
+    try:
+        datetime.date.fromisoformat(str(ld))
+    except ValueError:
+        errors.append("launch.localDate must look like 2026-11-19")
 if errors:
     print("ERRORS:\n- " + "\n- ".join(errors)); sys.exit(1)
 
@@ -61,13 +78,19 @@ tpl = (ROOT / "tools" / "template.html").read_text(encoding="utf-8")
 
 # ---------- guide pages ----------
 e = lambda s: html.escape(str(s if s is not None else ""))
-CSS = """body{margin:0;background:#0d0b14;color:#f4f0fa;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-a{color:#3ee6c9}.w{max-width:760px;margin:0 auto;padding:20px}h1{font-size:30px;line-height:1.15;margin:8px 0}
-.top a{text-decoration:none;font-weight:800;font-size:22px;color:#f4f0fa}.top span{color:#ff8a7a}
-.c{background:#17131f;border:1px solid #2c2540;border-radius:14px;padding:14px;margin:12px 0}
-.m{color:#a79fb8;font-size:14px}.k{font-family:ui-monospace,Menlo,monospace;background:#1f1a2b;border-radius:6px;padding:2px 6px}
-details summary{cursor:pointer;color:#ffb35c;font-weight:600}.cta{display:inline-block;margin:10px 0;padding:10px 16px;border-radius:99px;background:linear-gradient(100deg,#ff5e8a,#ffb35c);color:#1a0f12;font-weight:700;text-decoration:none}
-footer{color:#a79fb8;font-size:13px;border-top:1px solid #2c2540;margin-top:30px;padding-top:16px}"""
+CSS = """@font-face{font-family:"Bricolage";src:url(../fonts/bricolage.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
+body{margin:0;background:#1d1c20;color:#f3efe6;font:400 17px/1.5 "Bricolage",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit;text-underline-offset:3px}.w{max-width:640px;margin:0 auto;padding:20px}
+.top a{display:inline-block;text-decoration:none;font-weight:800;font-stretch:75%;font-size:30px;line-height:1;border-bottom:3px solid #ff4f8b;padding-bottom:5px}
+h1{font-size:40px;font-weight:800;font-stretch:75%;line-height:1;margin:30px 0 8px}
+h2{font-size:25px;font-weight:700;font-stretch:82%;line-height:1.1;margin:34px 0 10px}
+.m{color:#a8a3ad;font-size:15px}
+.c{border-top:1px solid #3a373f;padding:13px 0}.c b{font-weight:700}.c h2{margin:0 0 6px}
+.k{display:inline-block;border:1.5px solid #3a373f;border-bottom-width:3px;border-radius:7px;background:#28262c;padding:1px 8px;font-weight:700}
+ol,ul{padding-left:22px}li{margin:8px 0}
+details summary{cursor:pointer;color:#ffc247;font-weight:600}
+.cta{display:inline-block;margin:10px 0 4px;padding:10px 16px;border-radius:8px;background:#ffc247;color:#201a08;font-weight:700;text-decoration:none}
+footer{color:#a8a3ad;font-size:14.5px;border-top:1px solid #3a373f;margin-top:40px;padding-top:16px}"""
 
 def src(o):
     if not o.get("source"): return ""
@@ -84,12 +107,14 @@ def page(slug, title, desc, h1, intro, body, tab):
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{BASE}guide/{slug}.html">
 <meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}">
+<meta property="og:image" content="{BASE}brand/header.png"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1d1c20"><link rel="icon" type="image/png" href="../brand/avatar.png">
 <style>{CSS}</style></head><body><div class="w">
-<div class="top"><a href="../index.html">Six<span>Sheet</span></a></div>
-<h1>{e(h1)}</h1><p class="m">Updated {updated[:10]} · Spoiler-free</p><p>{intro}</p>
+<div class="top"><a href="../index.html">SixSheet</a></div>
+<h1>{e(h1)}</h1><p class="m">Updated {updated[:10]}. No story spoilers.</p><p>{intro}</p>
 <a class="cta" href="../index.html#{tab}">Open the interactive version</a>
 {body}
-<footer><p><a href="launch.html">Launch guide</a> · <a href="codes.html">Cheat codes</a> · <a href="money.html">Money</a> · <a href="collectibles.html">Collectibles</a> · <a href="finds.html">Latest finds</a></p>
+<footer><p><a href="launch.html">Launch guide</a>, <a href="codes.html">cheat codes</a>, <a href="money.html">money</a>, <a href="collectibles.html">collectibles</a>, <a href="finds.html">finds</a></p>
 <p>SixSheet is an unofficial fan site, not affiliated with or endorsed by Rockstar Games or Take-Two Interactive.</p></footer>
 </div></body></html>"""
     (ROOT / "guide").mkdir(exist_ok=True)
@@ -103,7 +128,7 @@ prep = "".join(f'<li><b>{e(p["text"])}</b>. {e(p.get("detail",""))}</li>' for p 
 page("launch", "GTA VI Launch Guide: Unlock Time, Size, Price & Checklist | SixSheet",
      "When GTA VI unlocks, how much space you need, editions and prices, plus a spoiler-free launch checklist.",
      "GTA VI launch guide", "Everything confirmed about launch, with sources. No rumors, no spoilers.",
-     f"<h2>Checklist</h2><ol>{prep}</ol><h2>Confirmed facts</h2>{facts}", "prep")
+     f"<h2>Checklist</h2><ul>{prep}</ul><h2>Confirmed facts</h2>{facts}", "prep")
 
 # Codes
 if D["codes"]:
@@ -122,7 +147,7 @@ page("codes", "GTA VI Cheat Codes (PS5 & Xbox), Verified | SixSheet",
 if D["money"]:
     rows = ""
     for i, m in enumerate(D["money"], 1):
-        meta = " · ".join(x for x in [f'Payout: {e(m["payout"])}' if m.get("payout") else "", f'Time: {e(m["time"])}' if m.get("time") else ""] if x)
+        meta = ", ".join(x for x in [f'Payout: {e(m["payout"])}' if m.get("payout") else "", f'Time: {e(m["time"])}' if m.get("time") else ""] if x)
         inner = f'<b>#{i} {e(m["title"])}</b> <span class="m">({"Verified" if m.get("verified") else "Unconfirmed"})</span><div>{e(m.get("summary",""))}</div>' + (f'<div class="m">{meta}</div>' if meta else "") + src(m)
         rows += f'<div class="c">{spoil(inner, m.get("spoiler"))}</div>'
 else:

@@ -2,322 +2,673 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SixSheet: Spoiler-Free GTA VI Cheat Sheet</title>
-<meta name="description" content="Spoiler-free GTA VI cheat sheet: unlock countdown, launch prep checklist, verified cheat codes, money methods and collectible trackers, updated through launch week.">
-<meta property="og:title" content="SixSheet: Spoiler-Free GTA VI Cheat Sheet">
-<meta property="og:description" content="Countdown, launch checklist, verified codes, money methods and trackers. No story spoilers, ever.">
-<meta name="theme-color" content="#0d0b14">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SixSheet: spoiler-free GTA VI cheat sheet</title>
+<meta name="description" content="Spoiler-free GTA VI cheat sheet: unlock countdown, launch checklist, tested cheat codes, money methods and collectible trackers.">
+<link rel="canonical" href="https://sixsheetgta.github.io/sixsheet/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SixSheet: spoiler-free GTA VI cheat sheet">
+<meta property="og:description" content="Countdown, launch checklist, tested codes, money methods and trackers. No story spoilers.">
+<meta property="og:url" content="https://sixsheetgta.github.io/sixsheet/">
+<meta property="og:image" content="https://sixsheetgta.github.io/sixsheet/brand/header.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@SixSheetGTA">
+<meta name="theme-color" content="#1d1c20">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/png" href="brand/avatar.png">
+<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:"Bricolage";src:url(fonts/bricolage.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
+@font-face{font-family:"Marker";src:url(fonts/caveat-brush.woff2) format("woff2");font-display:swap}
 :root{
-  --bg:#0d0b14;--panel:#17131f;--panel2:#1f1a2b;--line:#2c2540;
-  --ink:#f4f0fa;--mute:#a79fb8;--pink:#ff5e8a;--amber:#ffb35c;--teal:#3ee6c9;
-  --grad:linear-gradient(100deg,var(--pink),var(--amber));
+  --paper:#1d1c20;--lift:#28262c;--line:#3a373f;
+  --ink:#f3efe6;--dim:#a8a3ad;
+  --pink:#ff4f8b;--amber:#ffc247;--teal:#2fd9bd;
+  --pad:20px;--bar:64px;
 }
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif}
-a{color:var(--teal)}
-.wrap{max-width:960px;margin:0 auto;padding:0 18px}
-header.top{position:sticky;top:0;z-index:5;background:rgba(13,11,20,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
-.logo{font-family:Anton,Impact,sans-serif;font-size:26px;letter-spacing:.5px;text-decoration:none;color:var(--ink)}
-.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.shield{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mute);cursor:pointer;user-select:none;border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--panel)}
-.shield .dot{width:10px;height:10px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
-.shield.off .dot{background:var(--pink);box-shadow:0 0 8px var(--pink)}
-.hero{padding:44px 0 28px;text-align:center;background:radial-gradient(ellipse at 50% -20%,rgba(255,94,138,.28),transparent 60%),radial-gradient(ellipse at 90% 10%,rgba(62,230,201,.12),transparent 50%)}
-.hero h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,7vw,64px);line-height:1.05;margin:0 0 8px;text-transform:uppercase}
-.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{color:var(--mute);margin:0 auto;max-width:560px}
-.count{display:flex;justify-content:center;gap:10px;margin:26px 0 8px}
-.count div{background:var(--panel);border:1px solid var(--line);border-radius:14px;min-width:74px;padding:12px 8px}
-.count b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px;line-height:1}
-.count small{color:var(--mute);font-size:11px;text-transform:uppercase;letter-spacing:1px}
-.note{font-size:12px;color:var(--mute);max-width:520px;margin:0 auto}
-.live{display:inline-block;background:var(--grad);color:#1a0f12;font-weight:700;border-radius:99px;padding:8px 18px;margin-top:20px}
-nav.tabs{display:flex;gap:6px;overflow-x:auto;padding:14px 0;scrollbar-width:none}
-nav.tabs a{flex:none;text-decoration:none;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:14px;font-weight:600;background:var(--panel)}
-nav.tabs a.on{color:#1a0f12;background:var(--grad);border-color:transparent}
-section.view{display:none;padding:6px 0 40px}
-section.view.on{display:block}
-h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:30px;margin:10px 0 4px;text-transform:uppercase;letter-spacing:.3px}
-.sub{color:var(--mute);margin:0 0 18px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-.fact .k{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--amber);font-weight:700}
-.fact .v{font-weight:600;margin:4px 0 8px}
-.src{font-size:12px;color:var(--mute)}
-.check{display:flex;gap:12px;align-items:flex-start;cursor:pointer;margin-bottom:10px}
-.check .box{flex:none;width:24px;height:24px;border-radius:7px;border:2px solid var(--line);display:grid;place-items:center;margin-top:2px;transition:.15s}
-.check.done .box{background:var(--teal);border-color:var(--teal)}
-.check.done .box::after{content:"";width:6px;height:11px;border:solid #0d0b14;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
-.check.done .t{text-decoration:line-through;color:var(--mute)}
-.check .t{font-weight:600}
-.check .d{font-size:14px;color:var(--mute)}
-.progress{height:8px;background:var(--panel2);border-radius:99px;overflow:hidden;margin:6px 0 18px}
-.progress i{display:block;height:100%;background:var(--grad);transition:width .3s}
-.empty{text-align:center;padding:36px 18px;border:1px dashed var(--line);border-radius:16px;color:var(--mute)}
-.empty b{display:block;color:var(--ink);font-size:18px;margin-bottom:6px}
-.search{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;color:var(--ink);font:inherit;padding:12px 14px;margin-bottom:12px}
-.row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;border-radius:6px;padding:2px 7px;background:var(--panel2);color:var(--teal)}
-.tag.warn{color:var(--amber)}
-.input{font-family:ui-monospace,Menlo,monospace;font-size:14px;background:var(--panel2);border-radius:8px;padding:6px 8px;margin-top:6px;word-break:break-word}
-button.copy{flex:none;background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 10px;font:600 13px Inter,sans-serif;cursor:pointer}
-.spoil{position:relative}
-body.shielded .spoil .body{filter:blur(7px);user-select:none;pointer-events:none}
-body.shielded .spoil .reveal{display:block}
-.reveal{display:none;position:absolute;inset:0;margin:auto;height:max-content;width:max-content;background:var(--bg);border:1px solid var(--amber);color:var(--amber);border-radius:99px;padding:6px 14px;font:600 13px Inter,sans-serif;cursor:pointer;z-index:2}
-.spoil.open .body{filter:none!important;pointer-events:auto!important}
-.spoil.open .reveal{display:none!important}
-.stack>*+*{margin-top:12px}
-.gear a{text-decoration:none;color:inherit;display:block}
-.gear .card:hover{border-color:var(--pink)}
-.ad-slot{display:none;margin:18px 0;min-height:90px;border-radius:12px;background:var(--panel)}
-footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--mute);font-size:13px}
-.updated{font-size:12px;color:var(--mute)}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.45 "Bricolage",system-ui,-apple-system,"Segoe UI",sans-serif;padding-top:env(safe-area-inset-top)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+[hidden]{display:none!important}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- frame ---------- */
+.page{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:0 var(--pad) calc(var(--bar) + 40px + env(safe-area-inset-bottom))}
+.mast{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0 6px}
+.mark{position:relative;font-weight:800;font-stretch:75%;font-size:30px;line-height:1;letter-spacing:-.01em;text-decoration:none;padding-bottom:8px}
+.mark svg{position:absolute;left:-2px;right:-4px;bottom:0;width:calc(100% + 6px);height:9px;fill:none;stroke:var(--pink);stroke-width:3;stroke-linecap:round}
+.tools{display:flex;gap:6px}
+.tool{display:flex;align-items:center;gap:7px;height:38px;padding:0 10px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;font-weight:600;color:var(--dim)}
+.tool svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tool[aria-pressed="true"]{color:var(--teal)}
+.tool[aria-pressed="false"]{color:var(--pink)}
+
+/* ---------- hero ---------- */
+.hero{padding:22px 0 8px}
+.cd{display:flex;gap:.17em;font-size:clamp(46px,15.6vw,84px);font-weight:800;font-stretch:75%;line-height:.9;letter-spacing:-.01em}
+.cd b{display:inline-block;min-width:2ch;text-align:right;font-weight:inherit}
+.cd span:first-child b{min-width:1ch}
+.cd i{font-style:normal;font-size:.36em;font-weight:600;color:var(--dim);margin-left:.07em}
+.cd .sec b{color:var(--amber)}
+.cd-sub{margin:14px 0 14px;color:var(--dim)}
+.cd-sub strong{color:var(--ink);font-weight:600}
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{padding:8px 14px;font-size:15px;font-weight:600;color:var(--dim)}
+.seg button+button{border-left:1.5px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--amber);color:#201a08}
+.why{margin-top:12px;font-size:15px;color:var(--dim)}
+.why summary{display:inline-block;cursor:pointer;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;list-style:none}
+.why summary::-webkit-details-marker{display:none}
+.why p{margin:8px 0 0;max-width:52ch}
+.hand{font-family:"Marker","Bricolage",cursive;font-size:25px;line-height:1;color:var(--amber);transform:rotate(-3deg);transform-origin:left;margin:22px 0 0;width:max-content}
+.out{font-size:clamp(46px,15.6vw,84px);font-weight:800;font-stretch:75%;line-height:.9;margin:0 0 16px}
+.find{display:flex;align-items:center;gap:10px;height:50px;padding:0 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--lift)}
+.find svg{flex:none;width:20px;height:20px;fill:none;stroke:var(--dim);stroke-width:2;stroke-linecap:round}
+.find input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--ink);font:inherit}
+.find input::placeholder{color:var(--dim)}
+.find:focus-within{border-color:var(--amber)}
+
+/* ---------- tabs ---------- */
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;justify-content:space-around;background:var(--paper);border-top:1.5px solid var(--line);padding:0 6px env(safe-area-inset-bottom)}
+.tabs a{position:relative;flex:1;max-width:120px;height:var(--bar);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;font-size:12.5px;font-weight:600;color:var(--dim)}
+.tabs svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tabs a[aria-current="page"]{color:var(--ink)}
+.tabs a[aria-current="page"]::before{content:"";position:absolute;top:-1.5px;left:24%;right:24%;height:3px;border-radius:0 0 3px 3px;background:var(--pink)}
+.tabs .dot{position:absolute;top:10px;left:calc(50% + 9px);width:9px;height:9px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 2.5px var(--paper)}
+
+/* ---------- content ---------- */
+.view{display:none}
+.view.on{display:block}
+.block{padding-top:38px}
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 12px}
+h2{font-size:27px;font-weight:700;font-stretch:82%;line-height:1.1;letter-spacing:-.005em;margin:0}
+.count{color:var(--dim);font-size:15px;white-space:nowrap}
+.count.ready{font-family:"Marker","Bricolage",cursive;font-size:24px;line-height:1;color:var(--teal);transform:rotate(-4deg)}
+
+/* checklist */
+.tk{display:flex;align-items:flex-start;gap:6px;border-top:1px solid var(--line)}
+.tk:last-child{border-bottom:1px solid var(--line)}
+.tkb{flex:none;width:46px;height:52px;display:grid;place-items:center;margin-left:-9px}
+.bx{width:28px;height:28px;fill:none;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.bx .sq{stroke:var(--dim);stroke-width:1.8}
+.bx .ck{stroke:var(--teal);stroke-width:3.4;stroke-dasharray:32;stroke-dashoffset:32;transition:stroke-dashoffset .28s ease-out}
+.tk.done .ck{stroke-dashoffset:0}
+.tk .tx{flex:1;min-width:0;padding:13px 0;font-weight:500}
+.tk details.tx{padding:0}
+.tk details.tx>summary{padding:13px 26px 13px 0;cursor:pointer;list-style:none;position:relative}
+.tk details.tx>summary::-webkit-details-marker{display:none}
+.tk details.tx>summary::after,.row>summary::after{content:"";position:absolute;right:4px;top:50%;width:8px;height:8px;margin-top:-6px;border-right:2px solid var(--dim);border-bottom:2px solid var(--dim);transform:rotate(45deg);transition:transform .15s}
+.tk details.tx[open]>summary::after,.row[open]>summary::after{transform:rotate(225deg);margin-top:-2px}
+.tk details p{margin:-4px 0 14px;color:var(--dim);font-weight:400;font-size:16px;max-width:56ch}
+.tk.done summary,.tk.done span.tx{color:var(--dim);text-decoration:line-through;text-decoration-color:var(--pink);text-decoration-thickness:2.5px}
+
+/* fit checker */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:8px 12px;border:1.5px solid var(--line);border-radius:8px;font-weight:600;font-size:15px;line-height:1.15;text-align:left}
+.chip small{display:block;font-weight:400;font-size:13px;color:var(--dim)}
+.chip[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:#201a08}
+.chip[aria-pressed="true"] small{color:#5a4a16}
+.fit{margin-top:16px;min-height:74px}
+.fit .ask{color:var(--dim);margin:0}
+.meter{height:22px;border-radius:5px;background:var(--lift);overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--teal);border-radius:5px 3px 4px 5px;transition:width .55s cubic-bezier(.2,.8,.2,1),background .3s}
+.fit[data-lvl="mid"] .meter i{background:var(--amber)}
+.fit[data-lvl="tight"] .meter i{background:var(--pink)}
+.verdict{display:flex;align-items:baseline;gap:10px;margin:10px 0 0}
+.verdict b{font-size:34px;font-weight:800;font-stretch:75%;line-height:1}
+.verdict span{color:var(--dim);font-size:15.5px}
+.verdict a{color:var(--ink);text-underline-offset:4px;white-space:nowrap}
+
+/* rows (facts, money, tracker groups) */
+.row{border-top:1px solid var(--line)}
+.rows>.row:last-child,.rows>.sp:last-child .row{border-bottom:1px solid var(--line)}
+.row>summary{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:13px 26px 13px 0;cursor:pointer;list-style:none;position:relative}
+.row>summary::-webkit-details-marker{display:none}
+.row .k{color:var(--dim)}
+.row .v{font-weight:700;font-stretch:82%;font-size:19px;text-align:right}
+.row .t{font-weight:600}
+.row .more{padding:0 0 14px;max-width:58ch}
+.row .more p{margin:0 0 8px}
+.src{font-size:14.5px;color:var(--dim)}
+.src a{text-underline-offset:3px}
+.rank{display:inline-block;min-width:1.25em;color:var(--pink);font-weight:800;font-stretch:75%}
+
+/* entries (codes, finds, gear, search) */
+.entry{padding:15px 0;border-top:1px solid var(--line)}
+.list>.entry:last-child,.list>.sp:last-child .entry{border-bottom:1px solid var(--line)}
+.entry h3{font-size:18px;font-weight:700;margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.entry p{margin:4px 0 0;color:var(--dim);max-width:58ch}
+.entry .src{margin-top:8px}
+.ok,.maybe{font-family:"Marker","Bricolage",cursive;font-size:19px;font-weight:400;line-height:1;transform:rotate(-3deg)}
+.ok{color:var(--teal)}.maybe{color:var(--amber)}
+.new{width:9px;height:9px;border-radius:50%;background:var(--pink);flex:none}
+.keys{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:11px}
+.kc{display:inline-grid;place-items:center;min-width:34px;height:34px;padding:0 8px;border:1.5px solid var(--line);border-bottom-width:3.5px;border-radius:8px;background:var(--lift);font-weight:700;font-stretch:82%;font-size:16px;line-height:1}
+.plain{font-weight:600;font-size:17px}
+.copy{margin-left:auto;height:34px;padding:0 12px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;font-weight:600;color:var(--dim)}
+.copy.did{color:var(--teal);border-color:var(--teal)}
+.bar2{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px}
+.bar2 .find{flex:1;min-width:180px;height:42px}
+.gear a.entry{display:flex;align-items:center;justify-content:space-between;gap:14px;text-decoration:none}
+.gear .entry b{display:block;font-weight:600}
+.gear .entry span{color:var(--dim);font-size:15.5px}
+.gear .entry em{flex:none;font-style:normal;font-size:14px;font-weight:600;color:var(--dim);border:1.5px solid var(--line);border-radius:8px;padding:6px 10px}
+.gear a.entry:hover em{color:var(--ink);border-color:var(--dim)}
+.grp{font-size:15px;color:var(--dim);font-weight:600;margin:22px 0 6px}
+
+/* spoilers */
+.spb{display:none;width:100%;text-align:left;padding:14px 0;border-top:1px solid var(--line);color:var(--amber);font-weight:600}
+body.shielded .sp:not(.open)>.spb{display:block}
+body.shielded .sp:not(.open)>.spc{display:none}
+
+/* empty + footer + toast */
+.empty{padding:26px 0 8px}
+.empty p{margin:0;color:var(--dim);max-width:44ch}
+.empty .big{font-size:27px;font-weight:700;font-stretch:82%;line-height:1.1;color:var(--ink);margin-bottom:8px}
+.empty .mini{margin-top:16px;color:var(--ink);font-weight:600}
+.empty .mini b{color:var(--amber);font-weight:800;font-stretch:75%;font-size:22px}
+.foot{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-size:14.5px;color:var(--dim)}
+.foot p{margin:0 0 8px}
+.foot a{text-underline-offset:3px}
+.ad-slot{display:none}
+.toast{position:fixed;left:50%;bottom:calc(var(--bar) + 18px + env(safe-area-inset-bottom));transform:translate(-50%,12px);z-index:9;background:var(--ink);color:#1d1c20;font-weight:600;font-size:15px;padding:9px 14px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* on phones the big countdown only heads the launch tab */
+@media (max-width:919px){
+  body[data-live="0"]:not([data-view="prep"]) .hero{display:none}
+  body[data-live="1"] .out{display:none}
+  body[data-live="1"] .hero{padding:14px 0 0}
+}
+
+/* ---------- wide screens: rail + sheet ---------- */
+@media (min-width:920px){
+  .page{max-width:1080px;display:grid;grid-template-columns:330px minmax(0,600px);column-gap:84px;justify-content:center;padding:28px 32px 80px}
+  .rail{position:sticky;top:28px;align-self:start}
+  .mast{padding-top:0}
+  .cd,.out{font-size:60px}
+  .tabs{position:static;display:block;border:0;padding:0;margin-top:34px;background:none}
+  .tabs a{flex-direction:row;justify-content:flex-start;gap:12px;max-width:none;height:46px;font-size:17px;border-top:1px solid var(--line)}
+  .tabs a:last-child{border-bottom:1px solid var(--line)}
+  .tabs a[aria-current="page"]::before{top:11px;bottom:11px;left:-14px;right:auto;width:3px;height:auto;border-radius:2px}
+  .tabs .dot{position:static;margin-left:auto;margin-right:4px;box-shadow:none}
+  .block:first-child{padding-top:6px}
+  .toast{bottom:28px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
-<body class="shielded">
-<header class="top"><div class="wrap bar">
-  <a class="logo" href="#prep">Six<span>Sheet</span></a>
-  <div class="shield" id="shield" role="button" tabindex="0" aria-pressed="true"><span class="dot"></span><span id="shieldLabel">Spoiler shield on</span></div>
-</div></header>
+<body class="shielded" data-view="prep" data-live="0">
+<div class="page">
+  <aside class="rail">
+    <header class="mast">
+      <a class="mark" href="#prep" aria-label="SixSheet home">SixSheet<svg viewBox="0 0 120 9" preserveAspectRatio="none" aria-hidden="true"><path d="M2 4.500c20-2.800 42-3.200 62-1.800 16 1.100 32 .5 54-1.400M12 7.600c22-1.500 46-1.700 72-.6"/></svg></a>
+      <div class="tools">
+        <button class="tool" id="shield" type="button" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.500 12s3.500-6.500 9.500-6.500 9.500 6.500 9.500 6.500-3.500 6.500-9.500 6.500S2.500 12 2.500 12z"/><circle cx="12" cy="12" r="2.800"/><path id="slash" d="M4 4l16 16"/></svg><span id="shieldLabel">Spoilers hidden</span></button>
+        <button class="tool" id="share" type="button" aria-label="Copy link to this page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3.500M7.500 7.500L12 3l4.500 4.500M5 12.500V19a1.500 1.500 0 001.500 1.500h11A1.500 1.500 0 0019 19v-6.500"/></svg></button>
+      </div>
+    </header>
+    <h1 class="vh">GTA VI cheat sheet: unlock countdown, launch checklist, cheat codes, money methods and trackers, spoiler-free</h1>
+    <section class="hero" id="hero" aria-label="Launch status"></section>
+    <nav class="tabs" id="tabs" aria-label="Sections">
+      <a href="#prep" data-v="prep"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13.500" r="7.500"/><path d="M12 9.500v4l2.500 2.300M9.500 2.800h5"/></svg><span id="prepTab">Launch</span></a>
+      <a href="#codes" data-v="codes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.500h6V9h5.500v6H15v5.500H9V15H3.500V9H9z"/></svg><span>Codes</span></a>
+      <a href="#money" data-v="money"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M15.500 8.600c-.7-1.100-1.900-1.700-3.400-1.700-1.900 0-3.200 1-3.200 2.400 0 3.200 6.700 1.500 6.700 4.900 0 1.400-1.400 2.400-3.400 2.400-1.600 0-2.900-.7-3.500-1.800"/></svg><span>Money</span></a>
+      <a href="#tracker" data-v="tracker"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.500 6.500l2 2L9 5M3.500 14.500l2 2L9 13M13 7h7.500M13 15h7.500"/></svg><span>Tracker</span></a>
+      <a href="#finds" data-v="finds"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.500-6-6.500-11a6.500 6.500 0 0113 0c0 5-6.500 11-6.500 11z"/><circle cx="12" cy="10" r="2.300"/></svg><span>Finds</span></a>
+    </nav>
+  </aside>
 
-<div class="hero"><div class="wrap">
-  <h1>The <em>spoiler-free</em><br>GTA VI cheat sheet</h1>
-  <p>Verified codes, money methods and checklists, updated all launch week. No story spoilers, ever.</p>
-  <div class="count" id="count" aria-live="polite">
-    <div><b id="cd-d">-</b><small>Days</small></div>
-    <div><b id="cd-h">-</b><small>Hours</small></div>
-    <div><b id="cd-m">-</b><small>Min</small></div>
-    <div><b id="cd-s">-</b><small>Sec</small></div>
-  </div>
-  <p class="note" id="launchNote"></p>
-</div></div>
+  <main id="main">
+    <div class="ad-slot" data-slot="top"></div>
+    <section class="view" id="v-results" aria-live="polite"></section>
 
-<div class="wrap">
-  <nav class="tabs" id="tabs">
-    <a href="#prep" data-v="prep">Launch prep</a>
-    <a href="#codes" data-v="codes">Cheat codes</a>
-    <a href="#money" data-v="money">Money</a>
-    <a href="#tracker" data-v="tracker">Trackers</a>
-    <a href="#finds" data-v="finds">Latest finds</a>
-    <a href="#gear" data-v="gear">Gear</a>
-  </nav>
-  <div class="ad-slot" data-slot="top"></div>
+    <section class="view" id="v-prep">
+      <div class="block">
+        <div class="head"><h2 id="prepTitle">Get ready</h2><span class="count" id="prepCount"></span></div>
+        <div id="prepList"></div>
+      </div>
+      <div class="block" id="fitBlock">
+        <div class="head"><h2>Will it fit?</h2><span class="count" id="fitSize"></span></div>
+        <div class="chips" id="fitChips" role="group" aria-label="Your console"></div>
+        <div class="fit" id="fit" aria-live="polite"></div>
+      </div>
+      <div class="block">
+        <div class="head"><h2>Confirmed so far</h2><span class="count" id="factCount"></span></div>
+        <div class="rows" id="facts"></div>
+      </div>
+      <div class="block gear" id="gear">
+        <div class="head"><h2>Worth having</h2></div>
+        <div class="list" id="gearList"></div>
+        <p class="src" id="affNote" style="margin-top:12px"></p>
+      </div>
+    </section>
 
-  <section class="view" id="v-prep">
-    <h2>Launch prep</h2>
-    <p class="sub">Tick these off before unlock. Your progress saves on this device.</p>
-    <div class="progress"><i id="prepBar" style="width:0"></i></div>
-    <div class="card" id="prepList"></div>
-    <h2 style="margin-top:28px">What's confirmed</h2>
-    <p class="sub">Only facts with a source. Rumors stay off this page.</p>
-    <div class="grid" id="facts"></div>
-  </section>
+    <section class="view" id="v-codes"><div class="block">
+      <div class="head"><h2>Cheat codes</h2><span class="count" id="codeCount"></span></div>
+      <div class="bar2" id="codeBar" hidden>
+        <div class="seg" id="plat" role="group" aria-label="Platform"><button type="button" data-p="ps">PS5</button><button type="button" data-p="xbox">Xbox</button></div>
+        <label class="find"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.500" cy="10.500" r="6.500"/><path d="M15.500 15.500L21 21"/></svg><input id="codeQ" type="search" placeholder="Filter codes" aria-label="Filter codes"></label>
+      </div>
+      <div class="list" id="codeList"></div>
+    </div></section>
 
-  <section class="view" id="v-codes">
-    <h2>Cheat codes</h2>
-    <p class="sub">Every code is tested before it's marked verified.</p>
-    <input class="search" id="codeSearch" placeholder="Search codes (e.g. armor, vehicle)" aria-label="Search codes">
-    <div class="stack" id="codes"></div>
-  </section>
+    <section class="view" id="v-money"><div class="block">
+      <div class="head"><h2>Making money</h2><span class="count" id="moneyCount"></span></div>
+      <div class="rows" id="moneyList"></div>
+    </div></section>
 
-  <section class="view" id="v-money">
-    <h2>Making money</h2>
-    <p class="sub">Fastest legit methods, ranked as players confirm them.</p>
-    <div class="stack" id="money"></div>
-  </section>
+    <section class="view" id="v-tracker"><div class="block">
+      <div class="head"><h2>Trackers</h2><span class="count" id="trackCount"></span></div>
+      <div id="trackList"></div>
+    </div></section>
 
-  <section class="view" id="v-tracker">
-    <h2>Trackers</h2>
-    <p class="sub">Check off collectibles as you go. Saved on this device.</p>
-    <div class="stack" id="tracker"></div>
-  </section>
+    <section class="view" id="v-finds"><div class="block">
+      <div class="head"><h2>Latest finds</h2><span class="count" id="findCount"></span></div>
+      <div class="list" id="findList"></div>
+    </div></section>
 
-  <section class="view" id="v-finds">
-    <h2>Latest finds</h2>
-    <p class="sub">Hidden spots, tricks and glitches, credited to whoever found them.</p>
-    <div class="stack" id="finds"></div>
-  </section>
-
-  <section class="view" id="v-gear">
-    <h2>Gear for launch</h2>
-    <p class="sub">Storage first. That download is huge.</p>
-    <div class="grid gear" id="gear"></div>
-    <p class="src" id="affNote" style="margin-top:14px"></p>
-  </section>
-  <div class="ad-slot" data-slot="bottom"></div>
+    <div class="ad-slot" data-slot="bottom"></div>
+    <footer class="foot">
+      <p id="updated"></p>
+      <p id="contact"></p>
+      <p><a href="guide/launch.html">Launch guide</a>, <a href="guide/codes.html">cheat codes</a>, <a href="guide/money.html">money</a>, <a href="guide/collectibles.html">collectibles</a>, <a href="guide/finds.html">finds</a></p>
+      <p>Unofficial fan site. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive, who own the Grand Theft Auto trademarks.</p>
+    </footer>
+  </main>
 </div>
-
-<footer><div class="wrap">
-  <p class="updated" id="updated"></p>
-  <p id="contact"></p>
-  <p><a href="guide/launch.html">Launch guide</a> · <a href="guide/codes.html">Cheat codes</a> · <a href="guide/money.html">Money methods</a> · <a href="guide/collectibles.html">Collectibles</a> · <a href="guide/finds.html">Latest finds</a></p>
-  <p>SixSheet is an unofficial fan site. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Grand Theft Auto and related names are trademarks of Take-Two Interactive.</p>
-</div></footer>
+<div class="toast" id="toast" role="status"></div>
+<noscript><p style="padding:20px">SixSheet needs JavaScript for the checklists. The plain pages work without it: <a href="guide/launch.html">launch guide</a>, <a href="guide/codes.html">cheat codes</a>, <a href="guide/money.html">money</a>, <a href="guide/collectibles.html">collectibles</a>, <a href="guide/finds.html">finds</a>.</p></noscript>
 
 <script type="application/json" id="seed">/*SEED*/</script>
 <script>
 (function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
   var store = {
-    get:function(k,d){try{var v=localStorage.getItem('sixsheet:'+k);return v===null?d:JSON.parse(v);}catch(e){return d;}},
-    set:function(k,v){try{localStorage.setItem('sixsheet:'+k,JSON.stringify(v));}catch(e){}}
+    get: function(k, d){ try { var v = localStorage.getItem('sixsheet:' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set: function(k, v){ try { localStorage.setItem('sixsheet:' + k, JSON.stringify(v)); } catch (e) {} }
   };
-  var D;
-  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  function $(id){return document.getElementById(id);}
-  function srcLink(o){
-    if(!o.source) return '';
-    return '<div class="src">Source: '+(o.url?'<a href="'+esc(o.url)+'" rel="nofollow noopener" target="_blank">'+esc(o.source)+'</a>':esc(o.source))+(o.added?' · '+esc(fmtDate(o.added)):'')+'</div>';
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function safeUrl(u){ return /^https?:\/\//i.test(String(u || '')) ? String(u) : ''; }
+  function day(s){ var d = new Date(s); return isNaN(d) ? '' : d.toLocaleDateString(undefined, {month:'short', day:'numeric'}); }
+  function src(o){
+    if (!o.source) return '';
+    var u = safeUrl(o.url);
+    var when = o.added ? ', ' + esc(day(o.added)) : '';
+    return '<div class="src">' + (u ? '<a href="' + esc(u) + '" target="_blank" rel="nofollow noopener">' + esc(o.source) + '</a>' : esc(o.source)) + when + '</div>';
   }
-  function fmtDate(s){var d=new Date(s);return isNaN(d)?s:d.toLocaleDateString(undefined,{month:'short',day:'numeric'});}
-  function wrapSpoiler(html,isSp){
-    return isSp?'<div class="spoil"><button class="reveal" type="button">Spoiler-ish. Tap to reveal</button><div class="body">'+html+'</div></div>':html;
+  function spoil(html, flag){
+    return flag ? '<div class="sp"><button class="spb" type="button">Spoiler-ish. Tap to show</button><div class="spc">' + html + '</div></div>' : html;
   }
-  function empty(title,msg){return '<div class="empty"><b>'+esc(title)+'</b>'+esc(msg)+'</div>';}
+  function empty(big, small){
+    var mini = '';
+    if (!live && cdText) mini = '<p class="mini">Unlocks in <b>' + esc(cdText) + '</b></p>';
+    return '<div class="empty"><p class="big">' + esc(big) + '</p><p>' + esc(small) + '</p>' + mini + '</div>';
+  }
+  var BOX = '<svg class="bx" viewBox="0 0 28 28" aria-hidden="true"><path class="sq" d="M5.500 4.900c5.600-.9 11.500-.8 17 .1.700 5.700.700 11.600-.1 17.300-5.700.8-11.500.8-17.100-.2-.8-5.700-.7-11.500.2-17.200z"/><path class="ck" d="M8 14.500l4.800 5L24.500 5"/></svg>';
 
-  // Spoiler shield
-  var shielded = store.get('shield',true);
+  var D = null, live = false, region = 'us', cdText = '', timer = null;
+  var VIEWS = ['prep', 'codes', 'money', 'tracker', 'finds'];
+  var fresh = {};        // "section:key" -> true for entries added since the last visit
+  var lastSeen = store.get('seen', 0);
+  var shielded = store.get('shield', true);
+  var plat = store.get('plat', 'ps');
+  var toastT;
+
+  function toast(msg){
+    var t = $('toast'); t.textContent = msg; t.classList.add('on');
+    clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove('on'); }, 1600);
+  }
+  function copy(text, okMsg){
+    try {
+      navigator.clipboard.writeText(text).then(function(){ toast(okMsg); }, function(){ toast('Could not copy. Select it instead.'); });
+    } catch (e) { toast('Could not copy. Select it instead.'); }
+  }
+  function keyOf(sec, o){ return sec + ':' + (o.id || o.name || o.title || ''); }
+  function isNew(sec, o){ return !!fresh[keyOf(sec, o)]; }
+
+  /* ---------- spoiler shield ---------- */
   function applyShield(){
-    document.body.classList.toggle('shielded',shielded);
-    $('shield').classList.toggle('off',!shielded);
-    $('shield').setAttribute('aria-pressed',shielded);
-    $('shieldLabel').textContent = shielded?'Spoiler shield on':'Spoiler shield off';
+    document.body.classList.toggle('shielded', shielded);
+    $('shield').setAttribute('aria-pressed', shielded ? 'true' : 'false');
+    $('shieldLabel').textContent = shielded ? 'Spoilers hidden' : 'Spoilers shown';
+    $('slash').style.display = shielded ? '' : 'none';
   }
-  function toggleShield(){shielded=!shielded;store.set('shield',shielded);applyShield();}
-  $('shield').addEventListener('click',toggleShield);
-  $('shield').addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleShield();}});
-  document.addEventListener('click',function(e){
-    var r=e.target.closest('.reveal'); if(r){r.parentNode.classList.add('open');}
-  });
 
-  // Countdown
-  var timer;
+  /* ---------- hero: countdown, then search ---------- */
+  var US_TZ = /^(America\/(New_York|Detroit|Chicago|Denver|Boise|Phoenix|Los_Angeles|Anchorage|Juneau|Sitka|Nome|Yakutat|Metlakatla|Adak|Menominee|Indiana\/.+|Kentucky\/.+|North_Dakota\/.+)|Pacific\/Honolulu|US\/.+)$/;
+  function guessRegion(){
+    var saved = store.get('region', null);
+    if (saved === 'us' || saved === 'local') return saved;
+    try { return US_TZ.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? 'us' : 'local'; } catch (e) { return 'us'; }
+  }
+  function target(){
+    var us = new Date(D.launch.unlockUtc);
+    if (region === 'local' && D.launch.localDate) {
+      var p = String(D.launch.localDate).split('-');
+      var d = new Date(+p[0], +p[1] - 1, +p[2], 0, 0, 0);
+      if (!isNaN(d)) return d;
+    }
+    return us;
+  }
+  function whenLine(){
+    var t = target();
+    if (region === 'local') return 'Midnight on ' + t.toLocaleDateString(undefined, {weekday:'short', month:'short', day:'numeric'}) + ', your time.';
+    return t.toLocaleString(undefined, {weekday:'short', month:'short', day:'numeric', hour:'numeric', minute:'2-digit'}) + ' your time.';
+  }
+  function total(){ return D.codes.length + D.money.length + D.finds.length + D.tracker.length; }
+  function renderHero(){
+    var h = $('hero');
+    document.body.setAttribute('data-live', live ? '1' : '0');
+    $('prepTab').textContent = live ? 'Start' : 'Launch';
+    if (live) {
+      h.innerHTML = '<p class="out">It’s out.</p>' + (total()
+        ? '<label class="find"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.500" cy="10.500" r="6.500"/><path d="M15.500 15.500L21 21"/></svg><input id="q" type="search" placeholder="Search codes, money, finds" aria-label="Search everything"></label>'
+        : '<p class="cd-sub" style="margin:0">First codes and finds land here soon.</p>');
+      return;
+    }
+    var hasLocal = !!D.launch.localDate;
+    h.innerHTML =
+      '<div class="cd" role="timer" aria-label="Time until GTA VI unlocks">' +
+        '<span><b id="cd-d">0</b><i>d</i></span><span><b id="cd-h">00</b><i>h</i></span><span><b id="cd-m">00</b><i>m</i></span><span class="sec"><b id="cd-s">00</b><i>s</i></span>' +
+      '</div>' +
+      '<p class="cd-sub">until GTA VI unlocks. <strong id="cdWhen"></strong></p>' +
+      (hasLocal ? '<div class="seg" id="region" role="group" aria-label="Where your account is"><button type="button" data-r="us">US account</button><button type="button" data-r="local">Elsewhere</button></div>' : '') +
+      (D.launch.note ? '<details class="why"><summary>How unlock times work</summary><p>' + esc(D.launch.note) + '</p></details>' : '') +
+      '<p class="hand">no story spoilers. ever.</p>';
+    paintRegion();
+  }
+  function paintRegion(){
+    var seg = $('region');
+    if (seg) Array.prototype.forEach.call(seg.children, function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-r') === region ? 'true' : 'false'); });
+    var w = $('cdWhen'); if (w) w.textContent = whenLine();
+  }
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
   function tick(){
-    var t=new Date(D.launch.unlockUtc).getTime()-Date.now();
-    if(t<=0){clearInterval(timer);$('count').innerHTML='<span class="live">It’s out. Go play. We’ll keep this page updated.</span>';return;}
-    var s=Math.floor(t/1000);
-    $('cd-d').textContent=Math.floor(s/86400);
-    $('cd-h').textContent=String(Math.floor(s%86400/3600)).padStart(2,'0');
-    $('cd-m').textContent=String(Math.floor(s%3600/60)).padStart(2,'0');
-    $('cd-s').textContent=String(s%60).padStart(2,'0');
+    var ms = target().getTime() - Date.now();
+    if (ms <= 0) {
+      if (!live) { live = true; cdText = ''; renderHero(); renderAll(); route(); }
+      return;
+    }
+    if (live) { live = false; renderHero(); renderAll(); route(); }
+    var s = Math.floor(ms / 1000), d = Math.floor(s / 86400), hh = Math.floor(s % 86400 / 3600), mm = Math.floor(s % 3600 / 60);
+    cdText = (d ? d + 'd ' : '') + hh + 'h ' + pad(mm) + 'm';
+    if (!$('cd-d')) return;
+    $('cd-d').textContent = d; $('cd-h').textContent = pad(hh); $('cd-m').textContent = pad(mm); $('cd-s').textContent = pad(s % 60);
+    var minis = document.querySelectorAll('.mini b');
+    for (var i = 0; i < minis.length; i++) minis[i].textContent = cdText;
   }
 
-  // Prep checklist
+  /* ---------- launch tab ---------- */
+  function tickRow(id, text, detail, done){
+    var body = detail
+      ? '<details class="tx"><summary>' + esc(text) + '</summary><p>' + esc(detail) + '</p></details>'
+      : '<span class="tx">' + esc(text) + '</span>';
+    return '<div class="tk' + (done ? ' done' : '') + '" data-id="' + esc(id) + '"><button class="tkb" type="button" role="checkbox" aria-checked="' + (done ? 'true' : 'false') + '" aria-label="' + esc(text) + '">' + BOX + '</button>' + body + '</div>';
+  }
   function renderPrep(){
-    var done=store.get('prep',{});
-    $('prepList').innerHTML=D.prep.map(function(p){
-      return '<div class="check'+(done[p.id]?' done':'')+'" data-id="'+esc(p.id)+'" role="checkbox" tabindex="0" aria-checked="'+!!done[p.id]+'"><span class="box"></span><div><div class="t">'+esc(p.text)+'</div><div class="d">'+esc(p.detail||'')+'</div></div></div>';
+    var done = store.get('prep', {});
+    $('prepTitle').textContent = D.launch.prepTitle || 'Get ready';
+    $('prepList').innerHTML = D.prep.map(function(p){ return tickRow(p.id, p.text, p.detail, done[p.id]); }).join('');
+    countPrep();
+  }
+  function countPrep(){
+    var done = store.get('prep', {}), n = D.prep.filter(function(p){ return done[p.id]; }).length, c = $('prepCount');
+    var all = D.prep.length && n === D.prep.length;
+    c.className = 'count' + (all ? ' ready' : '');
+    c.textContent = all ? 'ready.' : n + ' of ' + D.prep.length;
+  }
+  function renderFit(){
+    var st = D.storage;
+    if (!st || !st.sizeGb || !Array.isArray(st.consoles) || !st.consoles.length) { $('fitBlock').hidden = true; return; }
+    $('fitBlock').hidden = false;
+    $('fitSize').textContent = 'up to ' + st.sizeGb + ' GB';
+    var pick = store.get('console', '');
+    $('fitChips').innerHTML = st.consoles.map(function(c){
+      return '<button class="chip" type="button" data-c="' + esc(c.id) + '" aria-pressed="' + (c.id === pick ? 'true' : 'false') + '">' + esc(c.name) + (c.sub ? '<small>' + esc(c.sub) + '</small>' : '') + '</button>';
     }).join('');
-    var n=D.prep.filter(function(p){return done[p.id];}).length;
-    $('prepBar').style.width=(D.prep.length?100*n/D.prep.length:0)+'%';
+    paintFit(false);
   }
-  function toggleCheck(el,key){
-    var all=store.get(key,{});var id=el.getAttribute('data-id');all[id]=!all[id];store.set(key,all);
-    if(key==='prep')renderPrep();else renderTracker();
+  function paintFit(animate){
+    var st = D.storage, pick = store.get('console', ''), f = $('fit');
+    var c = st.consoles.filter(function(x){ return x.id === pick; })[0];
+    if (!c) { f.removeAttribute('data-lvl'); f.innerHTML = '<p class="ask">Pick your console.</p>'; return; }
+    var pct = Math.min(100, Math.round(st.sizeGb / c.usableGb * 100));
+    var lvl = pct >= 50 ? 'tight' : pct >= 25 ? 'mid' : 'ok';
+    var left = Math.max(0, c.usableGb - st.sizeGb);
+    var say = lvl === 'tight' ? 'Tight. ' : lvl === 'mid' ? 'A big chunk. ' : 'Plenty of room. ';
+    f.setAttribute('data-lvl', lvl);
+    f.innerHTML = '<div class="meter"><i></i></div><p class="verdict"><b>' + pct + '%</b><span>' + say + 'About ' + left + ' GB left of ' + c.usableGb + ' usable.' +
+      (lvl === 'tight' ? ' <a href="#gear">Add storage</a>' : '') + '</span></p>';
+    var bar = f.querySelector('.meter i');
+    if (animate) requestAnimationFrame(function(){ requestAnimationFrame(function(){ bar.style.width = pct + '%'; }); });
+    else bar.style.width = pct + '%';
   }
-  $('prepList').addEventListener('click',function(e){var c=e.target.closest('.check');if(c)toggleCheck(c,'prep');});
-
-  // Facts
   function renderFacts(){
-    $('facts').innerHTML=D.facts.map(function(f){
-      return '<div class="card fact"><div class="k">'+esc(f.label)+'</div><div class="v">'+esc(f.value)+'</div>'+srcLink(f)+'</div>';
+    $('factCount').textContent = D.facts.length ? D.facts.length + ' facts' : '';
+    $('facts').innerHTML = D.facts.map(function(f){
+      return '<details class="row"><summary><span class="k">' + esc(f.label) + '</span><span class="v">' + esc(f.short || '') + '</span></summary><div class="more"><p>' + esc(f.value) + '</p>' + src(f) + '</div></details>';
     }).join('');
   }
-
-  // Codes
-  function renderCodes(){
-    var q=($('codeSearch').value||'').toLowerCase();
-    if(!D.codes.length){$('codes').innerHTML=empty('Codes land here once they’re verified','If GTA VI has cheat codes, each one gets tested and added within hours of launch. Bookmark this page.');return;}
-    var list=D.codes.filter(function(c){return !q||(c.name+' '+c.effect).toLowerCase().indexOf(q)>-1;});
-    if(!list.length){$('codes').innerHTML=empty('No match','Try a different word.');return;}
-    $('codes').innerHTML=list.map(function(c,i){
-      var inputs=[['PS5',c.ps],['Xbox',c.xbox],['Phone',c.phone]].filter(function(x){return x[1];});
-      return '<div class="card"><div class="row"><div><b>'+esc(c.name)+'</b> <span class="tag'+(c.verified?'':' warn')+'">'+(c.verified?'Verified':'Unconfirmed')+'</span><div class="d" style="color:var(--mute);font-size:14px">'+esc(c.effect||'')+'</div></div></div>'+
-        inputs.map(function(x){return '<div class="row"><div class="input"><b>'+x[0]+':</b> '+esc(x[1])+'</div><button class="copy" type="button" data-copy="'+esc(x[1])+'">Copy</button></div>';}).join('')+srcLink(c)+'</div>';
-    }).join('');
-  }
-  $('codeSearch').addEventListener('input',renderCodes);
-  document.addEventListener('click',function(e){
-    var b=e.target.closest('button.copy');if(!b)return;
-    var txt=b.getAttribute('data-copy');
-    try{navigator.clipboard.writeText(txt).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1200);},function(){b.textContent='Select it';});}catch(err){b.textContent='Select it';}
-  });
-
-  // Money
-  function renderMoney(){
-    if(!D.money.length){$('money').innerHTML=empty('Money methods arrive at launch','We rank methods by payout per hour once players confirm them in-game.');return;}
-    $('money').innerHTML=D.money.map(function(m,i){
-      var body='<div class="row"><b>#'+(i+1)+' '+esc(m.title)+'</b>'+(m.verified?'<span class="tag">Verified</span>':'<span class="tag warn">Unconfirmed</span>')+'</div><div>'+esc(m.summary)+'</div>'+
-        ((m.payout||m.time)?'<div class="src">'+(m.payout?'Payout: '+esc(m.payout):'')+(m.payout&&m.time?' · ':'')+(m.time?'Time: '+esc(m.time):'')+'</div>':'')+srcLink(m);
-      return '<div class="card">'+wrapSpoiler(body,m.spoiler)+'</div>';
-    }).join('');
-  }
-
-  // Trackers
-  function renderTracker(){
-    if(!D.tracker.length){$('tracker').innerHTML=empty('Collectible trackers go live after launch','Categories and counts get added once they’re confirmed in-game.');return;}
-    var done=store.get('tracker',{});
-    $('tracker').innerHTML=D.tracker.map(function(cat){
-      var items=cat.items||[];
-      var n=items.filter(function(it){return done[it.id];}).length;
-      var total=cat.total||items.length;
-      return '<div class="card"><div class="row"><b>'+esc(cat.category)+'</b><span class="src">'+n+' / '+esc(total)+'</span></div><div class="progress"><i style="width:'+(total?100*n/total:0)+'%"></i></div>'+
-        items.map(function(it){
-          var row='<div class="check'+(done[it.id]?' done':'')+'" data-id="'+esc(it.id)+'" role="checkbox" tabindex="0" aria-checked="'+!!done[it.id]+'"><span class="box"></span><div><div class="t">'+esc(it.name)+'</div><div class="d">'+esc(it.hint||'')+'</div></div></div>';
-          return wrapSpoiler(row,it.spoiler);
-        }).join('')+'</div>';
-    }).join('');
-  }
-  $('tracker').addEventListener('click',function(e){var c=e.target.closest('.check');if(c)toggleCheck(c,'tracker');});
-
-  // Finds
-  function renderFinds(){
-    if(!D.finds.length){$('finds').innerHTML=empty('Nothing yet. The game isn’t out','New discoveries post here, credited to the player who found them.');return;}
-    var list=D.finds.slice().sort(function(a,b){return new Date(b.added)-new Date(a.added);});
-    $('finds').innerHTML=list.map(function(f){
-      return '<div class="card">'+wrapSpoiler('<b>'+esc(f.title)+'</b><div>'+esc(f.summary)+'</div>'+srcLink(f),f.spoiler)+'</div>';
-    }).join('');
-  }
-
-  // Gear
   function renderGear(){
-    var tag=D.site.affiliateTag;
-    $('gear').innerHTML=D.gear.map(function(g){
-      var url='https://www.amazon.com/s?k='+encodeURIComponent(g.query)+(tag?'&tag='+encodeURIComponent(tag):'');
-      return '<a href="'+esc(url)+'" target="_blank" rel="sponsored noopener"><div class="card"><b>'+esc(g.name)+'</b><div class="src" style="margin-top:4px">'+esc(g.why)+'</div><div class="src" style="color:var(--teal);margin-top:8px">Shop on Amazon →</div></div></a>';
+    var tag = D.site.affiliateTag;
+    $('gear').hidden = !D.gear.length;
+    $('gearList').innerHTML = D.gear.map(function(g){
+      var url = 'https://www.amazon.com/s?k=' + encodeURIComponent(g.query || g.name) + (tag ? '&tag=' + encodeURIComponent(tag) : '');
+      return '<a class="entry" href="' + esc(url) + '" target="_blank" rel="sponsored noopener"><div><b>' + esc(g.name) + '</b><span>' + esc(g.why || '') + '</span></div><em>Amazon</em></a>';
     }).join('');
-    $('affNote').textContent=tag?'As an Amazon Associate, SixSheet earns from qualifying purchases.':'';
+    $('affNote').textContent = tag ? 'As an Amazon Associate, SixSheet earns from qualifying purchases.' : '';
   }
 
-  // Routing
-  var views=['prep','codes','money','tracker','finds','gear'];
+  /* ---------- codes ---------- */
+  var GLYPH = {triangle:'△', circle:'○', cross:'✕', square:'□', up:'↑', down:'↓', left:'←', right:'→'};
+  var BTN = /^(triangle|circle|cross|square|up|down|left|right|l1|l2|l3|r1|r2|r3|lb|rb|lt|rt|ls|rs|a|b|x|y|options|share|menu|view|start|select)$/i;
+  function keys(str, isPs){
+    var parts = String(str).split(/[\s,]+/).filter(Boolean);
+    if (!parts.length || !parts.every(function(p){ return BTN.test(p); })) return '<span class="plain">' + esc(str) + '</span>';
+    return parts.map(function(p){
+      var k = p.toLowerCase(), g = GLYPH[k] || (isPs && k === 'x' ? GLYPH.cross : p.toUpperCase());
+      return '<span class="kc" title="' + esc(p) + '">' + esc(g) + '</span>';
+    }).join('');
+  }
+  function codeHTML(c){
+    var mark = c.verified ? '<span class="ok">tested</span>' : '<span class="maybe">unconfirmed</span>';
+    var input = c[plat] || '', lines = '';
+    if (input) lines += '<div class="keys">' + keys(input, plat === 'ps') + '<button class="copy" type="button" data-copy="' + esc(input) + '">Copy</button></div>';
+    if (c.phone) lines += '<div class="keys"><span class="plain">Phone: ' + esc(c.phone) + '</span><button class="copy" type="button" data-copy="' + esc(c.phone) + '">Copy</button></div>';
+    if (!input && !c.phone) { var other = plat === 'ps' ? c.xbox : c.ps; if (other) lines += '<p>Only confirmed on ' + (plat === 'ps' ? 'Xbox' : 'PS5') + ' so far.</p>'; }
+    return '<article class="entry"><h3>' + (isNew('codes', c) ? '<span class="new" title="New"></span>' : '') + esc(c.name) + ' ' + mark + '</h3>' + (c.effect ? '<p>' + esc(c.effect) + '</p>' : '') + lines + src(c) + '</article>';
+  }
+  function renderCodes(){
+    var has = D.codes.length > 0;
+    $('codeBar').hidden = !has;
+    $('codeCount').textContent = has ? D.codes.length + (D.codes.length === 1 ? ' code' : ' codes') : '';
+    Array.prototype.forEach.call($('plat').children, function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-p') === plat ? 'true' : 'false'); });
+    if (!has) { $('codeList').innerHTML = empty('No codes yet.', 'If GTA VI has cheat codes, every one gets tested, then posted here.'); return; }
+    var q = ($('codeQ').value || '').toLowerCase();
+    var list = D.codes.filter(function(c){ return !q || ((c.name || '') + ' ' + (c.effect || '')).toLowerCase().indexOf(q) > -1; });
+    $('codeList').innerHTML = list.length ? list.map(codeHTML).join('') : '<div class="empty"><p>No code matches “' + esc(q) + '”.</p></div>';
+  }
+
+  /* ---------- money ---------- */
+  function moneyHTML(m, i){
+    var meta = [m.payout ? 'Pays ' + esc(m.payout) : '', m.time ? 'Takes ' + esc(m.time) : ''].filter(Boolean).join('. ');
+    var row = '<details class="row"><summary><span class="t"><span class="rank">' + (i + 1) + '</span>' + (isNew('money', m) ? '<span class="new" style="display:inline-block;margin-right:7px" title="New"></span>' : '') + esc(m.title) + '</span><span class="v">' + esc(m.payout || '') + '</span></summary><div class="more"><p>' + esc(m.summary || '') + '</p>' +
+      (meta ? '<p class="src">' + meta + '.</p>' : '') + '<p class="src">' + (m.verified ? 'Tested.' : 'Not confirmed yet.') + '</p>' + src(m) + '</div></details>';
+    return spoil(row, m.spoiler);
+  }
+  function renderMoney(){
+    $('moneyCount').textContent = D.money.length ? 'best first' : '';
+    $('moneyList').innerHTML = D.money.length ? D.money.map(moneyHTML).join('') : empty('Nothing yet.', 'Methods get ranked here by payout once players confirm them.');
+  }
+
+  /* ---------- trackers ---------- */
+  function renderTracker(){
+    if (!D.tracker.length) { $('trackCount').textContent = ''; $('trackList').innerHTML = empty('Nothing to track yet.', 'Collectible checklists show up after launch, once the counts are confirmed.'); return; }
+    var done = store.get('tracker', {}), open = store.get('trackOpen', null), got = 0, all = 0;
+    $('trackList').innerHTML = D.tracker.map(function(cat, ci){
+      var items = cat.items || [], n = items.filter(function(it){ return done[it.id]; }).length, tot = cat.total || items.length;
+      got += n; all += tot;
+      var isOpen = open ? !!open[cat.category] : ci === 0;
+      return '<details class="row grpd" data-cat="' + esc(cat.category) + '"' + (isOpen ? ' open' : '') + '><summary><span class="t">' + esc(cat.category) + '</span><span class="v" data-n>' + n + '/' + esc(tot) + '</span></summary><div class="more" style="max-width:none">' +
+        items.map(function(it){ return spoil(tickRow(it.id, it.name, it.hint, done[it.id]), it.spoiler); }).join('') + '</div></details>';
+    }).join('');
+    $('trackCount').textContent = got + ' of ' + all;
+  }
+  function countTracker(){
+    var done = store.get('tracker', {}), got = 0, all = 0;
+    D.tracker.forEach(function(cat){
+      var items = cat.items || [], n = items.filter(function(it){ return done[it.id]; }).length, tot = cat.total || items.length;
+      got += n; all += tot;
+      var el = document.querySelector('.grpd[data-cat="' + String(cat.category).replace(/"/g, '\\"') + '"] [data-n]');
+      if (el) el.textContent = n + '/' + tot;
+    });
+    $('trackCount').textContent = got + ' of ' + all;
+  }
+
+  /* ---------- finds ---------- */
+  function findHTML(f){
+    return spoil('<article class="entry"><h3>' + (isNew('finds', f) ? '<span class="new" title="New"></span>' : '') + esc(f.title) + '</h3><p>' + esc(f.summary || '') + '</p>' + src(f) + '</article>', f.spoiler);
+  }
+  function renderFinds(){
+    var list = D.finds.slice().sort(function(a, b){ return new Date(b.added || 0) - new Date(a.added || 0); });
+    $('findCount').textContent = list.length ? 'newest first' : '';
+    $('findList').innerHTML = list.length ? list.map(findHTML).join('') : empty('Nothing yet.', live ? 'New discoveries get posted here, credited to whoever found them.' : 'The game isn’t out. Discoveries get posted here, credited to whoever found them.');
+  }
+
+  /* ---------- search everything ---------- */
+  function renderResults(q){
+    var has = function(s){ return String(s || '').toLowerCase().indexOf(q) > -1; };
+    var c = D.codes.filter(function(x){ return has(x.name) || has(x.effect); });
+    var m = D.money.map(function(x, i){ return {x:x, i:i}; }).filter(function(o){ return has(o.x.title) || has(o.x.summary); });
+    var f = D.finds.filter(function(x){ return has(x.title) || has(x.summary); });
+    var n = c.length + m.length + f.length;
+    var html = '<div class="block"><div class="head"><h2>' + (n ? n + (n === 1 ? ' match' : ' matches') : 'No matches') + '</h2><button class="count" type="button" id="clearQ" style="text-decoration:underline;text-underline-offset:4px">Clear</button></div>';
+    if (c.length) html += '<p class="grp">Codes</p><div class="list">' + c.map(codeHTML).join('') + '</div>';
+    if (m.length) html += '<p class="grp">Money</p><div class="rows">' + m.map(function(o){ return moneyHTML(o.x, o.i); }).join('') + '</div>';
+    if (f.length) html += '<p class="grp">Finds</p><div class="list">' + f.map(findHTML).join('') + '</div>';
+    if (!n) html += '<div class="empty"><p>Nothing matches “' + esc(q) + '” yet.</p></div>';
+    $('v-results').innerHTML = html + '</div>';
+  }
+  function search(){
+    var el = $('q'), q = el ? el.value.trim().toLowerCase() : '';
+    if (q) { renderResults(q); show('results'); } else route();
+  }
+
+  /* ---------- routing ---------- */
+  function show(v){
+    ['results'].concat(VIEWS).forEach(function(x){ $('v-' + x).classList.toggle('on', x === v); });
+    document.body.setAttribute('data-view', v);
+    Array.prototype.forEach.call(document.querySelectorAll('#tabs a'), function(a){
+      if (a.getAttribute('data-v') === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+  }
+  function home(){
+    if (!live) return 'prep';
+    var order = ['codes', 'money', 'finds', 'tracker'];
+    for (var i = 0; i < order.length; i++) if (D[order[i]].length) return order[i];
+    return 'prep';
+  }
   function route(){
-    var v=(location.hash||'').slice(1);if(views.indexOf(v)<0)v='prep';
-    views.forEach(function(x){$('v-'+x).classList.toggle('on',x===v);});
-    Array.prototype.forEach.call(document.querySelectorAll('#tabs a'),function(a){a.classList.toggle('on',a.getAttribute('data-v')===v);});
+    var h = (location.hash || '').slice(1), v = h;
+    if (h === 'gear') v = 'prep';
+    if (VIEWS.indexOf(v) < 0) v = home();
+    show(v);
+    if (h === 'gear') { var g = $('gear'); if (g && g.scrollIntoView) g.scrollIntoView(); }
   }
-  window.addEventListener('hashchange',route);
+  function paintDots(){
+    Array.prototype.forEach.call(document.querySelectorAll('#tabs a'), function(a){
+      var v = a.getAttribute('data-v'), any = Object.keys(fresh).some(function(k){ return k.indexOf(v + ':') === 0; });
+      var d = a.querySelector('.dot');
+      if (any && !d) { d = document.createElement('i'); d.className = 'dot'; d.title = 'New since your last visit'; a.appendChild(d); }
+      if (!any && d) d.remove();
+    });
+  }
 
-  function boot(data){
-    D=data;
-    ['codes','money','tracker','finds','gear','facts','prep'].forEach(function(k){if(!Array.isArray(D[k]))D[k]=[];});
-    $('launchNote').textContent=D.launch.note||'';
-    $('updated').textContent='Last updated '+new Date(D.site.updated).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
-    $('contact').innerHTML=D.site.xHandle?'Found something? Tag <a href="https://x.com/'+esc(D.site.xHandle)+'" target="_blank" rel="noopener">@'+esc(D.site.xHandle)+'</a> on X.':'';
-    applyShield();renderPrep();renderFacts();renderCodes();renderMoney();renderTracker();renderFinds();renderGear();route();
-    tick();clearInterval(timer);timer=setInterval(tick,1000);
+  /* ---------- wire up (once) ---------- */
+  document.addEventListener('click', function(e){
+    var t = e.target, el;
+    if ((el = t.closest('.tkb'))) {
+      var row = el.parentNode, inPrep = !!row.closest('#prepList'), k = inPrep ? 'prep' : 'tracker', all = store.get(k, {}), id = row.getAttribute('data-id');
+      all[id] = !all[id]; store.set(k, all);
+      row.classList.toggle('done', !!all[id]); el.setAttribute('aria-checked', all[id] ? 'true' : 'false');
+      if (inPrep) countPrep(); else countTracker();
+      return;
+    }
+    if ((el = t.closest('.chip'))) {
+      store.set('console', el.getAttribute('data-c'));
+      Array.prototype.forEach.call($('fitChips').children, function(b){ b.setAttribute('aria-pressed', b === el ? 'true' : 'false'); });
+      paintFit(true); return;
+    }
+    if ((el = t.closest('#region button'))) { region = el.getAttribute('data-r'); store.set('region', region); paintRegion(); tick(); return; }
+    if ((el = t.closest('#plat button'))) { plat = el.getAttribute('data-p'); store.set('plat', plat); renderCodes(); if ($('v-results').classList.contains('on')) search(); return; }
+    if ((el = t.closest('.spb'))) { el.parentNode.classList.add('open'); return; }
+    if ((el = t.closest('.copy'))) {
+      copy(el.getAttribute('data-copy'), 'Copied');
+      el.classList.add('did'); el.textContent = 'Copied';
+      setTimeout(function(){ el.classList.remove('did'); el.textContent = 'Copy'; }, 1300);
+      return;
+    }
+    if (t.closest('#shield')) { shielded = !shielded; store.set('shield', shielded); applyShield(); toast(shielded ? 'Spoilers hidden' : 'Spoilers shown'); return; }
+    if (t.closest('#share')) { copy(location.href, 'Link copied'); return; }
+    if (t.closest('#clearQ')) { var q = $('q'); if (q) q.value = ''; route(); return; }
+    if (t.closest('#tabs a')) { var qq = $('q'); if (qq) qq.value = ''; window.scrollTo(0, 0); if (t.closest('#tabs a').getAttribute('href') === location.hash) route(); }
+  });
+  document.addEventListener('input', function(e){
+    if (e.target.id === 'codeQ') renderCodes();
+    if (e.target.id === 'q') search();
+  });
+  document.addEventListener('toggle', function(e){
+    var d = e.target;
+    if (d.classList && d.classList.contains('grpd')) {
+      var open = {}; Array.prototype.forEach.call(document.querySelectorAll('.grpd'), function(x){ open[x.getAttribute('data-cat')] = x.open; });
+      store.set('trackOpen', open);
+    }
+  }, true);
+  window.addEventListener('hashchange', route);
+
+  function renderAll(){
+    renderPrep(); renderFit(); renderFacts(); renderGear();
+    renderCodes(); renderMoney(); renderTracker(); renderFinds(); paintDots();
   }
-  var seed;try{seed=JSON.parse($('seed').textContent);}catch(e){}
-  if(seed)boot(seed);
-  try{
-    fetch('data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){if(d&&d.site)boot(d);}).catch(function(){});
-  }catch(e){}
+  function boot(data){
+    D = data;
+    ['codes', 'money', 'tracker', 'finds', 'gear', 'facts', 'prep'].forEach(function(k){ if (!Array.isArray(D[k])) D[k] = []; });
+    D.site = D.site || {}; D.launch = D.launch || {};
+    region = guessRegion();
+    if (!D.launch.localDate) region = 'us';
+    live = target().getTime() <= Date.now();
+
+    // what's new since the last visit (first visit: the last 24 hours)
+    var since = lastSeen || (Date.now() - 864e5);
+    fresh = {};
+    ['codes', 'money', 'finds'].forEach(function(sec){
+      D[sec].forEach(function(o){ var t = new Date(o.added || 0).getTime(); if (t && t > since) fresh[keyOf(sec, o)] = true; });
+    });
+    store.set('seen', Date.now());
+
+    var up = new Date(D.site.updated);
+    $('updated').textContent = isNaN(up) ? '' : 'Updated ' + up.toLocaleString(undefined, {month:'short', day:'numeric', hour:'numeric', minute:'2-digit'}) + '.';
+    var xh = String(D.site.xHandle || '').replace(/[^A-Za-z0-9_]/g, '');
+    $('contact').innerHTML = xh ? 'Found something? Tell <a href="https://x.com/' + xh + '" target="_blank" rel="noopener">@' + xh + '</a> on X.' : '';
+
+    applyShield(); renderHero(); tick(); renderAll(); route();
+    clearInterval(timer); timer = setInterval(tick, 1000);
+  }
+
+  var seed; try { seed = JSON.parse($('seed').textContent); } catch (e) {}
+  if (seed) boot(seed);
+  try {
+    fetch('data.json', {cache: 'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+      if (d && d.site && JSON.stringify(d) !== JSON.stringify(seed)) boot(d);
+    }).catch(function(){});
+  } catch (e) {}
 })();
 </script>
 </body>

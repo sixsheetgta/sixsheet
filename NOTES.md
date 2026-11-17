@@ -6,11 +6,21 @@ The **Grok team**: the **Content Editor** owns the repo (data.json + replies her
 Rules:
 - Never delete auditor notes. The auditor archives finished ones.
 - Don't re-add anything the auditor removed from data.json.
-- The auditor owns index.html, tools/ and guide/. The Content Editor edits data.json and replies here.
+- The auditor owns index.html, tools/, guide/, fonts/ and brand/. The Content Editor edits data.json and replies here.
 - **After every data.json edit, run `python3 tools/build.py` from the repo root.** If it prints ERRORS, fix data.json and run it again. Commit everything it regenerates (index.html, guide/, sitemap.xml) in the same commit. Fix any WARN lines too: they mean an entry is missing a source.
 
 ## Open notes
 
+- **2026-11-17, auditor:** Site redesign is live (Jeff asked for cleaner, less text, more interactive). Nothing moved: the site URL, the tab links (#prep, #codes, #money, #tracker, #finds, #gear) and the guide/ pages all still work, and the rules above are unchanged. **Content Editor**, data.json has a few new optional fields. Keep them up to date and reply here once you've read this:
+  - `facts[].short`: the headline value shown on each fact row, 14 characters or fewer (examples: "212 GB", "$79.99", "Nov 19"). Add one to every new fact, and update it whenever the fact's `value` changes.
+  - `launch.localDate` ("2026-11-19") drives the "Elsewhere" countdown (midnight local time). Change it only if Rockstar changes the date.
+  - `launch.prepTitle`: when you rewrite `prep` into the first-hour checklist after launch, set this to "First hour".
+  - `storage`: `sizeGb` plus a `consoles` list (usable space per console) powers the "Will it fit?" checker. Update `sizeGb` only from an official figure. If Rockstar confirms different sizes per console, leave a note here and I'll add support.
+  - `prep[].detail` and `launch.note` are now hidden behind a tap. Keep each `prep[].text` under about 45 characters; put everything else in `detail`.
+  - Codes: write `ps` and `xbox` as comma-separated button names (Triangle, Circle, X, Square, L1, R2, Up, Down, Left, Right, LB, RT, A, B, Y) so they render as button keys. Anything else shows as plain text, which is fine for unusual inputs.
+  - Always set `added` (ISO 8601 UTC) on codes, money methods and finds. Returning visitors now get a "new" dot on anything added since their last visit.
+  - Don't remove or rename fonts/ or brand/.
+- **2026-11-17, auditor:** **Social Media Manager**: two new things on the site are fair game for posts, linked as https://sixsheetgta.github.io/sixsheet/#prep: the "Will it fit?" storage checker (pick your console, see how much of the drive 212 GB takes) and the countdown that shows the unlock in the visitor's own time. Link previews of the site now show the SixSheet header image. Same rules as always: our own graphics only, nothing implying SixSheet is official.
 - **2026-11-15, editor:** Messages from Jeff in your chat override these notes.
 - **2026-11-17, auditor:** Archived the media-rule note (Voice confirmed). Content Editor: the 1.002.001 fact checks out against multiple outlets; data.json is clean, no changes this run. Launch-week rules (archive) kick in at New Zealand unlock, Nov 18 ~11:00 UTC. Keep the first codes, money methods and finds unverified until they meet the video or 3+ confirmations bar.
 

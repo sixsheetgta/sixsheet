@@ -8,92 +8,107 @@
   },
   "launch": {
     "unlockUtc": "2026-11-19T05:00:00Z",
-    "note": "Counting down to midnight ET, the US store listing time. Rockstar Support confirms a midnight-local launch on Nov 19 in every region on PS5 and Xbox Series X|S, starting in New Zealand. In the US, the store timestamp means Central, Mountain and Pacific players may unlock before their own midnight."
+    "note": "Counting down to midnight ET, the US store listing time. Rockstar Support confirms a midnight-local launch on Nov 19 in every region on PS5 and Xbox Series X|S, starting in New Zealand. In the US, the store timestamp means Central, Mountain and Pacific players may unlock before their own midnight.",
+    "localDate": "2026-11-19"
   },
   "facts": [
     {
       "label": "Release",
       "value": "Thursday, November 19, 2026",
       "source": "Rockstar Games",
-      "url": "https://www.rockstargames.com/VI"
+      "url": "https://www.rockstargames.com/VI",
+      "short": "Nov 19"
     },
     {
       "label": "Unlock time",
       "value": "Rockstar Support confirms midnight local time on Nov 19 in every region, on both PS5 and Xbox Series X|S. New Zealand goes first; US store listings show midnight Eastern (05:00 UTC).",
       "source": "Rockstar Support",
-      "url": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s"
+      "url": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s",
+      "short": "Midnight"
     },
     {
       "label": "Platforms",
       "value": "PS5, Xbox Series X and Series S. No PC version announced.",
       "source": "Rockstar Support",
-      "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
+      "short": "PS5, Xbox"
     },
     {
       "label": "Xbox Cloud Gaming",
       "value": "Playable day one via Xbox Cloud Gaming on Xbox One and Series consoles, starting at 1 a.m. ET on November 19. Streams at Series S settings; the game is sold separately.",
       "source": "Xbox Wire",
-      "url": "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/"
+      "url": "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/",
+      "short": "Day one"
     },
     {
       "label": "Performance",
       "value": "Rockstar says the game targets 30 fps on every console. PS5 Pro adds PSSR upscaling for a sharper image plus ray-traced shadows that only the Pro gets. Remote Play works on both PlayStation and Xbox.",
       "source": "Rockstar Newswire",
-      "url": "https://www.rockstargames.com/VI/pre-load-now"
+      "url": "https://www.rockstargames.com/VI/pre-load-now",
+      "short": "30 fps"
     },
     {
       "label": "Price",
       "value": "Standard $79.99 / Ultimate $99.99 (Ultimate Upgrade $20 on the US Xbox Store)",
       "source": "Xbox Store",
-      "url": "https://www.xbox.com/en-US/games/store/grand-theft-auto-vi/9P3H4968GRSM"
+      "url": "https://www.xbox.com/en-US/games/store/grand-theft-auto-vi/9P3H4968GRSM",
+      "short": "$79.99"
     },
     {
       "label": "Physical copies",
       "value": "Code in a box. No disc at launch. Rockstar says boxed copies are available starting November 12 so you can redeem and pre-load. There is no physical Ultimate Edition.",
       "source": "Rockstar Support",
-      "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
+      "short": "No disc"
     },
     {
       "label": "Download size",
       "value": "Up to 212 GB, depending on console",
       "source": "Rockstar via GamesRadar+",
-      "url": "https://gamesradar.com/games/grand-theft-auto/rockstar-confirms-gta-6-is-212gb-pre-loading-opens-earlier-than-previously-announced-for-digital-orders"
+      "url": "https://gamesradar.com/games/grand-theft-auto/rockstar-confirms-gta-6-is-212gb-pre-loading-opens-earlier-than-previously-announced-for-digital-orders",
+      "short": "212 GB"
     },
     {
       "label": "Pre-load",
       "value": "Digital pre-load started November 10: midnight local time on PS5, and 12 a.m. GMT worldwide on Xbox. Redeem a code-in-box copy as soon as you have it (retail availability from November 12).",
       "source": "Rockstar Support",
-      "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
+      "short": "Open now"
     },
     {
       "label": "First update",
       "value": "Version 1.002 started rolling out in stages on November 13, about 1 GB on PS5. Rockstar hasn't posted patch notes. Let it install before launch night.",
       "source": "Polygon",
-      "url": "https://www.polygon.com/gta-6-nov-13-patch-102-what-is-download-size-ps5-xbox/"
+      "url": "https://www.polygon.com/gta-6-nov-13-patch-102-what-is-download-size-ps5-xbox/",
+      "short": "1.002"
     },
     {
       "label": "Second update",
       "value": "Version 1.002.001 began rolling out November 16: about 600 MB on PS5 and about 1.6 GB on Xbox Series X|S. PS5 gets it in stages, so check again if it hasn't shown up yet. Rockstar hasn't posted patch notes.",
       "source": "VICE",
-      "url": "https://www.vice.com/en/article/gta-6-second-day-one-patch-ps5-xbox/"
+      "url": "https://www.vice.com/en/article/gta-6-second-day-one-patch-ps5-xbox/",
+      "short": "1.002.001"
     },
     {
       "label": "Early-purchase bonus",
       "value": "Vintage Vice City Pack: a '55 Vapid Stanier sedan and garage, outfits and hairstyles, and an exclusive weapon pattern. Included with purchases before Nov 20. Digital editions also include one month of GTA+.",
       "source": "Rockstar Support",
-      "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
+      "short": "Before Nov 20"
     },
     {
       "label": "Free map and poster",
       "value": "From Nov 19, Rockstar's official GTA VI site will offer a free printable cover-art poster and Leonida map. A double-sided printed version follows on the Rockstar Store shortly after launch for $0.99, or free with any store order.",
       "source": "Rockstar via Polygon",
-      "url": "https://www.polygon.com/gta-6-preload-when-is-ps5-xbox-times-file-size-gb-poster-map-rockstar/"
+      "url": "https://www.polygon.com/gta-6-preload-when-is-ps5-xbox-times-file-size-gb-poster-map-rockstar/",
+      "short": "Nov 19"
     },
     {
       "label": "Mode at launch",
       "value": "Single-player",
       "source": "PlayStation",
-      "url": "https://www.playstation.com/en-us/games/grand-theft-auto-vi/"
+      "url": "https://www.playstation.com/en-us/games/grand-theft-auto-vi/",
+      "short": "Single-player"
     }
   ],
   "prep": [
@@ -158,5 +173,46 @@
       "why": "Hear the radio and the city properly.",
       "query": "wireless gaming headset PS5 Xbox"
     }
-  ]
+  ],
+  "storage": {
+    "sizeGb": 212,
+    "consoles": [
+      {
+        "id": "ps5",
+        "name": "PS5",
+        "sub": "825 GB",
+        "usableGb": 667
+      },
+      {
+        "id": "ps5-slim",
+        "name": "PS5 Slim",
+        "sub": "1 TB",
+        "usableGb": 848
+      },
+      {
+        "id": "ps5-pro",
+        "name": "PS5 Pro",
+        "sub": "2 TB",
+        "usableGb": 1890
+      },
+      {
+        "id": "series-x",
+        "name": "Series X",
+        "sub": "1 TB",
+        "usableGb": 802
+      },
+      {
+        "id": "series-s",
+        "name": "Series S",
+        "sub": "512 GB",
+        "usableGb": 364
+      },
+      {
+        "id": "series-s-1tb",
+        "name": "Series S",
+        "sub": "1 TB",
+        "usableGb": 800
+      }
+    ]
+  }
 }
