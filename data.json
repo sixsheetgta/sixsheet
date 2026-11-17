@@ -4,7 +4,7 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-16T16:15:00Z"
+    "updated": "2026-11-17T04:05:00Z"
   },
   "launch": {
     "unlockUtc": "2026-11-19T05:00:00Z",
@@ -124,7 +124,7 @@
     },
     {
       "id": "bonus",
-      "text": "Buy before Nov 20 for the Vintage Vice City Pack",
+      "text": "Buy before Nov 20 for the Vice City Pack",
       "detail": "Both editions include it. Digital copies also include one month of GTA+; claim it on the GTA+ page, and cancel if you do not want it to continue as a paid plan."
     },
     {
@@ -139,7 +139,7 @@
     },
     {
       "id": "patch",
-      "text": "Leave the console on and updated on launch night",
+      "text": "Keep the console on and updated",
       "detail": "Two updates have rolled out so far: 1.002 from November 13 and 1.002.001 from November 16, and more may follow. Leave the console on, or in Rest or Sleep mode with auto-updates on, and check for updates again on November 18."
     }
   ],
