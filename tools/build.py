@@ -92,6 +92,12 @@ ADS_HEAD = ""
 if ads:
     ADS_HEAD = (f'<meta name="google-adsense-account" content="{ads}">\n'
                 f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ads}" crossorigin="anonymous"></script>')
+gc = str(D["site"].get("goatcounter", "") or "").strip()
+if gc and not _re.fullmatch(r"[a-z0-9-]{2,40}", gc):
+    print("ERRORS:\n- site.goatcounter must be a GoatCounter code like sixsheet"); sys.exit(1)
+if gc:
+    ADS_HEAD += (("\n" if ADS_HEAD else "") +
+                 f'<script data-goatcounter="https://{gc}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>')
 ads_txt = ROOT / "ads.txt"
 if ads:
     ads_txt.write_text(f"google.com, {ads.replace('ca-', '', 1)}, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")
@@ -229,12 +235,13 @@ ad_sec = ("""<h2>Ads</h2><p>SixSheet shows ads from Google AdSense to pay for th
           """<h2>Ads</h2><p>SixSheet may show ads from Google AdSense in the future. If it does, this page will explain how they use cookies and how to opt out before they appear.</p>""")
 aff_sec = ("""<h2>Affiliate links</h2><p>Some links to Amazon are affiliate links. As an Amazon Associate, SixSheet earns from qualifying purchases, at no extra cost to you. Amazon may set cookies when you follow one.</p>"""
            if aff else "")
+gc_sec = ('<h2>Visitor counts</h2><p>We count visits with <a href="https://www.goatcounter.com/help/privacy" rel="noopener">GoatCounter</a>, which uses no cookies and does not track you across sites. It records things like the page viewed, the referring site, browser type, screen size and country, so we can see which pages are useful. It does not store your IP address.</p>\n' if gc else "")
 page("privacy", "Privacy Policy | SixSheet",
      "How SixSheet handles data: checklist progress stays in your browser, plus ads and affiliate links.",
      "Privacy", f"Last updated {datetime.date.today().isoformat()}. Short version: SixSheet has no accounts and doesn't collect your personal information.",
      f"""<h2>What stays on your device</h2><p>Your checklist and tracker progress, spoiler setting, console choice and similar preferences are saved in your browser's local storage. They never leave your device, and clearing your browser data deletes them.</p>
 <h2>Hosting</h2><p>The site is hosted on GitHub Pages. GitHub may log technical data such as IP addresses to run and secure the service. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>.</p>
-{ad_sec}{aff_sec}
+{gc_sec}{ad_sec}{aff_sec}
 <h2>Links to other sites</h2><p>Sources link to other websites, which have their own privacy policies.</p>
 <h2>Contact</h2><p>Questions about this policy: message {contact}.</p>""", "")
 
