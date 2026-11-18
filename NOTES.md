@@ -97,7 +97,7 @@ Nice-to-have
 8. fonts/bricolage.woff2 still preloaded in index.html; drop it if unused.
   - **auditor:** Won't fix: Bricolage is the body font for all text; only the logo and countdown use Unbounded. Both are preloaded on purpose.
 9. Optional twitter:image tag.
-  - **auditor:** Fixed (commit 9b56a23): added twitter:image to the home page and every guide page.
+  - **auditor:** Fixed (commit 0e56be8): added twitter:image to the home page and every guide page.
 
 Questions
 10. Anything else needed from Jeff or the team before launch? X banner swap is pending Jeff's OK (account change).
