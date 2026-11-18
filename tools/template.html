@@ -72,6 +72,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .cd .sec b{background:var(--sun);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 14px rgba(255,79,154,.3));animation:none}
 .cd-sub{margin:14px 0 14px;color:var(--dim)}
 .cd-sub strong{color:var(--ink);font-weight:600}
+.pick{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:15px;color:var(--dim)}
+.pick select{appearance:none;-webkit-appearance:none;font:600 15px "Bricolage",system-ui,sans-serif;color:#151518;background:var(--sun);border:0;border-radius:8px;padding:9px 34px 9px 13px;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1.500l5 5 5-5' fill='none' stroke='%23151518' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"),var(--sun);background-repeat:no-repeat;background-position:right 12px center,0 0}
+.pick select option{color:#151518;background:#f2f2f5}
+.first{margin:10px 0 0;font-size:15px;color:var(--dim)}
 .seg{display:inline-flex;border:1.5px solid var(--line);border-radius:8px;overflow:hidden}
 .seg button{padding:8px 14px;font-size:15px;font-weight:600;color:var(--dim)}
 .seg button+button{border-left:1.5px solid var(--line)}
@@ -396,24 +401,57 @@ body.shielded .sp:not(.open)>.spc{display:none}
 
   /* ---------- hero: countdown, then search ---------- */
   var US_TZ = /^(America\/(New_York|Detroit|Chicago|Denver|Boise|Phoenix|Los_Angeles|Anchorage|Juneau|Sitka|Nome|Yakutat|Metlakatla|Adak|Menominee|Indiana\/.+|Kentucky\/.+|North_Dakota\/.+)|Pacific\/Honolulu|US\/.+)$/;
+  // where the player's account is: each region unlocks at its own midnight (US uses the store's midnight ET)
+  var REGIONS = [
+    {id:'us', name:'United States', tz:'America/New_York', zones:US_TZ},
+    {id:'local', name:'My time zone'},
+    {id:'nz', name:'New Zealand', tz:'Pacific/Auckland', zones:/^Pacific\/(Auckland|Chatham)$/},
+    {id:'au', name:'Australia (east)', tz:'Australia/Sydney', zones:/^Australia\/(Sydney|Melbourne|Hobart|Canberra|ACT|NSW|Victoria)$/},
+    {id:'jp', name:'Japan', tz:'Asia/Tokyo', zones:/^Asia\/Tokyo$/},
+    {id:'eu', name:'Central Europe', tz:'Europe/Berlin', zones:/^Europe\/(Berlin|Paris|Madrid|Rome|Amsterdam|Brussels|Vienna|Zurich|Stockholm|Oslo|Copenhagen|Warsaw|Prague|Budapest)$/},
+    {id:'uk', name:'UK and Ireland', tz:'Europe/London', zones:/^Europe\/(London|Dublin)$/},
+    {id:'br', name:'Brazil (São Paulo)', tz:'America/Sao_Paulo', zones:/^America\/Sao_Paulo$/}
+  ];
+  function reg(id){ for (var i = 0; i < REGIONS.length; i++) if (REGIONS[i].id === id) return REGIONS[i]; return REGIONS[0]; }
   function guessRegion(){
     var saved = store.get('region', null);
-    if (saved === 'us' || saved === 'local') return saved;
-    try { return US_TZ.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? 'us' : 'local'; } catch (e) { return 'us'; }
+    if (saved && REGIONS.some(function(r){ return r.id === saved; })) return saved;
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      for (var i = 0; i < REGIONS.length; i++) if (REGIONS[i].zones && REGIONS[i].zones.test(tz)) return REGIONS[i].id;
+      return 'local';
+    } catch (e) { return 'us'; }
   }
-  function target(){
-    var us = new Date(D.launch.unlockUtc);
-    if (region === 'local' && D.launch.localDate) {
-      var p = String(D.launch.localDate).split('-');
-      var d = new Date(+p[0], +p[1] - 1, +p[2], 0, 0, 0);
-      if (!isNaN(d)) return d;
-    }
-    return us;
+  // UTC instant of midnight on the launch date in a given IANA time zone
+  function midnightIn(tz){
+    var p = String(D.launch.localDate).split('-'), guess = Date.UTC(+p[0], +p[1] - 1, +p[2]);
+    try {
+      var f = new Intl.DateTimeFormat('en-US', {timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'});
+      for (var k = 0; k < 2; k++) {
+        var o = {}; f.formatToParts(new Date(guess)).forEach(function(x){ o[x.type] = +x.value; });
+        var asUtc = Date.UTC(o.year, o.month - 1, o.day, o.hour % 24, o.minute, o.second);
+        guess -= (asUtc - Date.UTC(+p[0], +p[1] - 1, +p[2]));
+      }
+      return new Date(guess);
+    } catch (e) { return new Date(D.launch.unlockUtc); }
   }
+  function target(id){
+    id = id || region;
+    if (!D.launch.localDate || id === 'us') return new Date(D.launch.unlockUtc);
+    if (id === 'local') { var p = String(D.launch.localDate).split('-'); return new Date(+p[0], +p[1] - 1, +p[2], 0, 0, 0); }
+    return midnightIn(reg(id).tz);
+  }
+  function yours(t){ return t.toLocaleString(undefined, {weekday:'short', month:'short', day:'numeric', hour:'numeric', minute:'2-digit'}); }
   function whenLine(){
     var t = target();
     if (region === 'local') return 'Midnight on ' + t.toLocaleDateString(undefined, {weekday:'short', month:'short', day:'numeric'}) + ', your time.';
-    return t.toLocaleString(undefined, {weekday:'short', month:'short', day:'numeric', hour:'numeric', minute:'2-digit'}) + ' your time.';
+    if (region === 'us') return yours(t) + ' your time.';
+    return 'Midnight in ' + reg(region).name + ', which is ' + yours(t) + ' your time.';
+  }
+  function firstLine(){
+    if (region === 'nz') return 'New Zealand unlocks first in the world.';
+    var nz = target('nz'), mine = target(), h = Math.round((mine - nz) / 36e5);
+    return h > 0 ? 'New Zealand gets it ' + h + ' hours earlier, at ' + yours(nz) + ' your time.' : '';
   }
   function total(){ return D.codes.length + D.money.length + D.finds.length + D.tracker.length; }
   function renderHero(){
@@ -435,15 +473,15 @@ body.shielded .sp:not(.open)>.spc{display:none}
         '<span><b class="chrome" id="cd-d">0</b><i>d</i></span><span><b class="chrome" id="cd-h">00</b><i>h</i></span><span><b class="chrome" id="cd-m">00</b><i>m</i></span><span class="sec"><b id="cd-s">00</b><i>s</i></span>' +
       '</div>' +
       '<p class="cd-sub">until GTA VI unlocks. <strong id="cdWhen"></strong></p>' +
-      (hasLocal ? '<div class="seg" id="region" role="group" aria-label="Where your account is"><button type="button" data-r="us">US account</button><button type="button" data-r="local">Elsewhere</button></div>' : '') +
+      (hasLocal ? '<label class="pick"><span>Your account region</span><select id="region">' + REGIONS.map(function(r){ return '<option value="' + r.id + '">' + esc(r.name) + '</option>'; }).join('') + '</select></label><p class="first" id="cdFirst"></p>' : '') +
       (D.launch.note ? '<details class="why"><summary>How unlock times work</summary><p>' + esc(D.launch.note) + '</p></details>' : '') +
       '<p class="badge"><i></i>No story spoilers, ever</p>';
     paintRegion();
   }
   function paintRegion(){
-    var seg = $('region');
-    if (seg) Array.prototype.forEach.call(seg.children, function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-r') === region ? 'true' : 'false'); });
+    var sel = $('region'); if (sel) sel.value = region;
     var w = $('cdWhen'); if (w) w.textContent = whenLine();
+    var f = $('cdFirst'); if (f) f.textContent = firstLine();
   }
   function pad(n){ return (n < 10 ? '0' : '') + n; }
   function tick(){
@@ -662,7 +700,6 @@ body.shielded .sp:not(.open)>.spc{display:none}
       Array.prototype.forEach.call($('fitChips').children, function(b){ b.setAttribute('aria-pressed', b === el ? 'true' : 'false'); });
       paintFit(true); return;
     }
-    if ((el = t.closest('#region button'))) { region = el.getAttribute('data-r'); store.set('region', region); paintRegion(); tick(); return; }
     if ((el = t.closest('#plat button'))) { plat = el.getAttribute('data-p'); store.set('plat', plat); renderCodes(); if ($('v-results').classList.contains('on')) search(); return; }
     if ((el = t.closest('.spb'))) { el.parentNode.classList.add('open'); return; }
     if ((el = t.closest('.copy'))) {
@@ -675,6 +712,9 @@ body.shielded .sp:not(.open)>.spc{display:none}
     if (t.closest('#share')) { copy(location.href, 'Link copied'); return; }
     if (t.closest('#clearQ')) { var q = $('q'); if (q) q.value = ''; route(); return; }
     if (t.closest('#tabs a')) { var qq = $('q'); if (qq) qq.value = ''; window.scrollTo(0, 0); if (t.closest('#tabs a').getAttribute('href') === location.hash) route(); }
+  });
+  document.addEventListener('change', function(e){
+    if (e.target.id === 'region') { region = e.target.value; store.set('region', region); paintRegion(); tick(); }
   });
   document.addEventListener('input', function(e){
     if (e.target.id === 'codeQ') renderCodes();
