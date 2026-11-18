@@ -16,6 +16,7 @@
 <meta name="theme-color" content="#1d1c20">
 <meta name="color-scheme" content="dark">
 <link rel="icon" type="image/png" href="brand/avatar.png">
+<!--ADS-->
 <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:"Bricolage";src:url(fonts/bricolage.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
@@ -310,6 +311,7 @@ body.shielded .sp:not(.open)>.spc{display:none}
       <p id="updated"></p>
       <p id="contact"></p>
       <p><a href="guide/launch.html">Launch guide</a>, <a href="guide/codes.html">cheat codes</a>, <a href="guide/money.html">money</a>, <a href="guide/collectibles.html">collectibles</a>, <a href="guide/finds.html">finds</a></p>
+      <p><a href="guide/about.html">About</a>, <a href="guide/privacy.html">privacy</a></p>
       <p>Unofficial fan site. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive, who own the Grand Theft Auto trademarks.</p>
     </footer>
   </main>
@@ -399,6 +401,9 @@ body.shielded .sp:not(.open)>.spc{display:none}
     var h = $('hero');
     document.body.setAttribute('data-live', live ? '1' : '0');
     $('prepTab').textContent = live ? 'Start' : 'Launch';
+    var tabs = $('tabs'), pt = tabs.querySelector('a[data-v="prep"]');
+    if (live && tabs.lastElementChild !== pt) tabs.appendChild(pt);
+    if (!live && tabs.firstElementChild !== pt) tabs.insertBefore(pt, tabs.firstElementChild);
     if (live) {
       h.innerHTML = '<p class="out">It’s out.</p>' + (total()
         ? '<label class="find"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.500" cy="10.500" r="6.500"/><path d="M15.500 15.500L21 21"/></svg><input id="q" type="search" placeholder="Search codes, money, finds" aria-label="Search everything"></label>'

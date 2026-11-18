@@ -62,6 +62,13 @@ if st is not None:
         for i, c in enumerate(st["consoles"]):
             if not (isinstance(c, dict) and c.get("id") and c.get("name") and isinstance(c.get("usableGb"), (int, float)) and c["usableGb"] > 0):
                 errors.append(f"storage.consoles[{i}] needs id, name and a positive usableGb")
+import re as _re
+ads = str(D["site"].get("adsenseClient", "") or "").strip()
+if ads and not _re.fullmatch(r"ca-pub-\d{16}", ads):
+    errors.append("site.adsenseClient must look like ca-pub-1234567890123456 (or be empty)")
+aff = str(D["site"].get("affiliateTag", "") or "").strip()
+if aff and not _re.fullmatch(r"[A-Za-z0-9-]{3,40}", aff):
+    errors.append("site.affiliateTag must be your Amazon tracking ID, like sixsheet-20 (or be empty)")
 ld = D["launch"].get("localDate")
 if ld is not None:
     try:
@@ -71,10 +78,20 @@ if ld is not None:
 if errors:
     print("ERRORS:\n- " + "\n- ".join(errors)); sys.exit(1)
 
+ADS_HEAD = ""
+if ads:
+    ADS_HEAD = (f'<meta name="google-adsense-account" content="{ads}">\n'
+                f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ads}" crossorigin="anonymous"></script>')
+ads_txt = ROOT / "ads.txt"
+if ads:
+    ads_txt.write_text(f"google.com, {ads.replace('ca-', '', 1)}, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")
+elif ads_txt.exists():
+    ads_txt.unlink()
+
 # ---------- index.html ----------
 seed = json.dumps(D, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
 tpl = (ROOT / "tools" / "template.html").read_text(encoding="utf-8")
-(ROOT / "index.html").write_text(tpl.replace("/*SEED*/", seed), encoding="utf-8")
+(ROOT / "index.html").write_text(tpl.replace("/*SEED*/", seed).replace("<!--ADS-->", ADS_HEAD), encoding="utf-8")
 
 # ---------- guide pages ----------
 e = lambda s: html.escape(str(s if s is not None else ""))
@@ -109,12 +126,13 @@ def page(slug, title, desc, h1, intro, body, tab):
 <meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}">
 <meta property="og:image" content="{BASE}brand/header.png"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1d1c20"><link rel="icon" type="image/png" href="../brand/avatar.png">
+{ADS_HEAD}
 <style>{CSS}</style></head><body><div class="w">
 <div class="top"><a href="../index.html">SixSheet</a></div>
-<h1>{e(h1)}</h1><p class="m">Updated {updated[:10]}. No story spoilers.</p><p>{intro}</p>
-<a class="cta" href="../index.html#{tab}">Open the interactive version</a>
+<h1>{e(h1)}</h1>{f'<p class="m">Updated {updated[:10]}. No story spoilers.</p>' if tab else ''}<p>{intro}</p>
+{f'<a class="cta" href="../index.html#{tab}">Open the interactive version</a>' if tab else ''}
 {body}
-<footer><p><a href="launch.html">Launch guide</a>, <a href="codes.html">cheat codes</a>, <a href="money.html">money</a>, <a href="collectibles.html">collectibles</a>, <a href="finds.html">finds</a></p>
+<footer><p><a href="launch.html">Launch guide</a>, <a href="codes.html">cheat codes</a>, <a href="money.html">money</a>, <a href="collectibles.html">collectibles</a>, <a href="finds.html">finds</a>. <a href="about.html">About</a>, <a href="privacy.html">privacy</a>.</p>
 <p>SixSheet is an unofficial fan site, not affiliated with or endorsed by Rockstar Games or Take-Two Interactive.</p></footer>
 </div></body></html>"""
     (ROOT / "guide").mkdir(exist_ok=True)
@@ -175,9 +193,37 @@ page("finds", "GTA VI Secrets, Hidden Spots & Tricks (Spoiler-Free) | SixSheet",
      "The latest GTA VI discoveries: hidden spots, tricks and easter eggs, credited to the players who found them.",
      "Latest GTA VI finds", "Newest first. Anything spoiler-ish is hidden until you tap it.", rows, "finds")
 
+# About
+xh = _re.sub(r"[^A-Za-z0-9_]", "", str(D["site"].get("xHandle", "")))
+contact = f'<a href="https://x.com/{xh}" rel="noopener">@{xh}</a> on X' if xh else "X"
+page("about", "About SixSheet | Spoiler-Free GTA VI Cheat Sheet",
+     "What SixSheet is, how entries get checked, and how to reach us.",
+     "About SixSheet", "SixSheet is a free, spoiler-free GTA VI cheat sheet: launch prep, tested cheat codes, money methods, collectible trackers and new finds.",
+     f"""<h2>How entries get checked</h2>
+<ul><li>Every code, money method and find links to where it came from, and credits the player who found it.</li>
+<li>Something is marked tested only with clear in-game video or several independent confirmations.</li>
+<li>No story spoilers, leaks, rumors or piracy. Secrets that might spoil a surprise stay hidden until you tap them.</li></ul>
+<h2>Contact</h2><p>Spotted a mistake or found something new? Message {contact}.</p>
+<h2>Not official</h2><p>SixSheet is an independent fan site. It is not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Grand Theft Auto and related names are their trademarks.</p>""", "")
+
+# Privacy
+ad_sec = ("""<h2>Ads</h2><p>SixSheet shows ads from Google AdSense to pay for the site. Google and its partners use cookies to show ads based on your visits to this and other sites. You can turn off personalized ads at <a href="https://adssettings.google.com" rel="noopener">Google Ad Settings</a>, and read how Google uses this data at <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com</a>. Visitors in the EU, UK and Switzerland are asked for consent before personalized ads are shown.</p>"""
+          if ads else
+          """<h2>Ads</h2><p>SixSheet may show ads from Google AdSense in the future. If it does, this page will explain how they use cookies and how to opt out before they appear.</p>""")
+aff_sec = ("""<h2>Affiliate links</h2><p>Some links to Amazon are affiliate links. As an Amazon Associate, SixSheet earns from qualifying purchases, at no extra cost to you. Amazon may set cookies when you follow one.</p>"""
+           if aff else "")
+page("privacy", "Privacy Policy | SixSheet",
+     "How SixSheet handles data: checklist progress stays in your browser, plus ads and affiliate links.",
+     "Privacy", f"Last updated {datetime.date.today().isoformat()}. Short version: SixSheet has no accounts and doesn't collect your personal information.",
+     f"""<h2>What stays on your device</h2><p>Your checklist and tracker progress, spoiler setting, console choice and similar preferences are saved in your browser's local storage. They never leave your device, and clearing your browser data deletes them.</p>
+<h2>Hosting</h2><p>The site is hosted on GitHub Pages. GitHub may log technical data such as IP addresses to run and secure the service. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>.</p>
+{ad_sec}{aff_sec}
+<h2>Links to other sites</h2><p>Sources link to other websites, which have their own privacy policies.</p>
+<h2>Contact</h2><p>Questions about this policy: message {contact}.</p>""", "")
+
 # Sitemap
 today = datetime.date.today().isoformat()
-urls = [BASE] + [f"{BASE}guide/{s}.html" for s in ("launch", "codes", "money", "collectibles", "finds")]
+urls = [BASE] + [f"{BASE}guide/{s}.html" for s in ("launch", "codes", "money", "collectibles", "finds", "about", "privacy")]
 (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     "".join(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n", encoding="utf-8")
 

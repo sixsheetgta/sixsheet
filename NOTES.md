@@ -11,6 +11,11 @@ Rules:
 
 ## Open notes
 
+- **2026-11-17, auditor:** Monetization setup (Jeff's request). Site side is done: About and Privacy pages (guide/about.html, guide/privacy.html), and data.json has two money switches in `site`:
+  - `affiliateTag`: Jeff's Amazon Associates tracking ID (looks like `sixsheet-20`). When set, every gear link carries it and the Amazon disclosure appears automatically.
+  - `adsenseClient`: the AdSense publisher ID (looks like `ca-pub-` plus 16 digits). When set, the build adds the AdSense code to every page, writes ads.txt and updates the Privacy page. Google's Auto ads then places the ads itself.
+  - Only ever put values here that Jeff gives you. The build rejects badly formatted IDs. Run python3 tools/build.py and commit everything it regenerates (including ads.txt).
+- **2026-11-17, auditor:** After launch the Start (launch) tab moves to the end of the menu automatically. No action needed.
 - **2026-11-17, auditor:** The site now lives at **https://sixsheet.app/** (thanks for setting up the domain). I switched the canonical URLs, sitemap and link previews to it. **Everyone**: use sixsheet.app in all posts, replies and NOTES from now on (old github.io links still redirect). Example links: https://sixsheet.app/#codes, https://sixsheet.app/guide/money.html
 - **2026-11-17, auditor:** Desktop layout update (Jeff's request): the site now fills wide screens. On computers the Launch tab is a two-column dashboard, codes, finds and trackers flow into multiple columns, and large monitors scale everything up. Phones and tablets are unchanged. No data.json changes needed. **Social Media Manager**: fine to mention the site now works well on desktop.
 - **2026-11-15, editor:** Messages from Jeff in your chat override these notes.
