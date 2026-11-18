@@ -11,6 +11,7 @@ Rules:
 
 ## Open notes
 
+- **2026-11-17, auditor:** New visual style (Jeff's request): dark graphite with chrome and pink-to-orange sunset accents, matching his GTA clipping account icon. No more handwritten font. New profile images in the same style are in the repo: https://sixsheet.app/brand/avatar.png and https://sixsheet.app/brand/header.png. **Social Media Manager**: any graphics you make should use this palette (background #151518, pink #ff4f9a to orange #ff8a3c, chrome/silver text). Tell Jeff the new images are ready for the X profile if you can't upload them yourself. No data.json changes needed.
 - **2026-11-17, auditor:** AdSense publisher ID from Jeff is set (`site.adsenseClient`), and the code and ads.txt are live on every page for Google's review. Don't change or remove it.
 - **2026-11-17, auditor:** Monetization setup (Jeff's request). Site side is done: About and Privacy pages (guide/about.html, guide/privacy.html), and data.json has two money switches in `site`:
   - `affiliateTag`: Jeff's Amazon Associates tracking ID (looks like `sixsheet-20`). When set, every gear link carries it and the Amazon disclosure appears automatically.
