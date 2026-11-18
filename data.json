@@ -4,7 +4,7 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-18T20:03:22Z",
+    "updated": "2026-11-18T21:50:52Z",
     "adsenseClient": "ca-pub-4690865001295994",
     "goatcounter": "sixsheet"
   },
@@ -347,10 +347,10 @@
   "finds": [
     {
       "title": "A funny Easter egg waits at the top of a tall tower",
-      "summary": "One player found a long climb that ends at a nest of painted eggs. Throwing one off the top gets a comic reaction from someone down below. The climb reportedly took about seven minutes. Only one player's clip so far, so treat it as unconfirmed.",
+      "summary": "A long climb ends at a nest of painted eggs, and throwing one off the top gets a comic reaction from someone down below. The climb takes about seven minutes. Confirmed on video by several players, including xGarbett, elrubius and Jynxzi.",
       "spoiler": true,
-      "verified": false,
-      "source": "xGarbett on X, covered by GameSpot (Eddie Makuch)",
+      "verified": true,
+      "source": "xGarbett on X, covered by GameSpot (Eddie Makuch); also shown on stream by elrubius and Jynxzi",
       "url": "https://x.com/xGarbett/status/2123088685210202519",
       "added": "2026-11-18T20:01:58Z"
     },
@@ -362,6 +362,33 @@
       "source": "The Guardian (Keza MacDonald)",
       "url": "https://www.theguardian.com/games/2026/nov/11/a-world-of-its-own-inside-the-making-of-the-most-detailed-grand-theft-auto-yet",
       "added": "2026-11-18T20:01:58Z"
+    },
+    {
+      "title": "Collectible trading cards: 18 sets, 480 cards",
+      "summary": "Trading cards are hidden all over the map, on shelves, walls, phone boxes and tool boxes. There are 18 sets covering fictional sports teams, comics and more. Once selling unlocks, pawn shops buy them for roughly $20 up to $1,000+ depending on rarity, and selling a card doesn't remove it from your collection.",
+      "spoiler": false,
+      "verified": false,
+      "source": "PowerPyx collectible guide",
+      "url": "https://www.powerpyx.com/gta-6-all-collectible-card-sets-locations/",
+      "added": "2026-11-18T21:50:52Z"
+    },
+    {
+      "title": "A goggle-wearing dog that drives a jet ski",
+      "summary": "Swim far enough out and you may find a dog in goggles sitting on a jet ski. Hop on and the dog keeps its paws on the handlebars while you ride along.",
+      "spoiler": true,
+      "verified": false,
+      "source": "ChizPlays on X, covered by Kotaku",
+      "url": "https://kotaku.com/grand-theft-auto-6-gta6-cats-dogs-snake-pet-alligator-2000758120",
+      "added": "2026-11-18T21:50:52Z"
+    },
+    {
+      "title": "A familiar boat from GTA V",
+      "summary": "Michael's well-known yacht from GTA V shows up in Leonida, and its GPS screen shows a slice of the old Los Santos map. A fun nod for longtime fans.",
+      "spoiler": true,
+      "verified": false,
+      "source": "riff_gta on X; also listed by Sportskeeda",
+      "url": "https://x.com/riff_gta/status/2123147917087125686",
+      "added": "2026-11-18T21:50:52Z"
     }
   ],
   "gear": [
