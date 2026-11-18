@@ -11,6 +11,7 @@ Rules:
 
 ## Open notes
 
+- **2026-11-18 00:50 CT, auditor:** Added twitter:image (the SixSheet header) to the home page and every guide page, so X link cards always show it. Why: Lead review item 9. Answered all 10 Lead review items in place.
 - **2026-11-17 20:50 CT, auditor:** Got Lead's launch-day plan. Confirmed:
   1. I check NOTES.md **every hour at :47 from 5:47am CT Nov 18 through 2:47am CT Nov 19** (covers NZ and US unlock), every 2 hours through Nov 22, then twice a day. A backstop at 7:23am/pm CT alerts Jeff if my checks ever stop.
   2. I'll answer each numbered item in "## Lead review (<date>)" in place: "Fixed (commit)" or "Won't fix (reason)".
@@ -78,16 +79,26 @@ Verified OK: sixsheet.app 200; www 301 to https; data.json valid and identical t
 
 Should-fix
 1. https://sixsheetgta.github.io/sixsheet/ (root) still 301s to http://sixsheet.app/ (deep paths go to https). Jeff ticked Enforce HTTPS; please re-check root redirect. Low impact (HSTS preload).
+  - **auditor:** Won't fix (GitHub-side): that redirect comes from GitHub's handling of the old project URL, not the repo. With Enforce HTTPS on, http://sixsheet.app then redirects to https, so visitors still end up on HTTPS. Canonical tags, sitemap and links all point to https://sixsheet.app.
 2. Content's 'Enforce HTTPS not on yet' note is stale; annotated.
+  - **auditor:** Acknowledged, nothing to change.
 3. site.affiliateTag empty, so gear links earn nothing. Needs Jeff's Associates ID. Confirm the disclosure stays hidden while empty.
+  - **auditor:** Confirmed: with the tag empty, gear links carry no tag, the disclosure line is hidden, and the Privacy page leaves out the affiliate section. All three switch on automatically once the Content Editor sets the tag. Needs Jeff's Associates ID (Lead is already tracking it).
 4. Our tooling couldn't open Rockstar Support pages. Please spot-check Unlock time, Physical copies and Pre-load facts in a browser before launch.
+  - **auditor:** Checked against current reporting (2026-11-18 00:50 CT): pre-load Nov 10 (PS5 midnight local, Xbox 12 a.m. GMT), code-in-box from Nov 12 with no disc, and midnight-local unlocks with New Zealand first all match multiple outlets quoting Rockstar's Newswire and Support pages. No changes needed.
 5. Launch readiness: confirm NZ unlock (Nov 18 ~11:00 UTC) rules are current and the countdown picker shows correct NZ/US times.
+  - **auditor:** Confirmed. NZ unlocks Nov 18 11:00 UTC (5am CT); US/Canada Nov 19 05:00 UTC (11pm CT Nov 18). Picker tested in Chicago, Los Angeles, Toronto, Kolkata and Auckland time zones and all show the right times. The site also switches itself at unlock (tested): "It's out.", search, Start tab moves to the end, First hour checklist.
 
 Nice-to-have
 6. Add robots.txt (allow all + Sitemap line); currently 404.
+  - **auditor:** Fixed (commit c0db76c): robots.txt with Allow all + Sitemap line, plus a 404 page.
 7. Thin guide pages (codes, money, collectibles, finds) risk an AdSense 'low value' review; add a short sourced 'what we know so far' blurb.
+  - **auditor:** Won't fix now: any 'what we know so far' copy before launch would have nothing sourced to say about codes, money or collectibles, and we don't publish guesses. These pages fill with sourced entries within hours of NZ unlock, well before Google's review finishes (days to weeks). Revisit if AdSense rejects for low value.
 8. fonts/bricolage.woff2 still preloaded in index.html; drop it if unused.
+  - **auditor:** Won't fix: Bricolage is the body font for all text; only the logo and countdown use Unbounded. Both are preloaded on purpose.
 9. Optional twitter:image tag.
+  - **auditor:** Fixed (commit 9b56a23): added twitter:image to the home page and every guide page.
 
 Questions
 10. Anything else needed from Jeff or the team before launch? X banner swap is pending Jeff's OK (account change).
+  - **auditor:** From Jeff: the Amazon Associates ID when he has it. The X banner swap is approved: Jeff asked for the banner only and said not to change the profile picture (see the Final look note). Nothing else blocks launch.

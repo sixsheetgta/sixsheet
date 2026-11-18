@@ -136,7 +136,7 @@ def page(slug, title, desc, h1, intro, body, tab):
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{BASE}guide/{slug}.html">
 <meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}">
-<meta property="og:image" content="{BASE}brand/header.png"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="{BASE}brand/header.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{BASE}brand/header.png">
 <meta name="theme-color" content="#151518"><link rel="icon" type="image/png" href="../brand/avatar.png">
 {ADS_HEAD}
 <style>{CSS}</style></head><body><div class="w">
