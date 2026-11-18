@@ -26,12 +26,14 @@
   --pink:#ff4f9a;--orange:#ff8a3c;
   --sun:linear-gradient(100deg,#ff4f9a 0%,#ff6a6a 50%,#ff8a3c 100%);
   --chrome:linear-gradient(180deg,#ffffff 0%,#e3e5ea 28%,#9ba0ab 47%,#4a4e57 53%,#b9bdc6 68%,#f5f6f8 100%);
-  --chrome-hi:linear-gradient(180deg,#ffffff 0%,#eef3ff 12%,#a9bad6 30%,#f6f9ff 43%,#c7cdd8 47%,#262a33 50%,#0c0d12 52.5%,#3b2a3a 55%,#c25d93 60%,#ff9fcb 65%,#ffe3ef 74%,#ffffff 82%,#d9dde6 90%,#8e95a3 100%);
-  --glint:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.0) 44%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 56%,transparent 60%);
-  --cy:50%;
+  --liquid:linear-gradient(115deg,#ffffff 0%,#dfe6f1 6%,#8fa6c8 10%,#2f4466 12.5%,#9fb5d6 14%,#f4f7fb 19%,#ffffff 24%,#cfd4dc 29%,#a7623a 33%,#4a2a17 35%,#d88a52 37%,#fde4cc 41%,#ffffff 46%,#e6ebf2 52%,#7c96bf 57%,#263856 59.5%,#a9bcda 61%,#f6f9fc 66%,#ffffff 71%,#c9ced7 77%,#b8693c 81%,#52301a 83%,#e39a63 85%,#fff1e3 90%,#ffffff 100%);
+  --shade:linear-gradient(180deg,rgba(255,255,255,.30) 0%,rgba(255,255,255,0) 40%,rgba(18,22,34,0) 58%,rgba(18,22,34,.30) 100%);
+  --glint:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.9) 50%,transparent 58%);
+  --cx:30%;--cy:40%;
   --pad:20px;--bar:64px;
 }
 @property --gx{syntax:"<percentage>";inherits:false;initial-value:170%}
+@property --drift{syntax:"<percentage>";inherits:false;initial-value:0%}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.45 "Bricolage",system-ui,-apple-system,"Segoe UI",sans-serif;padding-top:env(safe-area-inset-top)}
@@ -48,13 +50,14 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 /* ---------- frame ---------- */
 .page{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:0 var(--pad) calc(var(--bar) + 40px + env(safe-area-inset-bottom))}
 .mast{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0 6px}
-.chrome{background:var(--glint) var(--gx) 0/260% 100% no-repeat,var(--chrome-hi) 0 var(--cy)/100% 155% no-repeat;
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#e3e5ea;
-  filter:drop-shadow(0 -1px 0 rgba(255,255,255,.35)) drop-shadow(0 1.5px 0 #07080b) drop-shadow(0 0 14px rgba(255,79,154,.22));
-  transition:background-position .45s cubic-bezier(.2,.7,.2,1)}
-.chrome.glint{animation:glint .9s cubic-bezier(.3,.6,.3,1)}
+.chrome{background:var(--glint) var(--gx) 0/260% 100% no-repeat,var(--shade),var(--liquid) calc(var(--cx) + var(--drift)) var(--cy)/170% 170%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#e3e7ee;
+  filter:drop-shadow(0 0 .45px rgba(255,255,255,.9)) drop-shadow(0 0 .8px rgba(8,10,16,.95)) drop-shadow(0 2px 3px rgba(0,0,0,.55));
+  animation:drift 14s ease-in-out infinite;transition:background-position .5s cubic-bezier(.2,.7,.2,1)}
+.chrome.glint{animation:drift 14s ease-in-out infinite,glint .9s cubic-bezier(.3,.6,.3,1)}
+@keyframes drift{0%,100%{--drift:0%}50%{--drift:28%}}
 @keyframes glint{from{--gx:170%}to{--gx:-70%}}
-.mark{position:relative;display:inline-block;font-weight:800;font-stretch:75%;font-size:32px;line-height:1.05;letter-spacing:.01em;text-decoration:none;padding-bottom:9px}
+.mark{position:relative;display:inline-block;font-weight:800;font-stretch:75%;font-size:34px;line-height:1.05;letter-spacing:.01em;text-decoration:none;padding-bottom:9px}
 .mark::after{content:"";position:absolute;left:1px;right:1px;bottom:0;height:3px;border-radius:2px;background:var(--sun);box-shadow:0 0 10px rgba(255,79,154,.45)}
 .tools{display:flex;gap:6px}
 .tool{display:flex;align-items:center;gap:7px;height:38px;padding:0 10px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;font-weight:600;color:var(--dim)}
@@ -731,7 +734,7 @@ body.shielded .sp:not(.open)>.spc{display:none}
   // chrome: the reflection slides as you scroll or move over it, and a glint sweeps across
   var root = document.documentElement, glintAt = 0, raf = 0, reduce = false;
   try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
-  function setCy(v){ root.style.setProperty('--cy', v.toFixed(1) + '%'); }
+  function setPos(x, y){ root.style.setProperty('--cx', x.toFixed(1) + '%'); if (y != null) root.style.setProperty('--cy', y.toFixed(1) + '%'); }
   function glint(force){
     var now = Date.now(); if (reduce || (!force && now - glintAt < 2500)) return; glintAt = now;
     Array.prototype.forEach.call(document.querySelectorAll('.chrome'), function(el, i){
@@ -739,26 +742,26 @@ body.shielded .sp:not(.open)>.spc{display:none}
       setTimeout(function(){ el.classList.add('glint'); }, i * 70);
     });
   }
-  document.addEventListener('animationend', function(e){ if (e.target.classList && e.target.classList.contains('chrome')) e.target.classList.remove('glint'); });
+  document.addEventListener('animationend', function(e){ if (e.animationName === 'glint' && e.target.classList) e.target.classList.remove('glint'); });
   if (!reduce) {
     window.addEventListener('scroll', function(){
       if (raf) return;
       raf = requestAnimationFrame(function(){
         raf = 0;
-        var t = (window.scrollY / 420) % 2, w = t < 1 ? t : 2 - t;   // back and forth
-        setCy(34 + w * 32);
+        var t = (window.scrollY / 600) % 2, w = t < 1 ? t : 2 - t;   // back and forth
+        setPos(10 + w * 80, 30 + w * 30);
         glint(false);
       });
     }, {passive: true});
     var mk = $('mark');
     mk.addEventListener('pointerenter', function(){ glint(true); });
     mk.addEventListener('pointermove', function(e){
-      var r = mk.getBoundingClientRect(); setCy(34 + Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * 32);
+      var r = mk.getBoundingClientRect(); setPos(10 + Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * 80, 20 + Math.max(0, Math.min(1, (e.clientY - r.top) / r.height)) * 50);
     });
     var cdBox = $('hero');
     cdBox.addEventListener('pointermove', function(e){
       if (!e.target.closest('.cd')) return;
-      var r = cdBox.getBoundingClientRect(); setCy(34 + Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * 32);
+      var r = cdBox.getBoundingClientRect(); setPos(10 + Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * 80, 20 + Math.max(0, Math.min(1, (e.clientY - r.top) / r.height)) * 50);
     });
     setTimeout(function(){ glint(true); }, 600);
   }
