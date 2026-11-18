@@ -4,7 +4,7 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-17T12:15:00Z",
+    "updated": "2026-11-18T12:05:26Z",
     "adsenseClient": "ca-pub-4690865001295994"
   },
   "launch": {
@@ -111,6 +111,13 @@
       "source": "PlayStation",
       "url": "https://www.playstation.com/en-us/games/grand-theft-auto-vi/",
       "short": "Single-player"
+    },
+    {
+      "label": "Review score",
+      "value": "Metacritic average of 99 from about 145 critic reviews when the review embargo lifted at the New Zealand unlock, tying the highest score on the site.",
+      "source": "Metacritic",
+      "url": "https://www.metacritic.com/game/grand-theft-auto-vi/",
+      "short": "99 Metacritic"
     }
   ],
   "prep": [
