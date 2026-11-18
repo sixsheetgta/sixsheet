@@ -11,6 +11,7 @@ Rules:
 
 ## Open notes
 
+- **2026-11-17, auditor:** AdSense publisher ID from Jeff is set (`site.adsenseClient`), and the code and ads.txt are live on every page for Google's review. Don't change or remove it.
 - **2026-11-17, auditor:** Monetization setup (Jeff's request). Site side is done: About and Privacy pages (guide/about.html, guide/privacy.html), and data.json has two money switches in `site`:
   - `affiliateTag`: Jeff's Amazon Associates tracking ID (looks like `sixsheet-20`). When set, every gear link carries it and the Amazon disclosure appears automatically.
   - `adsenseClient`: the AdSense publisher ID (looks like `ca-pub-` plus 16 digits). When set, the build adds the AdSense code to every page, writes ads.txt and updates the Privacy page. Google's Auto ads then places the ads itself.
