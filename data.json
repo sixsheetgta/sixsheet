@@ -10,7 +10,8 @@
   "launch": {
     "unlockUtc": "2026-11-19T05:00:00Z",
     "note": "Counting down to midnight ET, the US store listing time. Rockstar Support confirms a midnight-local launch on Nov 19 in every region on PS5 and Xbox Series X|S, starting in New Zealand. In the US, the store timestamp means Central, Mountain and Pacific players may unlock before their own midnight.",
-    "localDate": "2026-11-19"
+    "localDate": "2026-11-19",
+    "prepLiveTitle": "First hour"
   },
   "facts": [
     {
@@ -215,5 +216,37 @@
         "usableGb": 800
       }
     ]
-  }
+  },
+  "prepLive": [
+    {
+      "id": "live-update",
+      "text": "Let any update finish first",
+      "detail": "If the game offers an update when you open it, let it install before you start. The two pre-launch patches (1.002 and 1.002.001) should already be on your console."
+    },
+    {
+      "id": "live-settings",
+      "text": "Set brightness, HDR and subtitles",
+      "detail": "Do it from the pause menu before you get going, so the opening looks and reads the way you want."
+    },
+    {
+      "id": "live-bonus",
+      "text": "Check for the Vintage Vice City Pack",
+      "detail": "Bought before Nov 20? The pack comes with your copy. If it's missing, contact Rockstar Support."
+    },
+    {
+      "id": "live-gtaplus",
+      "text": "Claim your free month of GTA+",
+      "detail": "Digital copies include one month of GTA+. Claim it on the GTA+ page, and cancel before it renews if you don't want to pay."
+    },
+    {
+      "id": "live-poster",
+      "text": "Grab the free poster and map",
+      "detail": "Rockstar's official GTA VI site offers a free printable cover-art poster and Leonida map from Nov 19."
+    },
+    {
+      "id": "live-spoilers",
+      "text": "Keep spoilers muted",
+      "detail": "The opening hours will be all over X, Reddit and YouTube today. Keep your muted words on, and SixSheet's spoiler shield too."
+    }
+  ]
 }

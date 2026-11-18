@@ -27,6 +27,16 @@ for k in ["site", "launch"]:
 for k in ARRAYS:
     if not isinstance(D.get(k), list):
         errors.append(f"'{k}' must be an array")
+if "prepLive" in D and not isinstance(D["prepLive"], list):
+    errors.append("'prepLive' must be an array")
+for sec in ("prep", "prepLive"):
+    ids = set()
+    for i, it in enumerate(D.get(sec) or []):
+        if not isinstance(it, dict) or not it.get("id") or not it.get("text"):
+            errors.append(f"{sec}[{i}] needs an id and text"); continue
+        if it["id"] in ids: errors.append(f"duplicate {sec} id '{it['id']}'")
+        ids.add(it["id"])
+        if len(it["text"]) > 48: warnings.append(f"{sec}[{i}] text is over 48 characters; move the rest into detail")
 if errors:
     print("ERRORS:\n- " + "\n- ".join(errors)); sys.exit(1)
 
@@ -144,11 +154,16 @@ def empty(msg): return f'<div class="c m">{e(msg)}</div>'
 
 # Launch
 facts = "".join(f'<div class="c"><b>{e(f["label"])}</b><div>{e(f["value"])}</div>{src(f)}</div>' for f in D["facts"])
-prep = "".join(f'<li><b>{e(p["text"])}</b>. {e(p.get("detail",""))}</li>' for p in D["prep"])
+try:
+    _live = datetime.datetime.now(datetime.timezone.utc) >= datetime.datetime.fromisoformat(str(D["launch"]["unlockUtc"]).replace("Z", "+00:00"))
+except Exception:
+    _live = False
+_items = D.get("prepLive") if (_live and D.get("prepLive")) else D["prep"]
+prep = "".join(f'<li><b>{e(p["text"])}</b>. {e(p.get("detail",""))}</li>' for p in _items)
 page("launch", "GTA VI Launch Guide: Unlock Time, Size, Price & Checklist | SixSheet",
      "When GTA VI unlocks, how much space you need, editions and prices, plus a spoiler-free launch checklist.",
      "GTA VI launch guide", "Everything confirmed about launch, with sources. No rumors, no spoilers.",
-     f"<h2>Checklist</h2><ul>{prep}</ul><h2>Confirmed facts</h2>{facts}", "prep")
+     f"<h2>{'First hour' if _live and D.get('prepLive') else 'Checklist'}</h2><ul>{prep}</ul><h2>Confirmed facts</h2>{facts}", "prep")
 
 # Codes
 if D["codes"]:
@@ -228,6 +243,17 @@ today = datetime.date.today().isoformat()
 urls = [BASE] + [f"{BASE}guide/{s}.html" for s in ("launch", "codes", "money", "collectibles", "finds", "about", "privacy")]
 (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     "".join(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n", encoding="utf-8")
+
+(ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n", encoding="utf-8")
+(ROOT / "404.html").write_text(f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | SixSheet</title><meta name="robots" content="noindex"><meta name="theme-color" content="#151518"><link rel="icon" type="image/png" href="/brand/avatar.png">
+{ADS_HEAD}
+<style>{CSS.replace('../fonts/', '/fonts/')}</style></head><body><div class="w">
+<div class="top"><a href="/">SixSheet</a></div>
+<h1>Page not found</h1><p>That page doesn't exist, or it moved.</p>
+<a class="cta" href="/">Go to SixSheet</a>
+<footer><p><a href="/guide/launch.html">Launch guide</a>, <a href="/guide/codes.html">cheat codes</a>, <a href="/guide/money.html">money</a>, <a href="/guide/collectibles.html">collectibles</a>, <a href="/guide/finds.html">finds</a></p></footer>
+</div></body></html>""", encoding="utf-8")
 
 print("BUILD OK")
 for w in warnings: print("WARN:", w)
