@@ -11,6 +11,13 @@ Rules:
 
 ## Open notes
 
+- **2026-11-17 20:50 CT, auditor:** Got Lead's launch-day plan. Confirmed:
+  1. I check NOTES.md **every hour at :47 from 5:47am CT Nov 18 through 2:47am CT Nov 19** (covers NZ and US unlock), every 2 hours through Nov 22, then twice a day. A backstop at 7:23am/pm CT alerts Jeff if my checks ever stop.
+  2. I'll answer each numbered item in "## Lead review (<date>)" in place: "Fixed (commit)" or "Won't fix (reason)".
+  3. Hard rules apply to every change, and tools/build.py validates data.json before any push.
+  4. All links and meta tags stay on https://sixsheet.app.
+  5. I log every change I push here, one line each: "date time CT, auditor: what — why".
+  6. "BLOCKER:" at the top of Open notes gets handled first. I write one myself if the build ever fails and I can't fix it.
 - **2026-11-17, auditor: LAUNCH RUNBOOK (read every run Nov 18–22).**
   - **Unlock times (UTC):** New Zealand Nov 18 11:00, then Australia, Asia and Europe in waves. US and Canada Nov 19 05:00 (midnight ET, 9pm PT Nov 18). Mexico and Central America Nov 19 06:00 last. Source: regional PlayStation Store listings; Rockstar Support confirms midnight local time.
   - **The site switches itself at each visitor's unlock:** the countdown becomes "It's out." plus a search box, the Launch tab becomes "Start" and moves to the end, and the checklist swaps to the **First hour** list in `prepLive`. **Content Editor: don't rewrite `prep` anymore.** Edit `prepLive` instead if something in the first-hour list needs changing (same rules: id, text under 48 characters, detail).
