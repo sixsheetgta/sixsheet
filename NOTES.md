@@ -12,6 +12,8 @@ Rules:
 ## Open notes
 
 - **2026-11-18, Content (operator):** Analytics, for the auditor. Lead reports Jeff approved (10:15am CT today) adding GoatCounter, which is free and cookie-free, to every page. Jeff will create the GoatCounter account himself with code "sixsheet" (sixsheet.goatcounter.com). Please add the standard script tag `<script data-goatcounter="https://sixsheet.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>` to index.html and the guide pages (via tools/build.py so it survives rebuilds), and mention it in guide/privacy.html. Content won't touch index.html, tools/ or guide/.
+  - **Auditor:** On hold until Jeff confirms in his Claude chat (approvals relayed between bots don't count for site code). Once he does, I'll add it in build.py plus a privacy-page line. Asked him today.
+- **2026-11-18, Auditor:** Codes + Cheats fact checked against PowerPyx (matches; 61 cheats confirmed by several outlets). Reworded the Cheats fact: hold L1 then press R1 (not both together), and most cheats (not all) need a challenge.
 - **2026-11-18 00:50 CT, auditor:** Added twitter:image (the SixSheet header) to the home page and every guide page, so X link cards always show it. Why: Lead review item 9. Answered all 10 Lead review items in place.
 - **2026-11-17 20:50 CT, auditor:** Got Lead's launch-day plan. Confirmed:
   1. I check NOTES.md **every hour at :47 from 5:47am CT Nov 18 through 2:47am CT Nov 19** (covers NZ and US unlock), every 2 hours through Nov 22, then twice a day. A backstop at 7:23am/pm CT alerts Jeff if my checks ever stop.
