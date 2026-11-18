@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SixSheet: spoiler-free GTA VI cheat sheet</title>
 <meta name="description" content="Spoiler-free GTA VI cheat sheet: unlock countdown, launch checklist, tested cheat codes, money methods and collectible trackers.">
-<link rel="canonical" href="https://sixsheetgta.github.io/sixsheet/">
+<link rel="canonical" href="https://sixsheet.app/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SixSheet: spoiler-free GTA VI cheat sheet">
 <meta property="og:description" content="Countdown, launch checklist, tested codes, money methods and trackers. No story spoilers.">
-<meta property="og:url" content="https://sixsheetgta.github.io/sixsheet/">
-<meta property="og:image" content="https://sixsheetgta.github.io/sixsheet/brand/header.png">
+<meta property="og:url" content="https://sixsheet.app/">
+<meta property="og:image" content="https://sixsheet.app/brand/header.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@SixSheetGTA">
 <meta name="theme-color" content="#1d1c20">
@@ -186,20 +186,52 @@ body.shielded .sp:not(.open)>.spc{display:none}
   body[data-live="1"] .hero{padding:14px 0 0}
 }
 
-/* ---------- wide screens: rail + sheet ---------- */
+/* ---------- tablets ---------- */
+@media (min-width:700px) and (max-width:919px){
+  .page{max-width:760px;--pad:32px}
+  .cd{font-size:84px}
+  .gear .list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
+}
+
+/* ---------- desktop: rail + full-width sheet ---------- */
 @media (min-width:920px){
-  .page{max-width:1080px;display:grid;grid-template-columns:330px minmax(0,600px);column-gap:84px;justify-content:center;padding:28px 32px 80px}
-  .rail{position:sticky;top:28px;align-self:start}
+  .page{max-width:1760px;display:grid;grid-template-columns:clamp(280px,23vw,360px) minmax(0,1fr);column-gap:clamp(40px,4.5vw,96px);padding:32px clamp(24px,3.5vw,64px) 80px}
+  .rail{position:sticky;top:32px;align-self:start}
   .mast{padding-top:0}
-  .cd,.out{font-size:60px}
+  .cd,.out{font-size:clamp(52px,4.6vw,64px)}
   .tabs{position:static;display:block;border:0;padding:0;margin-top:34px;background:none}
   .tabs a{flex-direction:row;justify-content:flex-start;gap:12px;max-width:none;height:46px;font-size:17px;border-top:1px solid var(--line)}
   .tabs a:last-child{border-bottom:1px solid var(--line)}
   .tabs a[aria-current="page"]::before{top:11px;bottom:11px;left:-14px;right:auto;width:3px;height:auto;border-radius:2px}
   .tabs .dot{position:static;margin-left:auto;margin-right:4px;box-shadow:none}
-  .block:first-child{padding-top:6px}
+  .view>.block:first-child{padding-top:6px}
   .toast{bottom:28px}
+  .empty{padding-top:40px}
+  .empty .big{font-size:34px}
+  /* lists flow into as many columns as fit */
+  .list,#trackList{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));column-gap:clamp(32px,3vw,56px);align-items:start}
+  .list>.entry:last-child,.list>.sp:last-child .entry{border-bottom:0}
+  .list>.empty,.list>.sp .empty{grid-column:1/-1}
+  #trackList>.empty{grid-column:1/-1}
+  #moneyList,#v-results .rows{max-width:860px}
+  .gear .list{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .gear a.entry{border-bottom:0}
 }
+.tool{white-space:nowrap}
+@media (min-width:920px) and (max-width:1199px){#shieldLabel{display:none}}
+/* the launch tab becomes a two-column dashboard */
+@media (min-width:1200px){
+  #v-prep.on{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"prep facts" "fit facts" "gear gear";grid-template-rows:auto 1fr auto;column-gap:clamp(40px,4vw,80px);align-items:start}
+  #prepBlock{grid-area:prep;padding-top:6px}
+  #fitBlock{grid-area:fit}
+  #factsBlock{grid-area:facts;padding-top:6px}
+  #gear{grid-area:gear}
+  #v-prep .ad-slot{grid-column:1/-1}
+}
+/* big monitors: scale everything up instead of leaving empty space */
+@media (min-width:1800px){.page{zoom:1.12}}
+@media (min-width:2200px){.page{zoom:1.28}}
+@media (min-width:3000px){.page{zoom:1.6}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -229,7 +261,7 @@ body.shielded .sp:not(.open)>.spc{display:none}
     <section class="view" id="v-results" aria-live="polite"></section>
 
     <section class="view" id="v-prep">
-      <div class="block">
+      <div class="block" id="prepBlock">
         <div class="head"><h2 id="prepTitle">Get ready</h2><span class="count" id="prepCount"></span></div>
         <div id="prepList"></div>
       </div>
@@ -238,7 +270,7 @@ body.shielded .sp:not(.open)>.spc{display:none}
         <div class="chips" id="fitChips" role="group" aria-label="Your console"></div>
         <div class="fit" id="fit" aria-live="polite"></div>
       </div>
-      <div class="block">
+      <div class="block" id="factsBlock">
         <div class="head"><h2>Confirmed so far</h2><span class="count" id="factCount"></span></div>
         <div class="rows" id="facts"></div>
       </div>

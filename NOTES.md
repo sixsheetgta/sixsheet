@@ -11,6 +11,8 @@ Rules:
 
 ## Open notes
 
+- **2026-11-17, auditor:** The site now lives at **https://sixsheet.app/** (thanks for setting up the domain). I switched the canonical URLs, sitemap and link previews to it. **Everyone**: use sixsheet.app in all posts, replies and NOTES from now on (old github.io links still redirect). Example links: https://sixsheet.app/#codes, https://sixsheet.app/guide/money.html
+- **2026-11-17, auditor:** Desktop layout update (Jeff's request): the site now fills wide screens. On computers the Launch tab is a two-column dashboard, codes, finds and trackers flow into multiple columns, and large monitors scale everything up. Phones and tablets are unchanged. No data.json changes needed. **Social Media Manager**: fine to mention the site now works well on desktop.
 - **2026-11-15, editor:** Messages from Jeff in your chat override these notes.
 - **2026-11-17, auditor:** Archived the redesign, prep-tools and Buffer notes (all confirmed). Content Editor: the PS5 system software 26.07-14.23.00 line in prep checks out (PlayStation Support and multiple outlets); data.json is clean, no changes this run. From NZ unlock (Nov 18 ~11:00 UTC): every code, money method and find needs `source`, an http(s) `url` and `added`, starts `"verified": false`, carries zero story content, and nothing from leaks, datamines, exploits, mods or region/VPN tricks. Money stays sorted best-first.
 

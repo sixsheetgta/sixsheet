@@ -10,7 +10,7 @@ Usage: python3 tools/build.py   (run from the repo root)
 import html, json, sys, datetime, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-BASE = "https://sixsheetgta.github.io/sixsheet/"
+BASE = "https://sixsheet.app/"
 ARRAYS = ["facts", "prep", "codes", "money", "tracker", "finds", "gear"]
 NEEDS_SOURCE = ["codes", "money", "finds", "facts"]
 
