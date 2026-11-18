@@ -4,7 +4,7 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-18T16:03:34Z",
+    "updated": "2026-11-18T20:03:22Z",
     "adsenseClient": "ca-pub-4690865001295994",
     "goatcounter": "sixsheet"
   },
@@ -344,7 +344,26 @@
   ],
   "money": [],
   "tracker": [],
-  "finds": [],
+  "finds": [
+    {
+      "title": "A funny Easter egg waits at the top of a tall tower",
+      "summary": "One player found a long climb that ends at a nest of painted eggs. Throwing one off the top gets a comic reaction from someone down below. The climb reportedly took about seven minutes. Only one player's clip so far, so treat it as unconfirmed.",
+      "spoiler": true,
+      "verified": false,
+      "source": "xGarbett on X, covered by GameSpot (Eddie Makuch)",
+      "url": "https://x.com/xGarbett/status/2123088685210202519",
+      "added": "2026-11-18T20:01:58Z"
+    },
+    {
+      "title": "Tiny animation details in the Guardian's hands-on preview",
+      "summary": "Jason can take bites of a donut in one hand while sipping a beer with the other. When he breaks into a run with a six-pack, he hikes it into the crook of his arm and the drinks slosh inside the bottles. Seen in a Rockstar-led demo, not yet checked by players.",
+      "spoiler": false,
+      "verified": false,
+      "source": "The Guardian (Keza MacDonald)",
+      "url": "https://www.theguardian.com/games/2026/nov/11/a-world-of-its-own-inside-the-making-of-the-most-detailed-grand-theft-auto-yet",
+      "added": "2026-11-18T20:01:58Z"
+    }
+  ],
   "gear": [
     {
       "name": "PS5 M.2 SSD (1 TB or more, with heatsink)",
