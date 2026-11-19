@@ -4,7 +4,7 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-18T21:50:52Z",
+    "updated": "2026-11-19T00:00:41Z",
     "adsenseClient": "ca-pub-4690865001295994",
     "goatcounter": "sixsheet"
   },
@@ -389,6 +389,26 @@
       "source": "riff_gta on X; also listed by Sportskeeda",
       "url": "https://x.com/riff_gta/status/2123147917087125686",
       "added": "2026-11-18T21:50:52Z"
+    },
+    {
+      "title": "You can pet cats and dogs",
+      "summary": "Walk up to a friendly cat or dog and you can give it a pet. Players started sharing clips of it within hours of the first unlocks. Careful with car doors nearby.",
+      "kind": "detail",
+      "spoiler": false,
+      "verified": false,
+      "source": "Clips from nyrhae and others, rounded up by Kotaku (Kenneth Shepard)",
+      "url": "https://kotaku.com/grand-theft-auto-6-gta6-cats-dogs-snake-pet-alligator-2000758120",
+      "added": "2026-11-19T00:00:41Z"
+    },
+    {
+      "title": "A pet snake you can feed",
+      "summary": "Some homes keep a pet snake in a glass tank, and you can drop in a mouse and watch it eat. The feeding animation is surprisingly lifelike.",
+      "kind": "secret",
+      "spoiler": true,
+      "verified": false,
+      "source": "NikTek on X and an xQc stream clip, rounded up by Kotaku",
+      "url": "https://kotaku.com/grand-theft-auto-6-gta6-cats-dogs-snake-pet-alligator-2000758120",
+      "added": "2026-11-19T00:00:41Z"
     }
   ],
   "gear": [
