@@ -180,8 +180,8 @@ if D["codes"]:
         rows += f'<div class="c"><b>{e(c["name"])}</b> <span class="m">({badge})</span><div>{e(c.get("effect",""))}</div>{inputs}{src(c)}</div>'
 else:
     rows = empty("No verified codes yet. If GTA VI has cheat codes, each one is tested and added here within hours of launch.")
-page("codes", "GTA VI Cheat Codes (PS5 & Xbox), Verified | SixSheet",
-     "Every GTA VI cheat code for PS5 and Xbox Series X|S, tested and marked verified. Updated through launch week.",
+page("codes", "GTA VI Cheat Codes for PS5 & Xbox, with Unlocks | SixSheet",
+     "GTA VI cheat codes for PS5 and Xbox Series X|S: D-pad inputs, how to enter them and what unlocks each one. Each code is marked tested or unconfirmed.",
      "GTA VI cheat codes", f"{len(D['codes'])} codes listed. Only tested codes are marked verified.", rows, "codes")
 
 # Money
