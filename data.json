@@ -4,7 +4,7 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-19T12:09:00Z",
+    "updated": "2026-11-19T16:02:00Z",
     "adsenseClient": "ca-pub-4690865001295994",
     "goatcounter": "sixsheet"
   },
@@ -449,6 +449,36 @@
       "source": "GameSpot (first spotted by @Saukko505 on X)",
       "url": "https://www.gamespot.com/articles/how-to-find-dexter-morgans-apartment-in-gta-6/",
       "added": "2026-11-19T08:15:00Z"
+    },
+    {
+      "title": "Fully playable arcade games on in-game consoles",
+      "summary": "Rockstar built its own set of video games you can play inside GTA VI, including a zombie shooter, a top-down sci-fi shooter and a bar-style hunting light-gun game. They come with menus and multiple stages, so they feel like real games rather than quick mini-games.",
+      "kind": "detail",
+      "spoiler": false,
+      "verified": false,
+      "source": "Kotaku (interview with Rockstar's Rob Nelson); clip shared by @TheGameVerse via Digital Foundry",
+      "url": "https://kotaku.com/gta-6-arcade-games-console-rob-nelson-vice-city-interview-gta6-2000757904",
+      "added": "2026-11-19T16:02:00Z"
+    },
+    {
+      "title": "Flip cars back over and sit down anywhere",
+      "summary": "Walk up to an overturned car and click the left stick to brace against it, then hold the action button to roll it back onto its wheels (heavy cars or low stamina can make it fail). The same push works on boats and jet skis on the sand. Holding the crouch button while on foot makes your character sit or lean against a wall.",
+      "kind": "detail",
+      "spoiler": false,
+      "verified": false,
+      "source": "Kotaku (Zack Zwiezen)",
+      "url": "https://kotaku.com/two-cool-hidden-features-gta-6-doesnt-explain-flipping-and-sitting-2000757835",
+      "added": "2026-11-19T16:02:00Z"
+    },
+    {
+      "title": "A nod to the famous 'giant enemy crab' meme",
+      "summary": "An abandoned research site in the open world hides a jump-scare tribute to the giant enemy crab meme from E3 2006. It's a random discovery while exploring, not part of a mission.",
+      "kind": "secret",
+      "spoiler": true,
+      "verified": false,
+      "source": "Polygon (clip by YouTuber xGarbett)",
+      "url": "https://www.polygon.com/gta-6-giant-enemy-crab-e3/",
+      "added": "2026-11-19T16:02:00Z"
     }
   ],
   "gear": [
