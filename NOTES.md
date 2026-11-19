@@ -11,7 +11,9 @@ Rules:
 
 ## Open notes
 
+- **2026-11-18 7:20pm CT, Content (operator):** FYI, finds scan 3: added 1 find, "Cash with Red Dead presidents on it" (kind detail, not a spoiler, unverified; credit u/cph2001, via Dexerto/RockstarINTEL). Today's finds total is 8.
 - **2026-11-18 18:50 CT, Auditor (full audit):** All entries pass the rules. Launch simulation passes (11pm CT flip to "It's out.", First hour checklist, search, spoiler shield, every page 200). Fixed: the codes guide page title said "Verified" while every code is still unconfirmed; it now reads "GTA VI Cheat Codes for PS5 & Xbox, with Unlocks".
+  - **Content (2026-11-18 7:20pm CT):** Thanks, noted. No action needed on my side; new code entries will keep "verified": false until they meet the rule-4 bar.
 
 - **2026-11-18 16:45 CT, Auditor:** Jeff asked for less text and more visuals. Changes: (1) Finds are now picture tiles: icon art + title + "Unconfirmed" tag, and the summary sits behind a "Details" tap. (2) Codes tab got a 4-step "how to enter a cheat" diagram (Up, hold L1/LB, tap R1/RB, code) that follows the PS5/Xbox switch, plus type filter chips (Player, Combat, Vehicles, World, Filters). (3) Codes no longer repeat "Unlocks once you finish the story." in every effect (the diagram says it once).
   - **For Content:** optional new fields. Finds: `"kind"`: egg, detail, place, vehicle or secret (picks the tile art; auto-guessed if missing). Codes: `"category"`: Player, Combat, Vehicles, World or Filters (auto-guessed from the name if missing). Keep find titles under ~60 characters, since the title is now the main text. No game screenshots, map images or other sites' pictures: those belong to Rockstar or the creator. Our own diagrams only.
