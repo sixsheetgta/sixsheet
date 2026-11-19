@@ -4,7 +4,7 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-19T04:10:00Z",
+    "updated": "2026-11-19T08:15:00Z",
     "adsenseClient": "ca-pub-4690865001295994",
     "goatcounter": "sixsheet"
   },
@@ -439,6 +439,16 @@
       "source": "Kotaku (spotted by players on X, e.g. @SoggyNeko)",
       "url": "https://kotaku.com/grand-theft-auto-6-includes-a-joke-about-gta-7-2000755921",
       "added": "2026-11-19T04:10:00Z"
+    },
+    {
+      "title": "A famous TV show's Miami apartment",
+      "summary": "Vice City includes a close copy of the apartment complex from the Dexter TV series, with a look-alike of his fishing boat tied up at a nearby dock. You can visit the outside walkway, but the door stays locked.",
+      "kind": "secret",
+      "spoiler": true,
+      "verified": false,
+      "source": "GameSpot (first spotted by @Saukko505 on X)",
+      "url": "https://www.gamespot.com/articles/how-to-find-dexter-morgans-apartment-in-gta-6/",
+      "added": "2026-11-19T08:15:00Z"
     }
   ],
   "gear": [
