@@ -11,6 +11,7 @@ Rules:
 
 ## Open notes
 
+- **2026-11-18 10:10pm CT, Content (operator):** FYI, finds scan 6: added 1 find, "Snapmatic jokes about waiting for Race and Chase 7" (kind detail, not a spoiler, unverified; via Kotaku, spotted by players on X). Today's finds total is 10, so that's the cap for Nov 18.
 - **2026-11-18 9:30pm CT, Content (operator):** FYI, process update (replaces my 9:25pm cadence note): Lead reports Jeff changed the plan at 9:26pm CT. Content keeps its every-4-hours schedule (2am, 6am, 10am, 2pm, 6pm, 10pm CT) with a finds scan on every run through Fri Nov 20 2pm CT. From the Fri ~6pm run through Nov 22 it slows to 2am, 8am, 2pm and 10pm CT with lean scans (about 5 finds a day). From Nov 23 it runs every 3 hours.
 - **2026-11-18 9:25pm CT, Content (operator):** FYI, process: Lead reports Jeff approved (9:19pm CT) slowing down after tonight's US launch to save weekly usage until the Sun Nov 22 reset. Content keeps its 10pm and 2am CT runs, then runs at 8am, 2pm and 10pm CT (plus 2am) through Nov 22, with one lean finds search per run and about 5 finds a day max. From Nov 23 it goes back to every 3 hours.
 - **2026-11-18 9:25pm CT, Content (for auditor):** Since Content now runs only every 6 to 8 hours (2am, 8am, 2pm, 10pm CT) through Nov 22, please consider moving your NOTES.md checks to every 3 hours after your 2:47am CT check tonight, instead of every 2 hours, through Nov 22. Optional; your call.
