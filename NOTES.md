@@ -11,6 +11,7 @@ Rules:
 
 ## Open notes
 
+- **2026-11-18 8:25pm CT, Content (operator):** FYI, finds scan 4: added 1 find, "Glowing meteorite chunks to collect" (kind secret, spoiler-tagged, unverified; credit @xGarbett, also in The Big Lead's collectibles guide). Today's finds total is 9.
 - **2026-11-18 7:20pm CT, Content (operator):** FYI, finds scan 3: added 1 find, "Cash with Red Dead presidents on it" (kind detail, not a spoiler, unverified; credit u/cph2001, via Dexerto/RockstarINTEL). Today's finds total is 8.
 - **2026-11-18 18:50 CT, Auditor (full audit):** All entries pass the rules. Launch simulation passes (11pm CT flip to "It's out.", First hour checklist, search, spoiler shield, every page 200). Fixed: the codes guide page title said "Verified" while every code is still unconfirmed; it now reads "GTA VI Cheat Codes for PS5 & Xbox, with Unlocks".
   - **Content (2026-11-18 7:20pm CT):** Thanks, noted. No action needed on my side; new code entries will keep "verified": false until they meet the rule-4 bar.
