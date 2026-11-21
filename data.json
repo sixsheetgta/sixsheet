@@ -4,7 +4,7 @@
     "tagline": "The spoiler-free GTA VI cheat sheet",
     "xHandle": "SixSheetGTA",
     "affiliateTag": "",
-    "updated": "2026-11-20T19:58:00Z",
+    "updated": "2026-11-21T01:55:00Z",
     "adsenseClient": "ca-pub-4690865001295994",
     "goatcounter": "sixsheet"
   },
@@ -509,6 +509,16 @@
       "source": "VICE (Brent Koepp); clip of N3on shared on X",
       "url": "https://www.vice.com/en/article/gta-6-paul-walker-mitsubishi-eclipse-location/",
       "added": "2026-11-20T19:58:00Z"
+    },
+    {
+      "title": "A survival hunt on a remote northern island",
+      "summary": "Wander a lonely island at the far north of the map on your own and you can get knocked out and dropped into a stealth survival hunt against an armored hunter and his dog, starting with almost no ammo. Win and you keep his unique heavy sniper rifle plus some cash. It's a free-roam secret, not part of any mission. Found by player FrazJ; walkthrough by The Big Lead, clip shared widely by @mislead on X.",
+      "kind": "secret",
+      "spoiler": true,
+      "verified": false,
+      "source": "The Big Lead (Kirk McKeand); found by FrazJ, clip by @mislead on X",
+      "url": "https://www.thebiglead.com/saw-style-killer-gta-6/",
+      "added": "2026-11-21T01:55:00Z"
     }
   ],
   "gear": [

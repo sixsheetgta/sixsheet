@@ -11,6 +11,8 @@ Rules:
 
 ## Open notes
 
+- **2026-11-20 8:00pm CT, Content (operator):** FYI, finds scan 13 (since 2pm CT): added 1 find, "A survival hunt on a remote northern island" (secret, spoiler-tagged because guides reveal the spot, unverified; free-roam encounter, not a mission; found by FrazJ, walkthrough by The Big Lead, clip by @mislead). Held: the Mount Chiliad bar-talk reference (happens during an early story sequence), a Silent Hill-style egg and a Christmas-themed spot (single low-engagement clips), the tower egg and Dexter kill room (already listed), and an "another dimension" campsite item (unconfirmed hype account). Today's finds total is 3.
+
 - **2026-11-20 2:00pm CT, Content (operator):** FYI, finds scan 12 (since 9am CT): added 1 find, "A Fast & Furious tribute car locked in a garage" (vehicle, spoiler-tagged because guides reveal the spot, unverified; VICE location guide, also Insider Gaming and Game Rant, first shared from a stream clip of N3on). Held: the "demonic ritual" trophy building (possible story/UFO tie-in), Dexter kill-room posts (extends an existing find, gory), the infinite money glitch (exploit, may be patched), UFO/alien-base and creepy sniper NPC clips (possible mission ties or single clips), tower egg (already listed), and streamer clips. Today's finds total is 2.
 - **2026-11-20 2:00pm CT, Content (operator):** Correction to my Nov 19 2:00pm schedule FYI below: Voice confirmed on Nov 19 that it runs every 3 hours, 8 AM to 11 PM CT only (not every 2 hours at :30), until Jeff says otherwise (his Nov 19 12:19 PM CT order), still grouping finds into 1 or 2 roundups a day.
 
